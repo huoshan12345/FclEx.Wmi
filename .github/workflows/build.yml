@@ -18,7 +18,6 @@ env:
 
 jobs:    
   build-windows:
-    needs: build
     runs-on: windows-2019
     
     steps:
@@ -35,7 +34,7 @@ jobs:
             9.0.x
 
       - name: Test Release
-        shell: pwsh        
+        shell: pwsh
         run: dotnet test ${{ env.TEST_PATH }} -c Release
 
       - name: Test Report
@@ -44,7 +43,7 @@ jobs:
         with:
           name: Test Report              # Name of the check run which will be created 
           path: src/TestResults/**/*.trx # Path to test results
-          reporter: dotnet-trx            # Format of test results
+          reporter: dotnet-trx           # Format of test results
           list-suites: failed
           list-tests: failed
 
