@@ -42,7 +42,7 @@ jobs:
         if: github.actor != 'dependabot-bot' && (success() || failure()) # run this step even if previous step failed
         with:
           name: Test Report              # Name of the check run which will be created 
-          path: src/TestResults/**/*.trx # Path to test results
+          path: TestResults/**/*.trx # Path to test results
           reporter: dotnet-trx           # Format of test results
           list-suites: failed
           list-tests: failed
