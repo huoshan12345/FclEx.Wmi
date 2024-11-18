@@ -1,9 +1,12 @@
 $ErrorActionPreference = "Stop"
 
 $isGithub = [string]::IsNullOrEmpty($Env:GITHUB_ACTION) -eq $false
-$root = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-$pkgPath = ([io.path]::combine($root, "*.nupkg"))
+$buildDir = [io.path]::combine($MyInvocation.MyCommand.Definition, "..")
+$rootDir = [io.path]::combine($buildDir, "..")
+$pkgPath = ([io.path]::combine($buildDir, "*.nupkg"))
+$srcDir = [io.path]::combine($rootDir, "src")
+
 Remove-Item $pkgPath
 
 $ver_path = ([io.path]::combine($buildDir, "pkg.version"))
@@ -17,12 +20,11 @@ if ([string]::IsNullOrEmpty($key)) {
 if ([string]::IsNullOrEmpty($ver)) {
   throw "the version is empty"
 }
-$srcPath = [io.path]::combine($root, "..", "src")
-$path = [io.path]::combine($srcPath, "InterfaceBaseInvoke")
+$path = [io.path]::combine($srcDir, "FclEx.Wmi")
 
 Write-Output "Packing $($path.Basename)"
 & dotnet clean $path --nologo -v q
-& dotnet pack $path --nologo -v q -c Release --include-symbols --output $root -p:PackageVersion=$ver
+& dotnet pack $path --nologo -v q -c Release --include-symbols --output $buildDir -p:PackageVersion=$ver
 if ($Lastexitcode -ne 0)	{
   throw "failed with exit code $LastExitCode"
 }
