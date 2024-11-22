@@ -53,6 +53,7 @@ jobs:
           reporter: dotnet-trx           # Format of test results
           list-suites: failed
           list-tests: failed
+          use-actions-summary: true
 
       - name: NuGet Publish
         if: ${{ github.ref == 'refs/heads/master' }}
