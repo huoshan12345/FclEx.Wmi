@@ -10,13 +10,16 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 env:
   DOTNET_NOLOGO: 1
   MYGET_APIKEY: ${{ secrets.MYGET_APIKEY }}
   SOLUTION: FclEx.Wmi.sln
   TEST_PATH: ./test/FclEx.Wmi.Tests
 
-jobs:    
+jobs:
   build-windows:
     runs-on: windows-2019
     
