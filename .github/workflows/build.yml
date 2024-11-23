@@ -53,10 +53,10 @@ jobs:
           reporter: dotnet-trx       # Format of test results
           list-suites: failed
           list-tests: failed
-          use-actions-summary: true
+          use-actions-summary: ${{ github.event_name == 'pull_request' }}
 
       - name: NuGet Publish
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: |
           ./build/pack.ps1
@@ -83,4 +83,4 @@ jobs:
           name: ${{ env.VERSION }}
           tag: ${{ env.VERSION }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          skipIfReleaseExists: true   
+          skipIfReleaseExists: true
