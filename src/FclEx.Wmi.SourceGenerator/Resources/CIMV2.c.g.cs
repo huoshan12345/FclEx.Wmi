@@ -3149,6 +3149,175 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// USBControllerHasHub defines the Hub(s) that are downstream of the USBController. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ControllerHasHub
+    {
+        /// <summary>
+        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
+        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
+        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 AccessState { get; set; }
+        /// <summary>
+        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
+        /// Data width is specified in bits. <br/>
+        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: bits <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NegotiatedDataWidth { get; set; }
+        /// <summary>
+        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
+        /// Speed is specified in bits per second. <br/>
+        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: bits per second <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 NegotiatedSpeed { get; set; }
+        /// <summary>
+        /// Number of hard resets issued by the controller. <br/>
+        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
+        /// All internal device state information and data are lost. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfHardResets { get; set; }
+        /// <summary>
+        /// Number of soft resets issued by the controller. <br/>
+        /// A soft reset does not completely clear current device state and/or data. <br/>
+        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfSoftResets { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_CIMLogicalDeviceCIMDataFile class represents an association between logical devices and data files, indicating the driver files used by the device. <br/>
+    /// This class is used to discover which device drivers a device uses. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C510-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_CIMLogicalDeviceCIMDataFile
+    {
+        /// <summary>
+        /// The Purpose property indicates the role that the data file plays with regard to its associated logical device. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Purpose { get; set; }
+        /// <summary>
+        /// The PurposeDescription property provides a description that extends the value of the Purpose property of this class. <br/>
+        /// Example: Floppy Disk Driver <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String PurposeDescription { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_ConnectionShare class represents an association between a shared resource on the computer and the connection made to the shared resource. <br/>
+    ///  <br/>
+    /// provider: SessionProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ConnectionShare
+    {
+    }
+
+    /// <summary>
+    /// The Win32_ClassicCOMClassSettings class represents an association between a COM class and the settings used to configure instances of the COM class. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {E5D8A564-F6C0-11d2-B35E-00105A1F8569} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ClassicCOMClassSettings
+    {
+    }
+
+    /// <summary>
+    /// The Win32_COMApplicationSettings class represents an association between a DCOM application and its configuration settings. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {E5D8A563-F6C0-11d2-B35E-00105A1F8569} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_COMApplicationSettings
+    {
+    }
+
+    /// <summary>
+    /// The Win32_ComputerSystemProcessor class represents an association between a computer system and a processor running on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {719A6839-C124-11d2-85E8-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ComputerSystemProcessor
+    {
+    }
+
+    /// <summary>
+    /// The Win32_COMApplicationClasses class represents an association between a COM component and the COM application where it resides. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// uuid: {0F73ED51-8ED9-11d2-B340-00105A1F8569} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_COMApplicationClasses
+    {
+    }
+
+    /// <summary>
+    /// The Win32_ClassicCOMApplicationClasses class represents an association between a DCOM application and a COM component grouped under it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {0F73ED54-8ED9-11d2-B340-00105A1F8569} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ClassicCOMApplicationClasses
+    {
+    }
+
+    /// <summary>
     /// This class represents an association between a managed system element collection and the class representing statistical information about the collection. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -3423,34 +3592,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_ClassicCOMClassSettings class represents an association between a COM class and the settings used to configure instances of the COM class. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {E5D8A564-F6C0-11d2-B35E-00105A1F8569} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ClassicCOMClassSettings
-    {
-    }
-
-    /// <summary>
-    /// The Win32_COMApplicationSettings class represents an association between a DCOM application and its configuration settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {E5D8A563-F6C0-11d2-B35E-00105A1F8569} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_COMApplicationSettings
-    {
-    }
-
-    /// <summary>
     /// The Condition class can be used to modify the selection state of any entry in the Feature class, based on a conditional expression. <br/>
     /// If Condition evaluates to True, the corresponding Level value in the Feature class will be set to the value specified in the Condition class&apos;s Level column. <br/>
     /// Using this mechanism, any feature can be permanently disabled (by setting the Level to 0), set to be always installed (by setting the Level to 1), or set to a different install priority (by setting Level to an intermediate value). <br/>
@@ -3575,46 +3716,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_ComputerSystemProcessor class represents an association between a computer system and a processor running on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {719A6839-C124-11d2-85E8-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ComputerSystemProcessor
-    {
-    }
-
-    /// <summary>
-    /// The Win32_COMApplicationClasses class represents an association between a COM component and the COM application where it resides. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// uuid: {0F73ED51-8ED9-11d2-B340-00105A1F8569} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_COMApplicationClasses
-    {
-    }
-
-    /// <summary>
-    /// The Win32_ClassicCOMApplicationClasses class represents an association between a DCOM application and a COM component grouped under it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {0F73ED54-8ED9-11d2-B340-00105A1F8569} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ClassicCOMApplicationClasses
-    {
-    }
-
-    /// <summary>
     /// The Win32_ComClassAutoEmulator class represents an association between a COM class and another COM class that it automatically emulates. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -3640,107 +3741,6 @@ namespace CIMV2
     /// </summary>
     public class Win32_ComClassEmulator
     {
-    }
-
-    /// <summary>
-    /// The Win32_ConnectionShare class represents an association between a shared resource on the computer and the connection made to the shared resource. <br/>
-    ///  <br/>
-    /// provider: SessionProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ConnectionShare
-    {
-    }
-
-    /// <summary>
-    /// The Win32_CIMLogicalDeviceCIMDataFile class represents an association between logical devices and data files, indicating the driver files used by the device. <br/>
-    /// This class is used to discover which device drivers a device uses. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C510-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_CIMLogicalDeviceCIMDataFile
-    {
-        /// <summary>
-        /// The Purpose property indicates the role that the data file plays with regard to its associated logical device. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Purpose { get; set; }
-        /// <summary>
-        /// The PurposeDescription property provides a description that extends the value of the Purpose property of this class. <br/>
-        /// Example: Floppy Disk Driver <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String PurposeDescription { get; set; }
-    }
-
-    /// <summary>
-    /// USBControllerHasHub defines the Hub(s) that are downstream of the USBController. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ControllerHasHub
-    {
-        /// <summary>
-        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
-        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
-        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 AccessState { get; set; }
-        /// <summary>
-        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
-        /// Data width is specified in bits. <br/>
-        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: bits <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NegotiatedDataWidth { get; set; }
-        /// <summary>
-        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
-        /// Speed is specified in bits per second. <br/>
-        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bits per second <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 NegotiatedSpeed { get; set; }
-        /// <summary>
-        /// Number of hard resets issued by the controller. <br/>
-        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
-        /// All internal device state information and data are lost. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfHardResets { get; set; }
-        /// <summary>
-        /// Number of soft resets issued by the controller. <br/>
-        /// A soft reset does not completely clear current device state and/or data. <br/>
-        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfSoftResets { get; set; }
     }
 
     /// <summary>

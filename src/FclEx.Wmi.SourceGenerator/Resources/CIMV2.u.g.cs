@@ -793,6 +793,97 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_USBControllerDevice class represents an association between a Universal Serial Bus (USB) controller and the CIM_LogicalDevice connected to it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {DE57D792-A032-11D2-90F0-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_USBControllerDevice
+    {
+        /// <summary>
+        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
+        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
+        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 AccessState { get; set; }
+        /// <summary>
+        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
+        /// Data width is specified in bits. <br/>
+        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: bits <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NegotiatedDataWidth { get; set; }
+        /// <summary>
+        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
+        /// Speed is specified in bits per second. <br/>
+        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: bits per second <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 NegotiatedSpeed { get; set; }
+        /// <summary>
+        /// Number of hard resets issued by the controller. <br/>
+        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
+        /// All internal device state information and data are lost. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfHardResets { get; set; }
+        /// <summary>
+        /// Number of soft resets issued by the controller. <br/>
+        /// A soft reset does not completely clear current device state and/or data. <br/>
+        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfSoftResets { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_UserDesktop class represents an association between a user account and desktop settings that are specific to it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FF-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_UserDesktop
+    {
+    }
+
+    /// <summary>
+    /// The Win32_UserInDomain relationship identifies the user accounts associated with a NT domain. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: B38813CF-0673-495C-A12F-384D47BDF1ED <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_UserInDomain
+    {
+    }
+
+    /// <summary>
     /// The Win32_UserProfile class contains information about user profiles on a Windows system. <br/>
     ///  <br/>
     /// provider: UserProfileProvider <br/>
@@ -1019,20 +1110,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_UserDesktop class represents an association between a user account and desktop settings that are specific to it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FF-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_UserDesktop
-    {
-    }
-
-    /// <summary>
     ///  <br/>
     /// provider: Win32_UserStateConfigurationProvider <br/>
     ///  <br/>
@@ -1060,82 +1137,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public byte RoamingUserProfile { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_UserInDomain relationship identifies the user accounts associated with a NT domain. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: B38813CF-0673-495C-A12F-384D47BDF1ED <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_UserInDomain
-    {
-    }
-
-    /// <summary>
-    /// The Win32_USBControllerDevice class represents an association between a Universal Serial Bus (USB) controller and the CIM_LogicalDevice connected to it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {DE57D792-A032-11D2-90F0-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_USBControllerDevice
-    {
-        /// <summary>
-        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
-        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
-        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 AccessState { get; set; }
-        /// <summary>
-        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
-        /// Data width is specified in bits. <br/>
-        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: bits <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NegotiatedDataWidth { get; set; }
-        /// <summary>
-        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
-        /// Speed is specified in bits per second. <br/>
-        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bits per second <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 NegotiatedSpeed { get; set; }
-        /// <summary>
-        /// Number of hard resets issued by the controller. <br/>
-        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
-        /// All internal device state information and data are lost. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfHardResets { get; set; }
-        /// <summary>
-        /// Number of soft resets issued by the controller. <br/>
-        /// A soft reset does not completely clear current device state and/or data. <br/>
-        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfSoftResets { get; set; }
     }
 }

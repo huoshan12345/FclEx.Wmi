@@ -5008,6 +5008,499 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_SCSIControllerDevice class represents an association between a Small Computer System Interface (SCSI) controller and the logical device (disk drive) connected to it. <br/>
+    /// Instances for this class are only provided on  Microsoft Windows NT/Windows 2000 or later and Windows 95 or later. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {CC0F48D2-C847-11d2-911E-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SCSIControllerDevice
+    {
+        /// <summary>
+        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
+        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
+        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 AccessState { get; set; }
+        /// <summary>
+        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
+        /// Data width is specified in bits. <br/>
+        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: bits <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NegotiatedDataWidth { get; set; }
+        /// <summary>
+        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
+        /// Speed is specified in bits per second. <br/>
+        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: bits per second <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 NegotiatedSpeed { get; set; }
+        /// <summary>
+        /// Number of hard resets issued by the controller. <br/>
+        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
+        /// All internal device state information and data are lost. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfHardResets { get; set; }
+        /// <summary>
+        /// Number of soft resets issued by the controller. <br/>
+        /// A soft reset does not completely clear current device state and/or data. <br/>
+        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfSoftResets { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_SubSession association defines relationships between sessions where one session is a part of or utilizes another session for example where a Terminal session uses a Logon Session. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SubSession
+    {
+    }
+
+    /// <summary>
+    /// The association between a shadow copy provider and a supported volume. <br/>
+    ///  <br/>
+    /// provider: MSVSS__PROVIDER <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ShadowVolumeSupport
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SessionConnection class represents an association between a session established with the local server, by a user on a remote machine, and the connections that depend on the session. <br/>
+    ///  <br/>
+    /// provider: SessionProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SessionConnection
+    {
+    }
+
+    /// <summary>
+    /// The association between a shadow copy and the volume for which the shadow copy was created. <br/>
+    ///  <br/>
+    /// provider: MSVSS__PROVIDER <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ShadowFor
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SessionResource association represents the relationship between a session and the resources that the session provides access to. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SessionResource
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SessionProcess represents the association between a logon-session and the processes belonging to that session. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: 9CD8E1CE-0D27-4a41-AADE-F8D200230FF4 <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SessionProcess
+    {
+    }
+
+    /// <summary>
+    /// A generic association to establish dependency relationships between objects. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {E7CD451C-DB34-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SoftwareFeatureParent
+    {
+    }
+
+    /// <summary>
+    /// The association between a shadow copy and the volume on which differential data is written. <br/>
+    ///  <br/>
+    /// provider: MSVSS__PROVIDER <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ShadowOn
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemDriverPNPEntity class represents an association between a Plug and Play device on the Win32 computer system and the driver that supports the Plug and Play device. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {0800F074-CB98-11d2-B35D-00104BC97924} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemDriverPNPEntity
+    {
+    }
+
+    /// <summary>
+    /// The association between a shadow copy and the provider that created the shadow copy <br/>
+    ///  <br/>
+    /// provider: MSVSS__PROVIDER <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ShadowBy
+    {
+    }
+
+    /// <summary>
+    /// The association between a shadow copy provider and a volume supported for differential storage area. <br/>
+    ///  <br/>
+    /// provider: MSVSS__PROVIDER <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ShadowDiffVolumeSupport
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SerialPortSetting class represents an association between a serial port and its configuration settings. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FE-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SerialPortSetting
+    {
+    }
+
+    /// <summary>
+    /// Associates an object to its security settings <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// uuid: {8502C584-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SecuritySettingOfObject
+    {
+    }
+
+    /// <summary>
+    /// Security settings of a share object <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C592-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SecuritySettingOfLogicalShare
+    {
+    }
+
+    /// <summary>
+    /// Security settings of a file or directory object <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C58D-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SecuritySettingOfLogicalFile
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemSetting class represents an association between a computer system and a general setting on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// uuid: {8502C501-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemSetting
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemProgramGroups class represents an association between a computer system and a logical program group. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C505-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemProgramGroups
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemBootConfiguration class represents an association between a computer system and its boot configuration. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C507-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemBootConfiguration
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemTimeZone class represents an association between a computer system and a time zone. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C504-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemTimeZone
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemDesktop class represents an association between a computer system and its desktop configuration. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C506-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemDesktop
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemDevices class represents an association between a computer system and a logical device installed on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F4-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemDevices
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemPartitions class represents an association between a computer system and a disk partition on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F5-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemPartitions
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemServices class represents an association between a computer system and a service program that exists on the system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F6-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemServices
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemNetworkConnections class represents an association between a network connection and the computer system on which it resides. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F7-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemNetworkConnections
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemResources class represents an association between a system resource and the computer system it resides on. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F8-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemResources
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemBIOS class represents an association between a computer system (including data such as startup properties, time zones, boot configurations, or administrative passwords) and a system BIOS (services, languages, system management properties). <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4EE-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemBIOS
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemLoadOrderGroups class represents an association between a computer system and a load order group. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C503-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemLoadOrderGroups
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemUsers class represents an association between a computer system and a user account on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F2-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemUsers
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemOperatingSystem class represents an association between a computer system and its operating system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F0-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemOperatingSystem
+    {
+        /// <summary>
+        /// Boolean indicating that the operating system is the default OS for the computer system. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean PrimaryOS { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_SystemSystemDriver class represents an association between a computer system and a system driver running on that computer system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F1-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemSystemDriver
+    {
+    }
+
+    /// <summary>
+    /// The Win32_SystemProcesses class represents an association between a computer system and a process running on that system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F3-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SystemProcesses
+    {
+    }
+
+    /// <summary>
+    /// The CIM_SoftwareFeatureSoftwareElements associations identifies the software elements that make up a particular software feature. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {F3B44268-DB34-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SoftwareFeatureSoftwareElements
+    {
+    }
+
+    /// <summary>
+    /// The Win32_Subdirectory class represents an association between a directory (folder) and one of its subdirectories (subfolders). <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {F25FE469-783E-11d2-90BF-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_SubDirectory
+    {
+    }
+
+    /// <summary>
     /// Structural representation of a SECURITY_DESCRIPTOR <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -5374,128 +5867,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public UInt32 SidLength { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_SerialPortSetting class represents an association between a serial port and its configuration settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FE-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SerialPortSetting
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemSetting class represents an association between a computer system and a general setting on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// uuid: {8502C501-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemSetting
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemProgramGroups class represents an association between a computer system and a logical program group. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C505-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemProgramGroups
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemBootConfiguration class represents an association between a computer system and its boot configuration. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C507-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemBootConfiguration
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemTimeZone class represents an association between a computer system and a time zone. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C504-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemTimeZone
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemDesktop class represents an association between a computer system and its desktop configuration. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C506-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemDesktop
-    {
-    }
-
-    /// <summary>
-    /// Associates an object to its security settings <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// uuid: {8502C584-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SecuritySettingOfObject
-    {
-    }
-
-    /// <summary>
-    /// Security settings of a share object <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C592-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SecuritySettingOfLogicalShare
-    {
-    }
-
-    /// <summary>
-    /// Security settings of a file or directory object <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C58D-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SecuritySettingOfLogicalFile
-    {
     }
 
     /// <summary>
@@ -5928,193 +6299,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_SystemServices class represents an association between a computer system and a service program that exists on the system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F6-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemServices
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemNetworkConnections class represents an association between a network connection and the computer system on which it resides. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F7-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemNetworkConnections
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemResources class represents an association between a system resource and the computer system it resides on. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F8-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemResources
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemBIOS class represents an association between a computer system (including data such as startup properties, time zones, boot configurations, or administrative passwords) and a system BIOS (services, languages, system management properties). <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4EE-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemBIOS
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemLoadOrderGroups class represents an association between a computer system and a load order group. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C503-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemLoadOrderGroups
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemUsers class represents an association between a computer system and a user account on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F2-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemUsers
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemOperatingSystem class represents an association between a computer system and its operating system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F0-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemOperatingSystem
-    {
-        /// <summary>
-        /// Boolean indicating that the operating system is the default OS for the computer system. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean PrimaryOS { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_SystemDevices class represents an association between a computer system and a logical device installed on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F4-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemDevices
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemPartitions class represents an association between a computer system and a disk partition on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F5-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemPartitions
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemSystemDriver class represents an association between a computer system and a system driver running on that computer system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F1-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemSystemDriver
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemProcesses class represents an association between a computer system and a process running on that system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F3-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemProcesses
-    {
-    }
-
-    /// <summary>
-    /// The CIM_SoftwareFeatureSoftwareElements associations identifies the software elements that make up a particular software feature. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {F3B44268-DB34-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SoftwareFeatureSoftwareElements
-    {
-    }
-
-    /// <summary>
-    /// The Win32_Subdirectory class represents an association between a directory (folder) and one of its subdirectories (subfolders). <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {F25FE469-783E-11d2-90BF-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SubDirectory
-    {
-    }
-
-    /// <summary>
     /// This association relates an MSI feature with an action used to register and/or publish the feature <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
@@ -6195,190 +6379,6 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_SoftwareElementAction
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SubSession association defines relationships between sessions where one session is a part of or utilizes another session for example where a Terminal session uses a Logon Session. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SubSession
-    {
-    }
-
-    /// <summary>
-    /// The association between a shadow copy provider and a supported volume. <br/>
-    ///  <br/>
-    /// provider: MSVSS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ShadowVolumeSupport
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SessionConnection class represents an association between a session established with the local server, by a user on a remote machine, and the connections that depend on the session. <br/>
-    ///  <br/>
-    /// provider: SessionProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SessionConnection
-    {
-    }
-
-    /// <summary>
-    /// The association between a shadow copy and the volume for which the shadow copy was created. <br/>
-    ///  <br/>
-    /// provider: MSVSS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ShadowFor
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SessionResource association represents the relationship between a session and the resources that the session provides access to. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SessionResource
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SessionProcess represents the association between a logon-session and the processes belonging to that session. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: 9CD8E1CE-0D27-4a41-AADE-F8D200230FF4 <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SessionProcess
-    {
-    }
-
-    /// <summary>
-    /// A generic association to establish dependency relationships between objects. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {E7CD451C-DB34-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SoftwareFeatureParent
-    {
-    }
-
-    /// <summary>
-    /// The association between a shadow copy and the volume on which differential data is written. <br/>
-    ///  <br/>
-    /// provider: MSVSS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ShadowOn
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SystemDriverPNPEntity class represents an association between a Plug and Play device on the Win32 computer system and the driver that supports the Plug and Play device. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {0800F074-CB98-11d2-B35D-00104BC97924} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SystemDriverPNPEntity
-    {
-    }
-
-    /// <summary>
-    /// The Win32_SCSIControllerDevice class represents an association between a Small Computer System Interface (SCSI) controller and the logical device (disk drive) connected to it. <br/>
-    /// Instances for this class are only provided on  Microsoft Windows NT/Windows 2000 or later and Windows 95 or later. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {CC0F48D2-C847-11d2-911E-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_SCSIControllerDevice
-    {
-        /// <summary>
-        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
-        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
-        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 AccessState { get; set; }
-        /// <summary>
-        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
-        /// Data width is specified in bits. <br/>
-        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: bits <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NegotiatedDataWidth { get; set; }
-        /// <summary>
-        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
-        /// Speed is specified in bits per second. <br/>
-        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bits per second <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 NegotiatedSpeed { get; set; }
-        /// <summary>
-        /// Number of hard resets issued by the controller. <br/>
-        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
-        /// All internal device state information and data are lost. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfHardResets { get; set; }
-        /// <summary>
-        /// Number of soft resets issued by the controller. <br/>
-        /// A soft reset does not completely clear current device state and/or data. <br/>
-        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfSoftResets { get; set; }
-    }
-
-    /// <summary>
-    /// The association between a shadow copy and the provider that created the shadow copy <br/>
-    ///  <br/>
-    /// provider: MSVSS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ShadowBy
-    {
-    }
-
-    /// <summary>
-    /// The association between a shadow copy provider and a volume supported for differential storage area. <br/>
-    ///  <br/>
-    /// provider: MSVSS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ShadowDiffVolumeSupport
     {
     }
 

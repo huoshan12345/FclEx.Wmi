@@ -72,7 +72,7 @@ public class SourceGenerator : ISourceGenerator
     private static IEnumerable<ClassItem> LoadClasses(string namespaceName)
     {
         var ns = new ManagementScope(namespaceName, new ConnectionOptions { Locale = "MS_409" });
-        var searcher = new ManagementObjectSearcher(ns, new WqlObjectQuery("SELECT * FROM Meta_Class WHERE __Class LIKE \"Win32_%\" AND NOT __Class LIKE \"Win32_Perf%\""), new() { UseAmendedQualifiers = true });
+        var searcher = new ManagementObjectSearcher(ns, new WqlObjectQuery("SELECT * FROM Meta_Class WHERE __Class LIKE \"Win32_%\""), new() { UseAmendedQualifiers = true });
         foreach (var wmiClass in searcher.Get().Cast<ManagementClass>())
         {
             var className = wmiClass.Path.ClassName;
@@ -179,7 +179,7 @@ public class SourceGenerator : ISourceGenerator
         var resourcesDir = GetResourcesDir(context);
 
         var list = new List<SourceInfo>();
-        DateTime? min = default;
+        DateTime? min = null;
         foreach (var file in resourcesDir.EnumerateFiles("*.cs"))
         {
             var text = File.ReadAllText(file.FullName);

@@ -1532,6 +1532,48 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_MemoryDeviceLocation class represents an association between a memory device and the physical memory on which it exists. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {FAF76B9C-798C-11D2-AAD1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryDeviceLocation
+    {
+    }
+
+    /// <summary>
+    /// The Win32_MemoryArrayLocation class represents an association between a logical memory array and the physical memory array upon which it exists. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {B24EF561-BBBE-11d2-ABFB-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryArrayLocation
+    {
+    }
+
+    /// <summary>
+    /// The Win32_MemoryDeviceArray class represents an association between a memory device and the memory array in which it resides. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {B24EF563-BBBE-11d2-ABFB-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryDeviceArray
+    {
+    }
+
+    /// <summary>
     /// The RegisterMIMEInfo action registers the MIME related registry information with the system. <br/>
     /// In the Advertise mode the action registers all MIME info for servers for which the corresponding feature is enabled. <br/>
     /// Else the action registers MIME info for servers for which the corresponding feature is currently selected to be installed. <br/>
@@ -1800,48 +1842,6 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_MethodParameterClass
-    {
-    }
-
-    /// <summary>
-    /// The Win32_MemoryDeviceArray class represents an association between a memory device and the memory array in which it resides. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {B24EF563-BBBE-11d2-ABFB-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MemoryDeviceArray
-    {
-    }
-
-    /// <summary>
-    /// The Win32_MemoryDeviceLocation class represents an association between a memory device and the physical memory on which it exists. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {FAF76B9C-798C-11D2-AAD1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MemoryDeviceLocation
-    {
-    }
-
-    /// <summary>
-    /// The Win32_MemoryArrayLocation class represents an association between a logical memory array and the physical memory array upon which it exists. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {B24EF561-BBBE-11d2-ABFB-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MemoryArrayLocation
     {
     }
 }

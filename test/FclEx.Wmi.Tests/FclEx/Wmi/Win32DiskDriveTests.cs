@@ -1,9 +1,4 @@
-﻿using System.Management;
-using Xunit;
-using Xunit.Abstractions;
-using CIMV2;
-
-namespace FclEx.Wmi;
+﻿namespace FclEx.Wmi;
 
 public class Win32DiskDriveTests(ITestOutputHelper output)
 {

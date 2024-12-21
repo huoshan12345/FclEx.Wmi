@@ -256,6 +256,20 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_WMIElementSetting class represents an association between a service running in the Win32 system, and the WMI settings it can use. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: WBEMCORE <br/>
+    ///  <br/>
+    /// uuid: {A83EF167-CA8D-11d2-B33D-00104BCC4B4A} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_WMIElementSetting
+    {
+    }
+
+    /// <summary>
     ///  <br/>
     /// provider: Win32_WinSAT <br/>
     ///  <br/>
@@ -324,19 +338,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public Single WinSPRLevel { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_WMIElementSetting class represents an association between a service running in the Win32 system, and the WMI settings it can use. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: WBEMCORE <br/>
-    ///  <br/>
-    /// uuid: {A83EF167-CA8D-11d2-B33D-00104BCC4B4A} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_WMIElementSetting
-    {
     }
 }

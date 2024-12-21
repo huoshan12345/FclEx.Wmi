@@ -915,6 +915,135 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_LogicalDiskToPartition class represents an association between a logical disk drive and the disk partition it resides on. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FB-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalDiskToPartition
+    {
+        /// <summary>
+        /// EndingAddress indicates where in lower level storage, the higher level extent ends. <br/>
+        /// This property is useful when mapping non-contiguous extents into a higher level grouping. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 EndingAddress { get; set; }
+        /// <summary>
+        /// StartingAddress indicates where in lower level storage, the higher level extent begins. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 StartingAddress { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_LogonSessionMappedDisk class represents an association between a logon session and the mapped logical disks defined within the session. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogonSessionMappedDisk
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LoadOrderGroupServiceDependencies class represents an association between a base service and a load order group that the service depends on to start running. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FC-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoadOrderGroupServiceDependencies
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LoggedOnUser association represents the relationship between a session and the user account using that session. <br/>
+    /// Although the association will usually be one to one - users are possible that involve more than one session. <br/>
+    /// At the termination of the session the association instance is deleted. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8BB5B3EC-E1F7-4b39-942A-605D5F55789A} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoggedOnUser
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LogicalProgramGroupItemDataFile class represents an association between the program group items of the start menu and the files in which they are stored. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {08FFAD62-8050-11d2-90CE-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalProgramGroupItemDataFile
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LogicalProgramGroupDirectory class represents an association between logical program groups (groupings in the start menu) and the file directories in which they are stored. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {F25FE467-783E-11d2-90BF-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalProgramGroupDirectory
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LoadOrderGroupServiceMembers class represents an association between a load order group and a base service. <br/>
+    /// Note: Win32_SystemDriver objects are members of that load order group. <br/>
+    /// Not all services are members of groups, and not all groups have services within them. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4EF-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoadOrderGroupServiceMembers
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LogicalDiskRootDirectory class represents an association between a logical disk and its directory structure. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {F25FE468-783E-11d2-90BF-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalDiskRootDirectory
+    {
+    }
+
+    /// <summary>
     /// The Win32_LUIDandAttributes abstract class represents a locally unique identifier (LUID) of a privilege and a set of bit flags that indicate the attributes of the privilege, such as whether the privilege is enabled. <br/>
     /// Each LUID and attributes structure defines the availability of a security privilege for the process. <br/>
     /// For more information, see LUID_AND_ATTRIBUTES. <br/>
@@ -1077,36 +1206,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_LoadOrderGroupServiceMembers class represents an association between a load order group and a base service. <br/>
-    /// Note: Win32_SystemDriver objects are members of that load order group. <br/>
-    /// Not all services are members of groups, and not all groups have services within them. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4EF-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoadOrderGroupServiceMembers
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalDiskRootDirectory class represents an association between a logical disk and its directory structure. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {F25FE468-783E-11d2-90BF-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalDiskRootDirectory
-    {
-    }
-
-    /// <summary>
     /// Association between the security settings of a file/directory and its group <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -1216,105 +1315,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public UInt32 Type { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_LogonSessionMappedDisk class represents an association between a logon session and the mapped logical disks defined within the session. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogonSessionMappedDisk
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LoadOrderGroupServiceDependencies class represents an association between a base service and a load order group that the service depends on to start running. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FC-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoadOrderGroupServiceDependencies
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalDiskToPartition class represents an association between a logical disk drive and the disk partition it resides on. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FB-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalDiskToPartition
-    {
-        /// <summary>
-        /// EndingAddress indicates where in lower level storage, the higher level extent ends. <br/>
-        /// This property is useful when mapping non-contiguous extents into a higher level grouping. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 EndingAddress { get; set; }
-        /// <summary>
-        /// StartingAddress indicates where in lower level storage, the higher level extent begins. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 StartingAddress { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_LoggedOnUser association represents the relationship between a session and the user account using that session. <br/>
-    /// Although the association will usually be one to one - users are possible that involve more than one session. <br/>
-    /// At the termination of the session the association instance is deleted. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8BB5B3EC-E1F7-4b39-942A-605D5F55789A} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoggedOnUser
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalProgramGroupItemDataFile class represents an association between the program group items of the start menu and the files in which they are stored. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {08FFAD62-8050-11d2-90CE-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalProgramGroupItemDataFile
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalProgramGroupDirectory class represents an association between logical program groups (groupings in the start menu) and the file directories in which they are stored. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {F25FE467-783E-11d2-90BF-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalProgramGroupDirectory
-    {
     }
 
     /// <summary>

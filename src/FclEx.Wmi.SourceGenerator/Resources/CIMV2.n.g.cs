@@ -2959,18 +2959,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_NamedJobObjectStatistics association class relates a job object instance and the I/O accounting information instance containing accounting information for the job. <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {C741E1B8-2F7F-4f2b-9A0C-57FCFD89F5C8} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectStatistics
-    {
-    }
-
-    /// <summary>
     /// The Win32_NetworkAdapterSetting class represents an association between a network adapter and its configuration settings. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -2996,6 +2984,18 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_NamedJobObjectProcess
+    {
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectStatistics association class relates a job object instance and the I/O accounting information instance containing accounting information for the job. <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {C741E1B8-2F7F-4f2b-9A0C-57FCFD89F5C8} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectStatistics
     {
     }
 

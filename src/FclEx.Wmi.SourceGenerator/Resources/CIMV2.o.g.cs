@@ -1110,6 +1110,32 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_OperatingSystemQFE class represents an association between an operating system and product updates applied as represented in Win32_QuickFixEngineering. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {2CB2C452-C516-11D2-B364-00105A1F77A1} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OperatingSystemQFE
+    {
+    }
+
+    /// <summary>
+    /// This class represents the association between an operating system and the autochk settings that apply to the disks on the machine.Note that the setting is associated to operating system rather than computer system since there can be one or more operating systems installed on the machine, each with its own autochk settings. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OperatingSystemAutochkSetting
+    {
+    }
+
+    /// <summary>
     ///  <br/>
     /// provider: Win32_OfflineFilesConfigurationProvider <br/>
     ///  <br/>
@@ -1199,18 +1225,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public Boolean ModifiedTime { get; set; }
-    }
-
-    /// <summary>
-    /// This class represents the association between an operating system and the autochk settings that apply to the disks on the machine.Note that the setting is associated to operating system rather than computer system since there can be one or more operating systems installed on the machine, each with its own autochk settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OperatingSystemAutochkSetting
-    {
     }
 
     /// <summary>
@@ -2027,20 +2041,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Location { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_OperatingSystemQFE class represents an association between an operating system and product updates applied as represented in Win32_QuickFixEngineering. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {2CB2C452-C516-11D2-B364-00105A1F77A1} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OperatingSystemQFE
-    {
     }
 
     /// <summary>

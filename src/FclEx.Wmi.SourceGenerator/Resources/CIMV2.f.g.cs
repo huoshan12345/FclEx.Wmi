@@ -244,6 +244,64 @@ namespace CIMV2
     }
 
     /// <summary>
+    ///  <br/>
+    /// provider: UserProfileProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_FolderRedirectionHealth
+    {
+        /// <summary>
+        /// The health status of this folder, based on the values that were set in the Win32_FolderRedirectionHealthConfiguration properties. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte HealthStatus { get; set; }
+        /// <summary>
+        /// The last time this folder was successfully synchronized to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastSuccessfulSyncTime { get; set; }
+        /// <summary>
+        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte LastSyncStatus { get; set; }
+        /// <summary>
+        /// The last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastSyncTime { get; set; }
+        /// <summary>
+        /// If true, the Offline Files feature is enabled for this folder. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean OfflineAccessEnabled { get; set; }
+        /// <summary>
+        /// known folder unique id (guid) <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String OfflineFileNameFolderGUID { get; set; }
+        /// <summary>
+        /// If true, indicate if this folder is being redirected. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Redirected { get; set; }
+    }
+
+    /// <summary>
     /// The RegisterFonts action registers installed fonts with the system. <br/>
     /// It maps the Font.FontTitle to the path of the font file installed. <br/>
     /// The RegisterFonts action is triggered when the Component to which the Font.File_ belongs is selected for install. <br/>
@@ -345,64 +403,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Version { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: UserProfileProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_FolderRedirectionHealth
-    {
-        /// <summary>
-        /// The health status of this folder, based on the values that were set in the Win32_FolderRedirectionHealthConfiguration properties. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte HealthStatus { get; set; }
-        /// <summary>
-        /// The last time this folder was successfully synchronized to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastSuccessfulSyncTime { get; set; }
-        /// <summary>
-        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte LastSyncStatus { get; set; }
-        /// <summary>
-        /// The last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastSyncTime { get; set; }
-        /// <summary>
-        /// If true, the Offline Files feature is enabled for this folder. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OfflineAccessEnabled { get; set; }
-        /// <summary>
-        /// known folder unique id (guid) <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String OfflineFileNameFolderGUID { get; set; }
-        /// <summary>
-        /// If true, indicate if this folder is being redirected. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Redirected { get; set; }
     }
 
     /// <summary>

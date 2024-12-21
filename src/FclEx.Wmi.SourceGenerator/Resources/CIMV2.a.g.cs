@@ -255,6 +255,69 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_AssociatedProcessorMemory class represents an association between a processor and its cache memory. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {074737F0-ACBC-11d2-ABF6-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_AssociatedProcessorMemory
+    {
+        /// <summary>
+        /// Speed of the bus, in MHertz, between the processor and memory. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: megahertz <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 BusSpeed { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_AllocatedResource class represents an association between logical devices and system resources. <br/>
+    /// This class is used to discover which resources, such as IRQs, or DMA channels, are in-use by a specific device. <br/>
+    /// This class has been deprecated in favor of the Win32_PNPAllocatedResource class. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C50D-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_AllocatedResource
+    {
+    }
+
+    /// <summary>
+    /// The ApplicationCommandLine association allows one to  to identify connection between an application and it&apos;s command line access point. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {C170CF06-DB34-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ApplicationCommandLine
+    {
+    }
+
+    /// <summary>
+    /// The ActiveRoute class assoctiates the current IP4 Route being used with the persisted IP route table. <br/>
+    ///  <br/>
+    /// provider: RouteProvider <br/>
+    ///  <br/>
+    /// uuid: {7BA1437A-C51C-421B-A359-2906AF2BDD9F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ActiveRoute
+    {
+    }
+
+    /// <summary>
     /// Specifies an access control entry <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -315,18 +378,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The ActiveRoute class assoctiates the current IP4 Route being used with the persisted IP route table. <br/>
-    ///  <br/>
-    /// provider: RouteProvider <br/>
-    ///  <br/>
-    /// uuid: {7BA1437A-C51C-421B-A359-2906AF2BDD9F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ActiveRoute
-    {
-    }
-
-    /// <summary>
     /// The SID of an account <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -350,57 +401,6 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_ActionCheck
-    {
-    }
-
-    /// <summary>
-    /// The ApplicationCommandLine association allows one to  to identify connection between an application and it&apos;s command line access point. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {C170CF06-DB34-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ApplicationCommandLine
-    {
-    }
-
-    /// <summary>
-    /// The Win32_AssociatedProcessorMemory class represents an association between a processor and its cache memory. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {074737F0-ACBC-11d2-ABF6-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_AssociatedProcessorMemory
-    {
-        /// <summary>
-        /// Speed of the bus, in MHertz, between the processor and memory. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: megahertz <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 BusSpeed { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_AllocatedResource class represents an association between logical devices and system resources. <br/>
-    /// This class is used to discover which resources, such as IRQs, or DMA channels, are in-use by a specific device. <br/>
-    /// This class has been deprecated in favor of the Win32_PNPAllocatedResource class. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C50D-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_AllocatedResource
     {
     }
 }

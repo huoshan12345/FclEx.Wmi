@@ -2595,6 +2595,105 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_PhysicalElementsOfDiskDrive association defines the mapping between a disk drive and the physical components that implement it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DiskDrivePhysicalMedia
+    {
+    }
+
+    /// <summary>
+    /// The Win32_DiskDriveToDiskPartition class represents an association between a disk drive and a partition existing on it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4F9-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DiskDriveToDiskPartition
+    {
+    }
+
+    /// <summary>
+    /// The Win32_DeviceBus class represents an association between a system bus and a logical device using the bus. <br/>
+    /// This class is used to discover which devices are on which bus. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C50F-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DeviceBus
+    {
+    }
+
+    /// <summary>
+    /// The Win32_DependentService class represents an association between two interdependent base services. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FA-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DependentService
+    {
+        /// <summary>
+        /// The nature of the service to service dependency. <br/>
+        /// This property describes that the associated service must have completed (value=2), must be started (3) or must not be started (4) in order for the service to function. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TypeOfDependency { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_DfsNodeTarget class associates a DFS node to one of its targets. <br/>
+    ///  <br/>
+    /// provider: DFSProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DfsNodeTarget
+    {
+    }
+
+    /// <summary>
+    /// A generic association to establish dependency relationships between objects. <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {C2225311-00A1-47FC-B163-49006EDFD693} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DriverForDevice
+    {
+    }
+
+    /// <summary>
+    /// The Win32_DeviceSettings class represents an association between a logical device and a setting that can be applied to it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FD-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_DeviceSettings
+    {
+    }
+
+    /// <summary>
     /// The DuplicateFileAction allows the author to make one or more duplicate copies of files installed by the InstallFiles executable action, either to a different directory than the original file, or to the same directory, but with a different name. <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
@@ -2704,18 +2803,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_DeviceSettings class represents an association between a logical device and a setting that can be applied to it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FD-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DeviceSettings
-    {
     }
 
     /// <summary>
@@ -2923,93 +3010,6 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_DCOMApplicationLaunchAllowedSetting
-    {
-    }
-
-    /// <summary>
-    /// The Win32_DeviceBus class represents an association between a system bus and a logical device using the bus. <br/>
-    /// This class is used to discover which devices are on which bus. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C50F-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DeviceBus
-    {
-    }
-
-    /// <summary>
-    /// The Win32_DependentService class represents an association between two interdependent base services. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FA-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DependentService
-    {
-        /// <summary>
-        /// The nature of the service to service dependency. <br/>
-        /// This property describes that the associated service must have completed (value=2), must be started (3) or must not be started (4) in order for the service to function. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TypeOfDependency { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_DfsNodeTarget class associates a DFS node to one of its targets. <br/>
-    ///  <br/>
-    /// provider: DFSProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DfsNodeTarget
-    {
-    }
-
-    /// <summary>
-    /// A generic association to establish dependency relationships between objects. <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {C2225311-00A1-47FC-B163-49006EDFD693} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DriverForDevice
-    {
-    }
-
-    /// <summary>
-    /// The Win32_PhysicalElementsOfDiskDrive association defines the mapping between a disk drive and the physical components that implement it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DiskDrivePhysicalMedia
-    {
-    }
-
-    /// <summary>
-    /// The Win32_DiskDriveToDiskPartition class represents an association between a disk drive and a partition existing on it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4F9-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_DiskDriveToDiskPartition
     {
     }
 
