@@ -5,93 +5,13 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The ModuleTrace event class is the base event for module events. <br/>
+    /// This association relates an MSI feature with an action used to register and/or publish the feature <br/>
+    ///  <br/>
+    /// uuid: {E40D5488-DB31-11d2-85FC-0000F8102E5F} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_ModuleTrace
+    public class Win32_ManagedSystemElementResource
     {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte[] SECURITY_DESCRIPTOR { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TIME_CREATED { get; set; }
-    }
-
-    /// <summary>
-    /// The ModuleLoadTrace event class indicates a process has loaded a new module. <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ModuleLoadTrace
-    {
-        /// <summary>
-        /// default load base address, as listed in the NT image header; if the requested address is unavailable the image will be loaded at a different address (ImageBase), causing rebasing. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 DefaultBase { get; set; }
-        /// <summary>
-        /// The FileName property indicates the filename of the loaded module. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String FileName { get; set; }
-        /// <summary>
-        /// The ImageBase property indicates the base address where the module was loaded into process memory. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ImageBase { get; set; }
-        /// <summary>
-        /// NT image checksum (usually set at link time), as listed in the NT image header; it is a hash used to verify the image was not changed or it&apos;s the same. <br/>
-        /// Note: This is not a cryptographic hash, therefore it&apos;s weak. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ImageChecksum { get; set; }
-        /// <summary>
-        /// The ImageSize property indicates the size in bytes of the loaded module. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ImageSize { get; set; }
-        /// <summary>
-        /// The ProcessID property indentifies the process that loaded the module. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte[] SECURITY_DESCRIPTOR { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TIME_CREATED { get; set; }
-        /// <summary>
-        /// NT image timestamp (usually set at link time), as listed in the NT image header; it is a  used to identify the binary image along with the original file name and ImageSize, which is also retrieved from the NT image header. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TimeDateStamp { get; set; }
     }
 
     /// <summary>
@@ -869,6 +789,20 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_MemoryArrayLocation class represents an association between a logical memory array and the physical memory array upon which it exists. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {B24EF561-BBBE-11d2-ABFB-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryArrayLocation
+    {
+    }
+
+    /// <summary>
     /// The Win32_MemoryDevice class represents the properties of a computer system&apos;s memory device along with it&apos;s associated mapped addresses. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -1262,6 +1196,244 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_MemoryDeviceArray class represents an association between a memory device and the memory array in which it resides. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {B24EF563-BBBE-11d2-ABFB-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryDeviceArray
+    {
+    }
+
+    /// <summary>
+    /// The Win32_MemoryDeviceLocation class represents an association between a memory device and the physical memory on which it exists. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {FAF76B9C-798C-11D2-AAD1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MemoryDeviceLocation
+    {
+    }
+
+    /// <summary>
+    /// The Win32_MethodParameter class is a base class forimplementation of method parameters derived from this class. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// uuid: {8502C4DA-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MethodParameterClass
+    {
+    }
+
+    /// <summary>
+    /// The RegisterMIMEInfo action registers the MIME related registry information with the system. <br/>
+    /// In the Advertise mode the action registers all MIME info for servers for which the corresponding feature is enabled. <br/>
+    /// Else the action registers MIME info for servers for which the corresponding feature is currently selected to be installed. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {F3F3A266-DB32-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_MIMEInfoAction
+    {
+        /// <summary>
+        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ActionID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// This property contains the COM server CLSID that is associated with the MIME content. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CLSID { get; set; }
+        /// <summary>
+        /// This column is an identifier for the MIME content. <br/>
+        /// It is commonly written in the form of type/format. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ContentType { get; set; }
+        /// <summary>
+        /// A description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Direction { get; set; }
+        /// <summary>
+        /// This column contains the server extension that is to be associated with the MIME content, without the dot. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Extension { get; set; }
+        /// <summary>
+        /// Name is used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The SoftwareElementID is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The SoftwareElementState indicates the state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The ModuleLoadTrace event class indicates a process has loaded a new module. <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ModuleLoadTrace
+    {
+        /// <summary>
+        /// default load base address, as listed in the NT image header; if the requested address is unavailable the image will be loaded at a different address (ImageBase), causing rebasing. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 DefaultBase { get; set; }
+        /// <summary>
+        /// The FileName property indicates the filename of the loaded module. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String FileName { get; set; }
+        /// <summary>
+        /// The ImageBase property indicates the base address where the module was loaded into process memory. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ImageBase { get; set; }
+        /// <summary>
+        /// NT image checksum (usually set at link time), as listed in the NT image header; it is a hash used to verify the image was not changed or it&apos;s the same. <br/>
+        /// Note: This is not a cryptographic hash, therefore it&apos;s weak. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ImageChecksum { get; set; }
+        /// <summary>
+        /// The ImageSize property indicates the size in bytes of the loaded module. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ImageSize { get; set; }
+        /// <summary>
+        /// The ProcessID property indentifies the process that loaded the module. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ProcessID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte[] SECURITY_DESCRIPTOR { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TIME_CREATED { get; set; }
+        /// <summary>
+        /// NT image timestamp (usually set at link time), as listed in the NT image header; it is a  used to identify the binary image along with the original file name and ImageSize, which is also retrieved from the NT image header. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TimeDateStamp { get; set; }
+    }
+
+    /// <summary>
+    /// The ModuleTrace event class is the base event for module events. <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ModuleTrace
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte[] SECURITY_DESCRIPTOR { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TIME_CREATED { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_MotherboardDevice class represents a device that contains the central components of the Win32 computer system. <br/>
     /// Example: A single piece of hardware containing a processor, bus, memory, and basic system interfaces <br/>
     ///  <br/>
@@ -1501,184 +1673,13 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// This abstract class represents any resources that are used by the MSI installer durring the course of an installation, patch or upgrade <br/>
+    /// The mount point associates a volume to the directory at which it is mounted. <br/>
     ///  <br/>
-    /// uuid: {CD7CA121-E3D2-11d2-8601-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MSIResource
-    {
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_MemoryDeviceLocation class represents an association between a memory device and the physical memory on which it exists. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {FAF76B9C-798C-11D2-AAD1-006008C78BC7} <br/>
+    /// provider: MSVDS__PROVIDER <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_MemoryDeviceLocation
+    public class Win32_MountPoint
     {
-    }
-
-    /// <summary>
-    /// The Win32_MemoryArrayLocation class represents an association between a logical memory array and the physical memory array upon which it exists. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {B24EF561-BBBE-11d2-ABFB-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MemoryArrayLocation
-    {
-    }
-
-    /// <summary>
-    /// The Win32_MemoryDeviceArray class represents an association between a memory device and the memory array in which it resides. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {B24EF563-BBBE-11d2-ABFB-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MemoryDeviceArray
-    {
-    }
-
-    /// <summary>
-    /// The RegisterMIMEInfo action registers the MIME related registry information with the system. <br/>
-    /// In the Advertise mode the action registers all MIME info for servers for which the corresponding feature is enabled. <br/>
-    /// Else the action registers MIME info for servers for which the corresponding feature is currently selected to be installed. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {F3F3A266-DB32-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MIMEInfoAction
-    {
-        /// <summary>
-        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ActionID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// This property contains the COM server CLSID that is associated with the MIME content. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CLSID { get; set; }
-        /// <summary>
-        /// This column is an identifier for the MIME content. <br/>
-        /// It is commonly written in the form of type/format. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ContentType { get; set; }
-        /// <summary>
-        /// A description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Direction { get; set; }
-        /// <summary>
-        /// This column contains the server extension that is to be associated with the MIME content, without the dot. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Extension { get; set; }
-        /// <summary>
-        /// Name is used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The SoftwareElementID is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The SoftwareElementState indicates the state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
     }
 
     /// <summary>
@@ -1814,34 +1815,33 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The mount point associates a volume to the directory at which it is mounted. <br/>
+    /// This abstract class represents any resources that are used by the MSI installer durring the course of an installation, patch or upgrade <br/>
     ///  <br/>
-    /// provider: MSVDS__PROVIDER <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MountPoint
-    {
-    }
-
-    /// <summary>
-    /// This association relates an MSI feature with an action used to register and/or publish the feature <br/>
-    ///  <br/>
-    /// uuid: {E40D5488-DB31-11d2-85FC-0000F8102E5F} <br/>
+    /// uuid: {CD7CA121-E3D2-11d2-8601-0000F8102E5F} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_ManagedSystemElementResource
+    public class Win32_MSIResource
     {
-    }
-
-    /// <summary>
-    /// The Win32_MethodParameter class is a base class forimplementation of method parameters derived from this class. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// uuid: {8502C4DA-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_MethodParameterClass
-    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
     }
 }

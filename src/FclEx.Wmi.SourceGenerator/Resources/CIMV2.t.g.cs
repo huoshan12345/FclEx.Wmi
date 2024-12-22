@@ -5,426 +5,6 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The ThreadTrace event class is the base event for thread events. <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ThreadTrace
-    {
-        /// <summary>
-        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte[] SECURITY_DESCRIPTOR { get; set; }
-        /// <summary>
-        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ThreadID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TIME_CREATED { get; set; }
-    }
-
-    /// <summary>
-    /// The ThreadStartTrace event class indicates a new thread has started. <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ThreadStartTrace
-    {
-        /// <summary>
-        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte[] SECURITY_DESCRIPTOR { get; set; }
-        /// <summary>
-        /// The StackBase property indicates the base address of the thread&apos;s stack. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 StackBase { get; set; }
-        /// <summary>
-        /// The StackBase property indicates the limit of the thread&apos;s stack. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 StackLimit { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 StartAddr { get; set; }
-        /// <summary>
-        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ThreadID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TIME_CREATED { get; set; }
-        /// <summary>
-        /// The UserStackBase property indicates the base address of the thread&apos;s user-mode stack. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 UserStackBase { get; set; }
-        /// <summary>
-        /// The UserStackLimit property indicates the limit of the thread&apos;s user-mode stack. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 UserStackLimit { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 WaitMode { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 Win32StartAddr { get; set; }
-    }
-
-    /// <summary>
-    /// The ThreadStopTrace event class indicates a thread has terminated. <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ThreadStopTrace
-    {
-        /// <summary>
-        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte[] SECURITY_DESCRIPTOR { get; set; }
-        /// <summary>
-        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ThreadID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TIME_CREATED { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_TerminalService class provides Terminal Service load balancing indicators. <br/>
-    ///  <br/>
-    /// classcontext: local|hkey_local_machine\SYSTEM\CurrentControlSet\Control\TerminalServer <br/>
-    ///  <br/>
-    /// provider: Win32_WIN32_TERMINALSERVICE_Prov <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_TerminalService
-    {
-        /// <summary>
-        /// The AcceptPause property indicates whether the service can be paused. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the service can be paused. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean AcceptPause { get; set; }
-        /// <summary>
-        /// The AcceptStop property indicates whether the service can be stopped. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the service can be stopped. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean AcceptStop { get; set; }
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The CheckPoint property specifies a value that the service increments periodically to report its progress during a lengthy start, stop, pause, or continue operation. <br/>
-        /// For example, the service should increment this value as it completes each step of its initialization when it is starting up. <br/>
-        /// The user interface program that invoked the operation on the service uses this value to track the progress of the service during a lengthy operation. <br/>
-        /// This value is not valid and should be zero when the service does not have a start, stop, pause, or continue operation pending. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 CheckPoint { get; set; }
-        /// <summary>
-        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
-        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CreationClassName { get; set; }
-        /// <summary>
-        /// The DelayedAutoStart property specifies if the service is started after other auto-start services are started plus a short delay. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DelayedAutoStart { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The DesktopInteract property indicates whether the service can create or communicate with windows on the desktop. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the service can create or communicate with windows on the desktop. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DesktopInteract { get; set; }
-        /// <summary>
-        /// The number of disconnected sessions on this server. <br/>
-        /// These sessions may still be actively consuming server resources, however they currently have no network. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 DisconnectedSessions { get; set; }
-        /// <summary>
-        /// The DisplayName property indicates the display name of the service. <br/>
-        /// This string has a maximum length of 256 characters. <br/>
-        /// The name is case-preserved in the Service Control Manager. <br/>
-        /// DisplayName comparisons are always case-insensitive. <br/>
-        /// Constraints: Accepts the same value as the Name property. <br/>
-        /// Example: Atdisk. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DisplayName { get; set; }
-        /// <summary>
-        /// If this service fails to start during startup, the ErrorControl property specifies the severity of the error. <br/>
-        /// The value indicates the action taken by the startup program if failure occurs. <br/>
-        /// All errors are logged by the computer system. <br/>
-        /// The computer system does not notify the user of &quot;Ignore&quot; errors. <br/>
-        /// With &quot;Normal&quot; errors the user is notified. <br/>
-        /// With &quot;Severe&quot; errors, the system is restarted with the last-known-good configuration. <br/>
-        /// Finally, on&quot;Critical&quot; errors the system attempts to restart with a good configuration. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ErrorControl { get; set; }
-        /// <summary>
-        /// The ExitCode property specifies a Win32 error code defining any problems encountered in starting or stopping the service. <br/>
-        /// This property is set to ERROR_SERVICE_SPECIFIC_ERROR (1066) when the error is unique to the service represented by this class, and information about the error is available in the ServiceSpecificExitCode member. <br/>
-        /// The service sets this value to NO_ERROR when running, and again upon normal termination. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ExitCode { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The Name property uniquely identifies the service and provides an indication of the functionality that is managed. <br/>
-        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The PathName property contains the fully qualified path to the service binary file that implements the service. <br/>
-        /// Example: \SystemRoot\System32\drivers\afd.sys <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String PathName { get; set; }
-        /// <summary>
-        /// The ProcessId property specifies the process identifier of the service. <br/>
-        /// Example: 324 <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessId { get; set; }
-        /// <summary>
-        /// The ServiceSpecificExitCode property specifies a service-specific error code for errors that occur while the service is either starting or stopping. <br/>
-        /// The exit codes are defined by the service represented by this class. <br/>
-        /// This value is only set when the ExitCodeproperty value is ERROR_SERVICE_SPECIFIC_ERROR, 1066. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ServiceSpecificExitCode { get; set; }
-        /// <summary>
-        /// The ServiceType property supplies the type of service provided to calling processes. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ServiceType { get; set; }
-        /// <summary>
-        /// Started is a boolean indicating whether the service has been started (TRUE), or stopped (FALSE). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Started { get; set; }
-        /// <summary>
-        /// The StartMode property indicates the start mode of the Win32 base service. <br/>
-        /// &quot;Boot&quot; specifies a device driver started by the operating system loader. <br/>
-        /// This value is valid only for driver services. <br/>
-        /// &quot;System&quot; specifies a device driver started by the IoInitSystem function. <br/>
-        /// This value is valid only for driver services. <br/>
-        /// &quot;Automatic&quot; specifies a service to be started automatically by the service control manager during system startup. <br/>
-        /// &quot;Manual&quot; specifies a service to be started by the service control manager when a process calls the StartService function. <br/>
-        /// &quot;Disabled&quot; specifies a service that can no longer be started. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: StartMode <br/>
-        ///  <br/>
-        /// </summary>
-        public String StartMode { get; set; }
-        /// <summary>
-        /// The StartName property indicates the account name under which the service runs. <br/>
-        /// Depending on the service type, the account name may be in the form of &quot;DomainName\Username&quot;. <br/>
-        /// The service process will be logged using one of these two forms when it runs. <br/>
-        /// If the account belongs to the built-in domain, &quot;.\Username&quot; can be specified. <br/>
-        /// If NULL is specified, the service will be logged on as the LocalSystem account. <br/>
-        /// For kernel or system level drivers, StartName contains the driver object name (that is, \FileSystem\Rdr or \Driver\Xns) which the input and output (I/O) system uses to load the device driver. <br/>
-        /// Additionally, if NULL is specified, the driver runs with a default object name created by the I/O system based on the service name. <br/>
-        /// Example: DWDOM\Admin. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String StartName { get; set; }
-        /// <summary>
-        /// The State property indicates the current state of the base service. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String State { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The scoping System&apos;s CreationClassName. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.CreationClassName <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemCreationClassName { get; set; }
-        /// <summary>
-        /// The name of the system that hosts this service <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemName { get; set; }
-        /// <summary>
-        /// The TagId property specifies a unique tag value for this service in the group. <br/>
-        /// A value of 0 indicates that the service has not been assigned a tag. <br/>
-        /// A tag can be used for ordering service startup within a load order group by specifying a tag order vector in the registry located at: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GroupOrderList. <br/>
-        /// Tags are only evaluated for Kernel Driver and File System Driver start type services that have &quot;Boot&quot; or &quot;System&quot; start modes. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TagId { get; set; }
-        /// <summary>
-        /// The total number of sessions on this server. <br/>
-        /// This includes both connected and disconnected sessions. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TotalSessions { get; set; }
-        /// <summary>
-        /// The WaitHint property specifies the estimated time required (in milliseconds) for a pending start, stop, pause, or continue operation. <br/>
-        /// After the specified amount of time has elapsed, the service makes its next call to the SetServiceStatus function with either an incremented CheckPoint value or a change in Current State. <br/>
-        /// If the amount of time specified by WaitHint passes, and CheckPoint has not been incremented, or the Current State has not changed, the service control manager or service control program assumes that an error has occurred. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 WaitHint { get; set; }
-    }
-
-    /// <summary>
     /// The Win32_TapeDrive class represents a tape drive on a Win32 computer. <br/>
     /// Tape drives are primarily distinguished by the fact that they can be accessed only sequentially. <br/>
     ///  <br/>
@@ -824,6 +404,163 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_TCPIPPrinterPort class represents a TCP//IP service access point. <br/>
+    /// For example a TCP/IP printer port. <br/>
+    /// Note:  The SE_LOAD_DRIVER_PRIVILEGE privilege is required on this class. <br/>
+    ///  <br/>
+    /// createby: PutInstance <br/>
+    ///  <br/>
+    /// deleteby: DeleteInstance <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {553644e9-f998-48c3-b037-26e5909f4333} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_TCPIPPrinterPort
+    {
+        /// <summary>
+        /// The ByteCount property, when true, causes the computer to count the number of bytes in a document before sending them to the printer and the printer to report back the number of bytes actually read. <br/>
+        /// This is used for diagnostics when one discovers that bytes are missing from the print output. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean ByteCount { get; set; }
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
+        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CreationClassName { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The HostAddress property indicates the address of device or print server <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String HostAddress { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Name property uniquely identifies the service access point and provides an indication of the functionality that is managed. <br/>
+        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The PortNumber property indicates the number of the TCP port used by the port monitor to communitcate with the device. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PortNumber { get; set; }
+        /// <summary>
+        /// The Protocol property has two values: &apos;Raw&apos; indicates printing directly to a device and &apos;Lpr&apos; indicates printing to device or print server; LPR is a legacy protocol, which will eventually be replaced by RAW. <br/>
+        /// Some printers support only LPR. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Protocol { get; set; }
+        /// <summary>
+        /// The Queue property is used with the LPR protocol to indicate the name of the print queue on the server. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Queue { get; set; }
+        /// <summary>
+        /// The SNMPCommunity property contains a security level value for the device. <br/>
+        /// For example &apos;public&apos;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SNMPCommunity { get; set; }
+        /// <summary>
+        /// The property SNMPDevIndex indicates the SNMP index number of this device for the SNMP agent. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 SNMPDevIndex { get; set; }
+        /// <summary>
+        /// The SNMPEnabled property, when true, indicates that this printer supports RFC1759 (Simple Network Management Protocol) and can provide rich status information from the device. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SNMPEnabled { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// The scoping system&apos;s creation class name. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.CreationClassName <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemCreationClassName { get; set; }
+        /// <summary>
+        /// The scoping system&apos;s name. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemName { get; set; }
+        /// <summary>
+        /// The Type property indicates the type of SAP such as &apos;attached&apos; or &apos;Redirected&apos;. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// schema: Win32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Type { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_TemperatureProbe class represents the properties of a temperature sensor (electronic thermometer). <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -1194,6 +931,278 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_TerminalService class provides Terminal Service load balancing indicators. <br/>
+    ///  <br/>
+    /// classcontext: local|hkey_local_machine\SYSTEM\CurrentControlSet\Control\TerminalServer <br/>
+    ///  <br/>
+    /// provider: Win32_WIN32_TERMINALSERVICE_Prov <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_TerminalService
+    {
+        /// <summary>
+        /// The AcceptPause property indicates whether the service can be paused. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the service can be paused. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean AcceptPause { get; set; }
+        /// <summary>
+        /// The AcceptStop property indicates whether the service can be stopped. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the service can be stopped. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean AcceptStop { get; set; }
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The CheckPoint property specifies a value that the service increments periodically to report its progress during a lengthy start, stop, pause, or continue operation. <br/>
+        /// For example, the service should increment this value as it completes each step of its initialization when it is starting up. <br/>
+        /// The user interface program that invoked the operation on the service uses this value to track the progress of the service during a lengthy operation. <br/>
+        /// This value is not valid and should be zero when the service does not have a start, stop, pause, or continue operation pending. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 CheckPoint { get; set; }
+        /// <summary>
+        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
+        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CreationClassName { get; set; }
+        /// <summary>
+        /// The DelayedAutoStart property specifies if the service is started after other auto-start services are started plus a short delay. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DelayedAutoStart { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The DesktopInteract property indicates whether the service can create or communicate with windows on the desktop. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the service can create or communicate with windows on the desktop. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DesktopInteract { get; set; }
+        /// <summary>
+        /// The number of disconnected sessions on this server. <br/>
+        /// These sessions may still be actively consuming server resources, however they currently have no network. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 DisconnectedSessions { get; set; }
+        /// <summary>
+        /// The DisplayName property indicates the display name of the service. <br/>
+        /// This string has a maximum length of 256 characters. <br/>
+        /// The name is case-preserved in the Service Control Manager. <br/>
+        /// DisplayName comparisons are always case-insensitive. <br/>
+        /// Constraints: Accepts the same value as the Name property. <br/>
+        /// Example: Atdisk. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DisplayName { get; set; }
+        /// <summary>
+        /// If this service fails to start during startup, the ErrorControl property specifies the severity of the error. <br/>
+        /// The value indicates the action taken by the startup program if failure occurs. <br/>
+        /// All errors are logged by the computer system. <br/>
+        /// The computer system does not notify the user of &quot;Ignore&quot; errors. <br/>
+        /// With &quot;Normal&quot; errors the user is notified. <br/>
+        /// With &quot;Severe&quot; errors, the system is restarted with the last-known-good configuration. <br/>
+        /// Finally, on&quot;Critical&quot; errors the system attempts to restart with a good configuration. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ErrorControl { get; set; }
+        /// <summary>
+        /// The ExitCode property specifies a Win32 error code defining any problems encountered in starting or stopping the service. <br/>
+        /// This property is set to ERROR_SERVICE_SPECIFIC_ERROR (1066) when the error is unique to the service represented by this class, and information about the error is available in the ServiceSpecificExitCode member. <br/>
+        /// The service sets this value to NO_ERROR when running, and again upon normal termination. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ExitCode { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Name property uniquely identifies the service and provides an indication of the functionality that is managed. <br/>
+        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The PathName property contains the fully qualified path to the service binary file that implements the service. <br/>
+        /// Example: \SystemRoot\System32\drivers\afd.sys <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String PathName { get; set; }
+        /// <summary>
+        /// The ProcessId property specifies the process identifier of the service. <br/>
+        /// Example: 324 <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ProcessId { get; set; }
+        /// <summary>
+        /// The ServiceSpecificExitCode property specifies a service-specific error code for errors that occur while the service is either starting or stopping. <br/>
+        /// The exit codes are defined by the service represented by this class. <br/>
+        /// This value is only set when the ExitCodeproperty value is ERROR_SERVICE_SPECIFIC_ERROR, 1066. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ServiceSpecificExitCode { get; set; }
+        /// <summary>
+        /// The ServiceType property supplies the type of service provided to calling processes. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ServiceType { get; set; }
+        /// <summary>
+        /// Started is a boolean indicating whether the service has been started (TRUE), or stopped (FALSE). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Started { get; set; }
+        /// <summary>
+        /// The StartMode property indicates the start mode of the Win32 base service. <br/>
+        /// &quot;Boot&quot; specifies a device driver started by the operating system loader. <br/>
+        /// This value is valid only for driver services. <br/>
+        /// &quot;System&quot; specifies a device driver started by the IoInitSystem function. <br/>
+        /// This value is valid only for driver services. <br/>
+        /// &quot;Automatic&quot; specifies a service to be started automatically by the service control manager during system startup. <br/>
+        /// &quot;Manual&quot; specifies a service to be started by the service control manager when a process calls the StartService function. <br/>
+        /// &quot;Disabled&quot; specifies a service that can no longer be started. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: StartMode <br/>
+        ///  <br/>
+        /// </summary>
+        public String StartMode { get; set; }
+        /// <summary>
+        /// The StartName property indicates the account name under which the service runs. <br/>
+        /// Depending on the service type, the account name may be in the form of &quot;DomainName\Username&quot;. <br/>
+        /// The service process will be logged using one of these two forms when it runs. <br/>
+        /// If the account belongs to the built-in domain, &quot;.\Username&quot; can be specified. <br/>
+        /// If NULL is specified, the service will be logged on as the LocalSystem account. <br/>
+        /// For kernel or system level drivers, StartName contains the driver object name (that is, \FileSystem\Rdr or \Driver\Xns) which the input and output (I/O) system uses to load the device driver. <br/>
+        /// Additionally, if NULL is specified, the driver runs with a default object name created by the I/O system based on the service name. <br/>
+        /// Example: DWDOM\Admin. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String StartName { get; set; }
+        /// <summary>
+        /// The State property indicates the current state of the base service. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String State { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// The scoping System&apos;s CreationClassName. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.CreationClassName <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemCreationClassName { get; set; }
+        /// <summary>
+        /// The name of the system that hosts this service <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemName { get; set; }
+        /// <summary>
+        /// The TagId property specifies a unique tag value for this service in the group. <br/>
+        /// A value of 0 indicates that the service has not been assigned a tag. <br/>
+        /// A tag can be used for ordering service startup within a load order group by specifying a tag order vector in the registry located at: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GroupOrderList. <br/>
+        /// Tags are only evaluated for Kernel Driver and File System Driver start type services that have &quot;Boot&quot; or &quot;System&quot; start modes. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TagId { get; set; }
+        /// <summary>
+        /// The total number of sessions on this server. <br/>
+        /// This includes both connected and disconnected sessions. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TotalSessions { get; set; }
+        /// <summary>
+        /// The WaitHint property specifies the estimated time required (in milliseconds) for a pending start, stop, pause, or continue operation. <br/>
+        /// After the specified amount of time has elapsed, the service makes its next call to the SetServiceStatus function with either an incremented CheckPoint value or a change in Current State. <br/>
+        /// If the amount of time specified by WaitHint passes, and CheckPoint has not been incremented, or the Current State has not changed, the service control manager or service control program assumes that an error has occurred. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 WaitHint { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_Thread class represents a thread of execution.While a process must have one thread of execution, the process can create other threads to execute tasks in parallel. <br/>
     /// Threads share the process environment, thus multiple threads under the same process use less memory than the same number of processes. <br/>
     ///  <br/>
@@ -1425,160 +1434,151 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_TCPIPPrinterPort class represents a TCP//IP service access point. <br/>
-    /// For example a TCP/IP printer port. <br/>
-    /// Note:  The SE_LOAD_DRIVER_PRIVILEGE privilege is required on this class. <br/>
-    ///  <br/>
-    /// createby: PutInstance <br/>
-    ///  <br/>
-    /// deleteby: DeleteInstance <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {553644e9-f998-48c3-b037-26e5909f4333} <br/>
+    /// The ThreadStartTrace event class indicates a new thread has started. <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_TCPIPPrinterPort
+    public class Win32_ThreadStartTrace
     {
         /// <summary>
-        /// The ByteCount property, when true, causes the computer to count the number of bytes in a document before sending them to the printer and the printer to report back the number of bytes actually read. <br/>
-        /// This is used for diagnostics when one discovers that bytes are missing from the print output. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean ByteCount { get; set; }
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
-        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CreationClassName { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The HostAddress property indicates the address of device or print server <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String HostAddress { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The Name property uniquely identifies the service access point and provides an indication of the functionality that is managed. <br/>
-        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The PortNumber property indicates the number of the TCP port used by the port monitor to communitcate with the device. <br/>
+        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 PortNumber { get; set; }
+        public UInt32 ProcessID { get; set; }
         /// <summary>
-        /// The Protocol property has two values: &apos;Raw&apos; indicates printing directly to a device and &apos;Lpr&apos; indicates printing to device or print server; LPR is a legacy protocol, which will eventually be replaced by RAW. <br/>
-        /// Some printers support only LPR. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte[] SECURITY_DESCRIPTOR { get; set; }
+        /// <summary>
+        /// The StackBase property indicates the base address of the thread&apos;s stack. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 StackBase { get; set; }
+        /// <summary>
+        /// The StackBase property indicates the limit of the thread&apos;s stack. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 StackLimit { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 StartAddr { get; set; }
+        /// <summary>
+        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 Protocol { get; set; }
+        public UInt32 ThreadID { get; set; }
         /// <summary>
-        /// The Queue property is used with the LPR protocol to indicate the name of the print queue on the server. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
-        public String Queue { get; set; }
+        public UInt64 TIME_CREATED { get; set; }
         /// <summary>
-        /// The SNMPCommunity property contains a security level value for the device. <br/>
-        /// For example &apos;public&apos;. <br/>
+        /// The UserStackBase property indicates the base address of the thread&apos;s user-mode stack. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
-        public String SNMPCommunity { get; set; }
+        public UInt64 UserStackBase { get; set; }
         /// <summary>
-        /// The property SNMPDevIndex indicates the SNMP index number of this device for the SNMP agent. <br/>
+        /// The UserStackLimit property indicates the limit of the thread&apos;s user-mode stack. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 UserStackLimit { get; set; }
+        /// <summary>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 SNMPDevIndex { get; set; }
+        public UInt32 WaitMode { get; set; }
         /// <summary>
-        /// The SNMPEnabled property, when true, indicates that this printer supports RFC1759 (Simple Network Management Protocol) and can provide rich status information from the device. <br/>
         ///  <br/>
-        /// cimtype: boolean <br/>
+        /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
-        public Boolean SNMPEnabled { get; set; }
+        public UInt64 Win32StartAddr { get; set; }
+    }
+
+    /// <summary>
+    /// The ThreadStopTrace event class indicates a thread has terminated. <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ThreadStopTrace
+    {
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The scoping system&apos;s creation class name. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.CreationClassName <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemCreationClassName { get; set; }
-        /// <summary>
-        /// The scoping system&apos;s name. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemName { get; set; }
-        /// <summary>
-        /// The Type property indicates the type of SAP such as &apos;attached&apos; or &apos;Redirected&apos;. <br/>
+        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
-        /// schema: Win32 <br/>
+        /// </summary>
+        public UInt32 ProcessID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 Type { get; set; }
+        public byte[] SECURITY_DESCRIPTOR { get; set; }
+        /// <summary>
+        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ThreadID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TIME_CREATED { get; set; }
+    }
+
+    /// <summary>
+    /// The ThreadTrace event class is the base event for thread events. <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ThreadTrace
+    {
+        /// <summary>
+        /// The ProcessID property contains the process identifier of the process to which the thread belongs. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ProcessID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte[] SECURITY_DESCRIPTOR { get; set; }
+        /// <summary>
+        /// The ThreadID property contains the thread identifier of the thread involved in the event. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ThreadID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TIME_CREATED { get; set; }
     }
 
     /// <summary>
@@ -1800,6 +1800,57 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_TokenGroups abstract class contains information about the group account security identifiers (SIDs) associated with an access token. <br/>
+    /// For more information about token groups and the TOKEN_GROUPS structure, see the Access Tokens topic in the Platform SDK Access Control documentation. <br/>
+    ///  <br/>
+    /// uuid: {6CDD7B40-369D-4725-AB7F-EFE53EE2C455} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_TokenGroups
+    {
+        /// <summary>
+        /// Specifies the number of groups in the access token. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 GroupCount { get; set; }
+        /// <summary>
+        /// Specifies an array of SIDs and attributes. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_SIDandAttributes <br/>
+        ///  <br/>
+        /// </summary>
+        public Object[] Groups { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_TokenPrivileges abstract class contains information about a set of privileges for an access token. <br/>
+    /// Each process or thread in the job object has an access token specifying what resources and actions are available to it. <br/>
+    /// For more information, see the Access Tokens topic in the Platform SDK Access Control documentation. <br/>
+    ///  <br/>
+    /// uuid: {3559D159-47E8-4458-9B7E-5FD16D260B8D} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_TokenPrivileges
+    {
+        /// <summary>
+        /// Specifies the number of entries in the Privileges array. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PrivilegeCount { get; set; }
+        /// <summary>
+        /// Specifies an array of LUIDs and attributes. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_LUIDandAttributes <br/>
+        ///  <br/>
+        /// </summary>
+        public Object[] Privileges { get; set; }
+    }
+
+    /// <summary>
     /// Specifies a trustee. <br/>
     /// Either a name or a SID (byte array) can be used <br/>
     ///  <br/>
@@ -1957,56 +2008,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_TokenPrivileges abstract class contains information about a set of privileges for an access token. <br/>
-    /// Each process or thread in the job object has an access token specifying what resources and actions are available to it. <br/>
-    /// For more information, see the Access Tokens topic in the Platform SDK Access Control documentation. <br/>
-    ///  <br/>
-    /// uuid: {3559D159-47E8-4458-9B7E-5FD16D260B8D} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_TokenPrivileges
-    {
-        /// <summary>
-        /// Specifies the number of entries in the Privileges array. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PrivilegeCount { get; set; }
-        /// <summary>
-        /// Specifies an array of LUIDs and attributes. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_LUIDandAttributes <br/>
-        ///  <br/>
-        /// </summary>
-        public Object[] Privileges { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_TokenGroups abstract class contains information about the group account security identifiers (SIDs) associated with an access token. <br/>
-    /// For more information about token groups and the TOKEN_GROUPS structure, see the Access Tokens topic in the Platform SDK Access Control documentation. <br/>
-    ///  <br/>
-    /// uuid: {6CDD7B40-369D-4725-AB7F-EFE53EE2C455} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_TokenGroups
-    {
-        /// <summary>
-        /// Specifies the number of groups in the access token. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 GroupCount { get; set; }
-        /// <summary>
-        /// Specifies an array of SIDs and attributes. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_SIDandAttributes <br/>
-        ///  <br/>
-        /// </summary>
-        public Object[] Groups { get; set; }
     }
 }

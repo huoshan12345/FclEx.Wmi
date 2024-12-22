@@ -443,126 +443,137 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The RemoveIniValues action deletes .INI file information that the application desires to delete from .INI files. <br/>
-    /// The deletion of the information is gated by the Component class. <br/>
-    /// A .INI value is deleted if the corresponding component has been set to be installed either locally or run from source. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {B94A25A8-DB33-11d2-85FC-0000F8102E5F} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_RemoveIniAction
+    public class Win32_Reliability
+    {
+    }
+
+    /// <summary>
+    /// Reliability related events. <br/>
+    /// When available, these events are associated with the original records in the Win32_NTLogEvent class <br/>
+    ///  <br/>
+    /// provider: ReliabilityMetricsProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ReliabilityRecords
     {
         /// <summary>
-        /// The type of modification made. <br/>
-        /// Hexadecimal <br/>
-        /// Decimal <br/>
-        /// Meaning <br/>
-        /// 0x002 <br/>
-        /// 2 <br/>
-        /// Deletes .ini entry. <br/>
-        /// 0x004 <br/>
-        /// 4 <br/>
-        /// Deletes a tag from a .ini entry. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Action { get; set; }
-        /// <summary>
-        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
+        /// The computer name <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String ActionID { get; set; }
+        public String ComputerName { get; set; }
         /// <summary>
+        /// The event ID number <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 EventIdentifier { get; set; }
+        /// <summary>
+        /// The array of variables and values from the original event <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Caption { get; set; }
+        public String[] InsertionStrings { get; set; }
         /// <summary>
-        /// A description of the object. <br/>
+        /// The name of the event log <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Description { get; set; }
+        public String Logfile { get; set; }
         /// <summary>
-        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Direction { get; set; }
-        /// <summary>
-        /// The .ini file key below the section. <br/>
+        /// The text of the event as it appears in the event log <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String key { get; set; }
+        public String Message { get; set; }
         /// <summary>
-        /// Name is used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The .ini file section. <br/>
+        /// The product name, if available <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Section { get; set; }
+        public String ProductName { get; set; }
         /// <summary>
-        /// The SoftwareElementID is an identifier for this software element. <br/>
+        /// The event record number in the original event log <br/>
         ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
-        public String SoftwareElementID { get; set; }
+        public UInt32 RecordNumber { get; set; }
         /// <summary>
-        /// The SoftwareElementState indicates the state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// The value to be deleted. <br/>
+        /// The event source <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Value { get; set; }
+        public String SourceName { get; set; }
         /// <summary>
-        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
+        /// The UTC time at which the source generated the event <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime TimeGenerated { get; set; }
+        /// <summary>
+        /// The name of the user on whose behalf the event occurred, if available <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
+        /// </summary>
+        public String User { get; set; }
+    }
+
+    /// <summary>
+    /// System stability index value history <br/>
+    ///  <br/>
+    /// provider: ReliabilityMetricsProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ReliabilityStabilityMetrics
+    {
+        /// <summary>
+        /// The most recent UTC time at which reliability metric data was collected <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
-        public String Version { get; set; }
+        public DateTime EndMeasurementDate { get; set; }
+        /// <summary>
+        /// A GUID used to correlate reliability metrics on this computer. <br/>
+        /// The GUID will be reset if an error prevents reliability metrics from being calculated <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String RelID { get; set; }
+        /// <summary>
+        /// The UTC time at which reliability metric data collection began <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime StartMeasurementDate { get; set; }
+        /// <summary>
+        /// The system stability index value <br/>
+        ///  <br/>
+        /// cimtype: real64 <br/>
+        ///  <br/>
+        /// </summary>
+        public double SystemStabilityIndex { get; set; }
+        /// <summary>
+        /// The UTC time at which the system stability index value was calculated <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime TimeGenerated { get; set; }
     }
 
     /// <summary>
@@ -702,6 +713,280 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The RemoveIniValues action deletes .INI file information that the application desires to delete from .INI files. <br/>
+    /// The deletion of the information is gated by the Component class. <br/>
+    /// A .INI value is deleted if the corresponding component has been set to be installed either locally or run from source. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {B94A25A8-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_RemoveIniAction
+    {
+        /// <summary>
+        /// The type of modification made. <br/>
+        /// Hexadecimal <br/>
+        /// Decimal <br/>
+        /// Meaning <br/>
+        /// 0x002 <br/>
+        /// 2 <br/>
+        /// Deletes .ini entry. <br/>
+        /// 0x004 <br/>
+        /// 4 <br/>
+        /// Deletes a tag from a .ini entry. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Action { get; set; }
+        /// <summary>
+        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ActionID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Direction { get; set; }
+        /// <summary>
+        /// The .ini file key below the section. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String key { get; set; }
+        /// <summary>
+        /// Name is used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The .ini file section. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Section { get; set; }
+        /// <summary>
+        /// The SoftwareElementID is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The SoftwareElementState indicates the state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// The value to be deleted. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Value { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// This optional class allows the author to &apos;reserve&apos; a specified amount of disk space in any directory, depending on the installation state of a component. <br/>
+    /// Reserving cost in this way could be useful for authors who want to ensure that a minimum amount of disk space will be available after the installation is completed. <br/>
+    /// For example, this disk space might be reserved for user documents, or for application files (such as index files) that are created only after the application is launched following installation. <br/>
+    /// The ReserveCost class also allows custom actions to specify an approximate cost for any files, registry entries, or other items, that the custom action might install. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {C744CF5A-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ReserveCost
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The name of the directory (as a path, reference to a directory specification or reference to a property) where the space is reserved. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ReserveFolder { get; set; }
+        /// <summary>
+        /// A unique key identifying this reserve cost item within its product. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ReserveKey { get; set; }
+        /// <summary>
+        /// The number of bytes of disk space reserved if the associated software element is installed to run locally. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ReserveLocal { get; set; }
+        /// <summary>
+        /// The number of bytes of disk space reserved if the associated software element is installed to run from source. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ReserveSource { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: UserProfileConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_RoamingProfileBackgroundUploadParams
+    {
+        /// <summary>
+        /// The time interval, in hours. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Interval { get; set; }
+        /// <summary>
+        /// Indicates when a background upload should be performed. <br/>
+        /// One of the following values can be specified. <br/>
+        /// SpecificTime - Perform the background upload at the time of day specified in the Time property. <br/>
+        /// SetInterval  - Perform the background upload at the interval specified in the Interval property. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte SchedulingMethod { get; set; }
+        /// <summary>
+        /// An integer value that represents the hour, in 24-hour time, for the time of day when they sync should occur. <br/>
+        /// This must be an integer value from 0 to 23. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Time { get; set; }
     }
 
     /// <summary>
@@ -849,6 +1134,35 @@ namespace CIMV2
     /// provider: UserProfileConfigurationProvider <br/>
     ///  <br/>
     /// </summary>
+    public class Win32_RoamingProfileSlowLinkParams
+    {
+        /// <summary>
+        /// The connection speed, in kilobytes per second (kbps). <br/>
+        /// This threshold is used to determine if the connection is a slow link. <br/>
+        /// If the server&apos;s transfer rate in kbps is less than this threshold, the connection is considered to be slow. <br/>
+        /// This property applies to IP networks. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ConnectionTransferRate { get; set; }
+        /// <summary>
+        /// The slow-network connection timeout, in milliseconds. <br/>
+        /// This threshold is used to determine if the connection is a slow link. <br/>
+        /// If the delay in milliseconds is greater than this threshold, the connection is considered to be slow. <br/>
+        /// This property applies to non-IP networks. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TimeOut { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: UserProfileConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
     public class Win32_RoamingProfileUserConfiguration
     {
         /// <summary>
@@ -872,123 +1186,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public Boolean IsConfiguredByWMI { get; set; }
-    }
-
-    /// <summary>
-    /// This optional class allows the author to &apos;reserve&apos; a specified amount of disk space in any directory, depending on the installation state of a component. <br/>
-    /// Reserving cost in this way could be useful for authors who want to ensure that a minimum amount of disk space will be available after the installation is completed. <br/>
-    /// For example, this disk space might be reserved for user documents, or for application files (such as index files) that are created only after the application is launched following installation. <br/>
-    /// The ReserveCost class also allows custom actions to specify an approximate cost for any files, registry entries, or other items, that the custom action might install. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {C744CF5A-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ReserveCost
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The name of the directory (as a path, reference to a directory specification or reference to a property) where the space is reserved. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ReserveFolder { get; set; }
-        /// <summary>
-        /// A unique key identifying this reserve cost item within its product. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ReserveKey { get; set; }
-        /// <summary>
-        /// The number of bytes of disk space reserved if the associated software element is installed to run locally. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ReserveLocal { get; set; }
-        /// <summary>
-        /// The number of bytes of disk space reserved if the associated software element is installed to run from source. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ReserveSource { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
     }
 
     /// <summary>
@@ -1033,202 +1230,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public UInt16 LastProfileUploadIntervalUnhealthyInHours { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// </summary>
-    public class Win32_Reliability
-    {
-    }
-
-    /// <summary>
-    /// System stability index value history <br/>
-    ///  <br/>
-    /// provider: ReliabilityMetricsProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ReliabilityStabilityMetrics
-    {
-        /// <summary>
-        /// The most recent UTC time at which reliability metric data was collected <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime EndMeasurementDate { get; set; }
-        /// <summary>
-        /// A GUID used to correlate reliability metrics on this computer. <br/>
-        /// The GUID will be reset if an error prevents reliability metrics from being calculated <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String RelID { get; set; }
-        /// <summary>
-        /// The UTC time at which reliability metric data collection began <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime StartMeasurementDate { get; set; }
-        /// <summary>
-        /// The system stability index value <br/>
-        ///  <br/>
-        /// cimtype: real64 <br/>
-        ///  <br/>
-        /// </summary>
-        public double SystemStabilityIndex { get; set; }
-        /// <summary>
-        /// The UTC time at which the system stability index value was calculated <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime TimeGenerated { get; set; }
-    }
-
-    /// <summary>
-    /// Reliability related events. <br/>
-    /// When available, these events are associated with the original records in the Win32_NTLogEvent class <br/>
-    ///  <br/>
-    /// provider: ReliabilityMetricsProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ReliabilityRecords
-    {
-        /// <summary>
-        /// The computer name <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ComputerName { get; set; }
-        /// <summary>
-        /// The event ID number <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 EventIdentifier { get; set; }
-        /// <summary>
-        /// The array of variables and values from the original event <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] InsertionStrings { get; set; }
-        /// <summary>
-        /// The name of the event log <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Logfile { get; set; }
-        /// <summary>
-        /// The text of the event as it appears in the event log <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Message { get; set; }
-        /// <summary>
-        /// The product name, if available <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ProductName { get; set; }
-        /// <summary>
-        /// The event record number in the original event log <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 RecordNumber { get; set; }
-        /// <summary>
-        /// The event source <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SourceName { get; set; }
-        /// <summary>
-        /// The UTC time at which the source generated the event <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime TimeGenerated { get; set; }
-        /// <summary>
-        /// The name of the user on whose behalf the event occurred, if available <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String User { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: UserProfileConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_RoamingProfileBackgroundUploadParams
-    {
-        /// <summary>
-        /// The time interval, in hours. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Interval { get; set; }
-        /// <summary>
-        /// Indicates when a background upload should be performed. <br/>
-        /// One of the following values can be specified. <br/>
-        /// SpecificTime - Perform the background upload at the time of day specified in the Time property. <br/>
-        /// SetInterval  - Perform the background upload at the interval specified in the Interval property. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte SchedulingMethod { get; set; }
-        /// <summary>
-        /// An integer value that represents the hour, in 24-hour time, for the time of day when they sync should occur. <br/>
-        /// This must be an integer value from 0 to 23. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Time { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: UserProfileConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_RoamingProfileSlowLinkParams
-    {
-        /// <summary>
-        /// The connection speed, in kilobytes per second (kbps). <br/>
-        /// This threshold is used to determine if the connection is a slow link. <br/>
-        /// If the server&apos;s transfer rate in kbps is less than this threshold, the connection is considered to be slow. <br/>
-        /// This property applies to IP networks. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ConnectionTransferRate { get; set; }
-        /// <summary>
-        /// The slow-network connection timeout, in milliseconds. <br/>
-        /// This threshold is used to determine if the connection is a slow link. <br/>
-        /// If the delay in milliseconds is greater than this threshold, the connection is considered to be slow. <br/>
-        /// This property applies to non-IP networks. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TimeOut { get; set; }
     }
 }

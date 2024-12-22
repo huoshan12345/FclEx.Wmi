@@ -59,7 +59,7 @@ public class SourceGenerator : ISourceGenerator
         {
             var cur = queue.Dequeue();
             var nsClass = new ManagementClass(new ManagementScope(cur), new ManagementPath("__namespace"), new());
-            
+
             foreach (var ns in nsClass.GetInstances())
             {
                 var nsName = $"{cur}\\{ns["Name"]}";
@@ -125,24 +125,28 @@ public class SourceGenerator : ISourceGenerator
         {
             var query = LoadClasses(ns)
                 .Where(m => !m.Qualifiers.Others.ContainsKey("abstract"))
-                .GroupBy(m => GetFirstChar(m.Name));
+                .GroupBy(m => GetTag(m.Name));
 
             foreach (var group in query)
             {
-                var info = ClassItemSource.Generate(ns, group, group.Key.ToString());
+                var info = ClassItemSource.Generate(ns, group, group.Key);
                 yield return info;
             }
         }
         yield break;
 
-        static char GetFirstChar(string name)
+        static string GetTag(string name)
         {
+            const StringComparison cmp = StringComparison.OrdinalIgnoreCase;
+            if (name.StartsWith("Win32_Perf", cmp))
+                return "perf";
+
             const string prefix = "Win32_";
-            var index = name.IndexOf("Win32_", StringComparison.Ordinal);
+            var index = name.IndexOf(prefix, cmp);
             var ch = index >= 0
                 ? name[index + prefix.Length]
                 : name[0];
-            return char.ToLower(ch);
+            return char.ToLower(ch).ToString();
         }
     }
 

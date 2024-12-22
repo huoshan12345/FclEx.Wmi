@@ -100,6 +100,106 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// Instances of this class contain information about any environment variables that may need to be registered for their associated products installation. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {8518ABC0-DB32-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_EnvironmentSpecification
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// Token name for the environment specification within its package. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Environment { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// The value for this environment as a formatted string. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Value { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
     /// The ExtensionInfoAction manages the registration of extension related information with the system. <br/>
     /// The action registers the extension servers for which the corresponding feature is currently selected to be uninstalled. <br/>
     ///  <br/>
@@ -231,106 +331,6 @@ namespace CIMV2
         public String Verb { get; set; }
         /// <summary>
         /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// Instances of this class contain information about any environment variables that may need to be registered for their associated products installation. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {8518ABC0-DB32-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_EnvironmentSpecification
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// Token name for the environment specification within its package. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Environment { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// The value for this environment as a formatted string. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Value { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>

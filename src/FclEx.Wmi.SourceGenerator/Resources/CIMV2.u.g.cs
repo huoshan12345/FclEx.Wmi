@@ -250,6 +250,69 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_USBControllerDevice class represents an association between a Universal Serial Bus (USB) controller and the CIM_LogicalDevice connected to it. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {DE57D792-A032-11D2-90F0-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_USBControllerDevice
+    {
+        /// <summary>
+        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
+        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
+        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 AccessState { get; set; }
+        /// <summary>
+        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
+        /// Data width is specified in bits. <br/>
+        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: bits <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NegotiatedDataWidth { get; set; }
+        /// <summary>
+        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
+        /// Speed is specified in bits per second. <br/>
+        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: bits per second <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 NegotiatedSpeed { get; set; }
+        /// <summary>
+        /// Number of hard resets issued by the controller. <br/>
+        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
+        /// All internal device state information and data are lost. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfHardResets { get; set; }
+        /// <summary>
+        /// Number of soft resets issued by the controller. <br/>
+        /// A soft reset does not completely clear current device state and/or data. <br/>
+        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfSoftResets { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_USBHub class represents the management characterisitics of a USB Hub. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -711,151 +774,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// Describes an instance in time as returned by Win32ClockProvider. <br/>
-    /// When a query is submitted to the Win32UTCClockProvider, the results are returned as Win32_UTCTime objects with times matching the query. <br/>
-    /// These are returned as part of __InstanceModificationEvents <br/>
-    ///  <br/>
-    /// provider: Win32ClockProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_UTCTime
-    {
-        /// <summary>
-        /// The current matching day (1-31) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Day { get; set; }
-        /// <summary>
-        /// The current matching day of the current week (0-6, Sunday being 0) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 DayOfWeek { get; set; }
-        /// <summary>
-        /// The current hour of the current day (0-23) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Hour { get; set; }
-        /// <summary>
-        /// (currently not used) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Milliseconds { get; set; }
-        /// <summary>
-        /// The current minute (0-59) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Minute { get; set; }
-        /// <summary>
-        /// The current matching month (1-12) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Month { get; set; }
-        /// <summary>
-        /// The current quarter of the current year (1-4) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Quarter { get; set; }
-        /// <summary>
-        /// The current second of the current minute (0-59) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Second { get; set; }
-        /// <summary>
-        /// The current week in the current month (1-6) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 WeekInMonth { get; set; }
-        /// <summary>
-        /// The current matching year (4 digits) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Year { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_USBControllerDevice class represents an association between a Universal Serial Bus (USB) controller and the CIM_LogicalDevice connected to it. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {DE57D792-A032-11D2-90F0-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_USBControllerDevice
-    {
-        /// <summary>
-        /// The AccessState property indicates whether the controller is actively commanding or accessing the device (value=1) or not (value=2). <br/>
-        /// Also, the value, &quot;Unknown&quot; (0), can be defined. <br/>
-        /// This information is necessary when a logical device can be commanded by, or accessed through, multiple controllers. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 AccessState { get; set; }
-        /// <summary>
-        /// When several bus and/or connection data widths are possible, the NegotiatedDataWidth property defines the one in use between the devices. <br/>
-        /// Data width is specified in bits. <br/>
-        /// If data width is not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: bits <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NegotiatedDataWidth { get; set; }
-        /// <summary>
-        /// When several bus and/or connection speeds are possible, the NegotiatedSpeed property defines the one in use between the devices. <br/>
-        /// Speed is specified in bits per second. <br/>
-        /// If connection or bus speeds are not negotiated, or if this information is not available/important to device management, the property should be set to 0. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bits per second <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 NegotiatedSpeed { get; set; }
-        /// <summary>
-        /// Number of hard resets issued by the controller. <br/>
-        /// A hard reset returns the device to its initialization or &apos;boot-up&apos; state. <br/>
-        /// All internal device state information and data are lost. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfHardResets { get; set; }
-        /// <summary>
-        /// Number of soft resets issued by the controller. <br/>
-        /// A soft reset does not completely clear current device state and/or data. <br/>
-        /// Exact semantics are dependent on the device, and on the protocols and mechanisms used to communicate to it. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfSoftResets { get; set; }
-    }
-
-    /// <summary>
     /// The Win32_UserDesktop class represents an association between a user account and desktop settings that are specific to it. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -1137,5 +1055,87 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public byte RoamingUserProfile { get; set; }
+    }
+
+    /// <summary>
+    /// Describes an instance in time as returned by Win32ClockProvider. <br/>
+    /// When a query is submitted to the Win32UTCClockProvider, the results are returned as Win32_UTCTime objects with times matching the query. <br/>
+    /// These are returned as part of __InstanceModificationEvents <br/>
+    ///  <br/>
+    /// provider: Win32ClockProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_UTCTime
+    {
+        /// <summary>
+        /// The current matching day (1-31) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Day { get; set; }
+        /// <summary>
+        /// The current matching day of the current week (0-6, Sunday being 0) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 DayOfWeek { get; set; }
+        /// <summary>
+        /// The current hour of the current day (0-23) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Hour { get; set; }
+        /// <summary>
+        /// (currently not used) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Milliseconds { get; set; }
+        /// <summary>
+        /// The current minute (0-59) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Minute { get; set; }
+        /// <summary>
+        /// The current matching month (1-12) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Month { get; set; }
+        /// <summary>
+        /// The current quarter of the current year (1-4) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Quarter { get; set; }
+        /// <summary>
+        /// The current second of the current minute (0-59) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Second { get; set; }
+        /// <summary>
+        /// The current week in the current month (1-6) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 WeekInMonth { get; set; }
+        /// <summary>
+        /// The current matching year (4 digits) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Year { get; set; }
     }
 }

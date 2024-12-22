@@ -265,274 +265,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_BIOS class represents the attributes of the computer system&apos;s basic input/output services (BIOS) that are installed on the computer. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4E1-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_BIOS
-    {
-        /// <summary>
-        /// The BiosCharacteristics property identifies the BIOS characteristics supported by the system as defined by the System Management BIOS Reference Specification <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16[] BiosCharacteristics { get; set; }
-        /// <summary>
-        /// The BIOSVersion array property contains the complete System BIOS information. <br/>
-        /// In many machines, there can be several version strings stored in the Registry representing the system BIOS info. <br/>
-        /// The property contains the complete set. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] BIOSVersion { get; set; }
-        /// <summary>
-        /// The internal identifier for this compilation of this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String BuildNumber { get; set; }
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The code set used by this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CodeSet { get; set; }
-        /// <summary>
-        /// The CurrentLanguage property shows the name of the current BIOS language. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CurrentLanguage { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// Identifies the major release of the embedded controller firmware. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte EmbeddedControllerMajorVersion { get; set; }
-        /// <summary>
-        /// Identifies the minor release of the embedded controller firmware. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte EmbeddedControllerMinorVersion { get; set; }
-        /// <summary>
-        /// The value of this property is the manufacturer&apos;s identifier for this software element. <br/>
-        /// Often this will be a stock keeping unit (SKU) or a part number. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String IdentificationCode { get; set; }
-        /// <summary>
-        /// The InstallableLanguages property indicates the number of languages available for installation on this system. <br/>
-        /// Language may determine properties such as the need for Unicode and bi-directional text. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 InstallableLanguages { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The value of this property identifies the language edition of this software element. <br/>
-        /// The language codes defined in ISO 639 should be used. <br/>
-        /// Where the software element represents multi-lingual or international version of a product, the string multilingual should be used. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LanguageEdition { get; set; }
-        /// <summary>
-        /// The ListOfLanguages property contains a list of namesof available BIOS-installable languages. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] ListOfLanguages { get; set; }
-        /// <summary>
-        /// Manufacturer of this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Manufacturer { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The OtherTargetOS property records the manufacturer and  operating system type for a software element when  the TargetOperatingSystem property has a value of  1 (&quot;Other&quot;). <br/>
-        /// Therefore, when the TargetOperatingSystem property has a value of &quot;Other&quot;, the OtherTargetOS  property must have a non-null value. <br/>
-        /// For all other values  of TargetOperatingSystem, the OtherTargetOS property is to be NULL. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// modelcorrespondence: CIM_OperatingSystem.OtherTypeDescription <br/>
-        ///  <br/>
-        /// </summary>
-        public String OtherTargetOS { get; set; }
-        /// <summary>
-        /// If true, this is the primary BIOS of the computer system. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean PrimaryBIOS { get; set; }
-        /// <summary>
-        /// The ReleaseDate property indicates the release date of the Win32 BIOS in the Coordinated Universal Time (UTC) format of YYYYMMDDHHMMSS.MMMMMM(+-)OOO. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime ReleaseDate { get; set; }
-        /// <summary>
-        /// The assigned serial number of this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SerialNumber { get; set; }
-        /// <summary>
-        /// The SMBIOSBIOSVersion property contains the BIOS version as reported by SMBIOS. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SMBIOSBIOSVersion { get; set; }
-        /// <summary>
-        /// The SMBIOSMajorVersion property contains the major SMBIOS version number. <br/>
-        /// This property will be NULL if SMBIOS not found. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SMBIOSMajorVersion { get; set; }
-        /// <summary>
-        /// The SMBIOSMinorVersion property contains the minor SMBIOS Version number. <br/>
-        /// This property will be NULL if SMBIOS not found. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SMBIOSMinorVersion { get; set; }
-        /// <summary>
-        /// The SMBIOSPresent property indicates whether the SMBIOS is available on this computer system. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// If TRUE, SMBIOS is on this computer. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SMBIOSPresent { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element and is designed to be  used in conjunction with other keys to create a unique representation  of this CIM_SoftwareElement <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The SoftwareElementState is defined in this model to  identify various states of a software elements life cycle. <br/>
-        /// - A software element in the deployable state describes     the details necessary to successful distribute it and     the details (conditions and actions) required to create     a software element in the installable state (i.e., the next state). <br/>
-        /// - A software element in the installable state describes     the details necessary to successfully install it and the    details (conditions and actions required to create a     software element in the executable state (i.e., the next state). <br/>
-        /// - A software element in the executable state describes the     details necessary to successfully  start it and the details     (conditions and actions required to create a software element in     the running state (i.e., the next state). <br/>
-        /// - A software element in the running state describes the details     necessary to monitor and operate on a start element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// Identifies the major release of the System BIOS. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte SystemBiosMajorVersion { get; set; }
-        /// <summary>
-        /// Identifies the minor release of the System BIOS. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte SystemBiosMinorVersion { get; set; }
-        /// <summary>
-        /// The TargetOperatingSystem property allows the provider to specify the  operating system environment. <br/>
-        /// The value of this property does not  ensure binary executable. <br/>
-        /// Two other pieces of information are needed. <br/>
-        /// First, the version of the OS needs to be specified using the OS  version check. <br/>
-        /// The second piece of information is the architecture the  OS runs on. <br/>
-        /// The combination of these constructs allows the provider to  clearly identify the level of OS required for a particular software  element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// modelcorrespondence: CIM_OperatingSystem.OSType <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// The Version property contains the version of the BIOS. <br/>
-        /// This string is created by the BIOS manufacturer. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
     /// The Win32_BaseService class represents executable objects that are installed in a registry database maintained by the Service Control Manager. <br/>
     /// The executable file associated with a service can be started at boot time by a boot program or by the system. <br/>
     /// It can also be started on-demand by the Service Control Manager. <br/>
@@ -1145,6 +877,510 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// Instances ofthis class represent binary information (such as bitmapps, icons, executables, etc...) that are used by an installation. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {DB150AA8-E3D1-11d2-8601-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_Binary
+    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// This property represents the binary data that is associated with this object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Data { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The product code for the product of which this binary is a part. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ProductCode { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+    }
+
+    /// <summary>
+    /// The BindImage action binds each executable that needs to be bound to the DLLs imported by it by computing the virtual address of each function that is imported from all DLLs. <br/>
+    /// The computed virtual address is then saved in the importing image&apos;s Import Address Table (IAT). <br/>
+    /// The action works on each file installed locally. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {1D40FFD4-DB32-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_BindImageAction
+    {
+        /// <summary>
+        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ActionID { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Direction { get; set; }
+        /// <summary>
+        /// The FileID of a Win32_FileSpecification for which this action applies (must be a valid binary file.) <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String File { get; set; }
+        /// <summary>
+        /// Name is used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// A list of paths, separated by semicolons, that represent the paths to be searched to find the imported DLLs. <br/>
+        /// The list is usually a list of Win32_Properties, with each Win32_Property.Name enclosed inside square brackets ([ ]). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Path { get; set; }
+        /// <summary>
+        /// The SoftwareElementID is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The SoftwareElementState indicates the state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_BIOS class represents the attributes of the computer system&apos;s basic input/output services (BIOS) that are installed on the computer. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4E1-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_BIOS
+    {
+        /// <summary>
+        /// The BiosCharacteristics property identifies the BIOS characteristics supported by the system as defined by the System Management BIOS Reference Specification <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16[] BiosCharacteristics { get; set; }
+        /// <summary>
+        /// The BIOSVersion array property contains the complete System BIOS information. <br/>
+        /// In many machines, there can be several version strings stored in the Registry representing the system BIOS info. <br/>
+        /// The property contains the complete set. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] BIOSVersion { get; set; }
+        /// <summary>
+        /// The internal identifier for this compilation of this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String BuildNumber { get; set; }
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The code set used by this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CodeSet { get; set; }
+        /// <summary>
+        /// The CurrentLanguage property shows the name of the current BIOS language. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CurrentLanguage { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// Identifies the major release of the embedded controller firmware. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte EmbeddedControllerMajorVersion { get; set; }
+        /// <summary>
+        /// Identifies the minor release of the embedded controller firmware. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte EmbeddedControllerMinorVersion { get; set; }
+        /// <summary>
+        /// The value of this property is the manufacturer&apos;s identifier for this software element. <br/>
+        /// Often this will be a stock keeping unit (SKU) or a part number. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String IdentificationCode { get; set; }
+        /// <summary>
+        /// The InstallableLanguages property indicates the number of languages available for installation on this system. <br/>
+        /// Language may determine properties such as the need for Unicode and bi-directional text. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 InstallableLanguages { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The value of this property identifies the language edition of this software element. <br/>
+        /// The language codes defined in ISO 639 should be used. <br/>
+        /// Where the software element represents multi-lingual or international version of a product, the string multilingual should be used. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LanguageEdition { get; set; }
+        /// <summary>
+        /// The ListOfLanguages property contains a list of namesof available BIOS-installable languages. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] ListOfLanguages { get; set; }
+        /// <summary>
+        /// Manufacturer of this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Manufacturer { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The OtherTargetOS property records the manufacturer and  operating system type for a software element when  the TargetOperatingSystem property has a value of  1 (&quot;Other&quot;). <br/>
+        /// Therefore, when the TargetOperatingSystem property has a value of &quot;Other&quot;, the OtherTargetOS  property must have a non-null value. <br/>
+        /// For all other values  of TargetOperatingSystem, the OtherTargetOS property is to be NULL. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// modelcorrespondence: CIM_OperatingSystem.OtherTypeDescription <br/>
+        ///  <br/>
+        /// </summary>
+        public String OtherTargetOS { get; set; }
+        /// <summary>
+        /// If true, this is the primary BIOS of the computer system. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean PrimaryBIOS { get; set; }
+        /// <summary>
+        /// The ReleaseDate property indicates the release date of the Win32 BIOS in the Coordinated Universal Time (UTC) format of YYYYMMDDHHMMSS.MMMMMM(+-)OOO. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime ReleaseDate { get; set; }
+        /// <summary>
+        /// The assigned serial number of this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SerialNumber { get; set; }
+        /// <summary>
+        /// The SMBIOSBIOSVersion property contains the BIOS version as reported by SMBIOS. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SMBIOSBIOSVersion { get; set; }
+        /// <summary>
+        /// The SMBIOSMajorVersion property contains the major SMBIOS version number. <br/>
+        /// This property will be NULL if SMBIOS not found. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SMBIOSMajorVersion { get; set; }
+        /// <summary>
+        /// The SMBIOSMinorVersion property contains the minor SMBIOS Version number. <br/>
+        /// This property will be NULL if SMBIOS not found. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SMBIOSMinorVersion { get; set; }
+        /// <summary>
+        /// The SMBIOSPresent property indicates whether the SMBIOS is available on this computer system. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// If TRUE, SMBIOS is on this computer. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SMBIOSPresent { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element and is designed to be  used in conjunction with other keys to create a unique representation  of this CIM_SoftwareElement <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The SoftwareElementState is defined in this model to  identify various states of a software elements life cycle. <br/>
+        /// - A software element in the deployable state describes     the details necessary to successful distribute it and     the details (conditions and actions) required to create     a software element in the installable state (i.e., the next state). <br/>
+        /// - A software element in the installable state describes     the details necessary to successfully install it and the    details (conditions and actions required to create a     software element in the executable state (i.e., the next state). <br/>
+        /// - A software element in the executable state describes the     details necessary to successfully  start it and the details     (conditions and actions required to create a software element in     the running state (i.e., the next state). <br/>
+        /// - A software element in the running state describes the details     necessary to monitor and operate on a start element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// Identifies the major release of the System BIOS. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte SystemBiosMajorVersion { get; set; }
+        /// <summary>
+        /// Identifies the minor release of the System BIOS. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte SystemBiosMinorVersion { get; set; }
+        /// <summary>
+        /// The TargetOperatingSystem property allows the provider to specify the  operating system environment. <br/>
+        /// The value of this property does not  ensure binary executable. <br/>
+        /// Two other pieces of information are needed. <br/>
+        /// First, the version of the OS needs to be specified using the OS  version check. <br/>
+        /// The second piece of information is the architecture the  OS runs on. <br/>
+        /// The combination of these constructs allows the provider to  clearly identify the level of OS required for a particular software  element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// modelcorrespondence: CIM_OperatingSystem.OSType <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// The Version property contains the version of the BIOS. <br/>
+        /// This string is created by the BIOS manufacturer. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_BootConfiguration class represents the boot configuration of a Win32 system. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4E2-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_BootConfiguration
+    {
+        /// <summary>
+        /// The BootDirectory property indicates the path to the system files required for booting the system. <br/>
+        /// Example: C:\Windows. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String BootDirectory { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The ConfigurationPath property indicates the path to the configuration files. <br/>
+        /// This value may be similar to the value in the BootDirectory. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ConfigurationPath { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The LastDrive property indicates the last drive letter to which a physical drive is assigned. <br/>
+        /// Example: E: <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LastDrive { get; set; }
+        /// <summary>
+        /// The Name property indicates the name of the boot configuration. <br/>
+        /// It is an identifier for the boot configuration. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The ScratchDirectory property indicates the directory where temporary files can reside during boot time. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ScratchDirectory { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+        /// <summary>
+        /// The TempDirectory property indicates the directory where temporary files are stored. <br/>
+        /// Example: C:\TEMP <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String TempDirectory { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_Bus class represents a physical bus as seen by a Win32 operating system. <br/>
     /// Any instance of a Win32 bus is a descendent (or member) of this class. <br/>
     /// Example: USB Bus. <br/>
@@ -1375,241 +1611,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String SystemName { get; set; }
-    }
-
-    /// <summary>
-    /// Instances ofthis class represent binary information (such as bitmapps, icons, executables, etc...) that are used by an installation. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {DB150AA8-E3D1-11d2-8601-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_Binary
-    {
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// This property represents the binary data that is associated with this object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Data { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The product code for the product of which this binary is a part. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ProductCode { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_BootConfiguration class represents the boot configuration of a Win32 system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4E2-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_BootConfiguration
-    {
-        /// <summary>
-        /// The BootDirectory property indicates the path to the system files required for booting the system. <br/>
-        /// Example: C:\Windows. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String BootDirectory { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The ConfigurationPath property indicates the path to the configuration files. <br/>
-        /// This value may be similar to the value in the BootDirectory. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ConfigurationPath { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The LastDrive property indicates the last drive letter to which a physical drive is assigned. <br/>
-        /// Example: E: <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LastDrive { get; set; }
-        /// <summary>
-        /// The Name property indicates the name of the boot configuration. <br/>
-        /// It is an identifier for the boot configuration. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The ScratchDirectory property indicates the directory where temporary files can reside during boot time. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ScratchDirectory { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-        /// <summary>
-        /// The TempDirectory property indicates the directory where temporary files are stored. <br/>
-        /// Example: C:\TEMP <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String TempDirectory { get; set; }
-    }
-
-    /// <summary>
-    /// The BindImage action binds each executable that needs to be bound to the DLLs imported by it by computing the virtual address of each function that is imported from all DLLs. <br/>
-    /// The computed virtual address is then saved in the importing image&apos;s Import Address Table (IAT). <br/>
-    /// The action works on each file installed locally. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {1D40FFD4-DB32-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_BindImageAction
-    {
-        /// <summary>
-        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ActionID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Direction { get; set; }
-        /// <summary>
-        /// The FileID of a Win32_FileSpecification for which this action applies (must be a valid binary file.) <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String File { get; set; }
-        /// <summary>
-        /// Name is used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// A list of paths, separated by semicolons, that represent the paths to be searched to find the imported DLLs. <br/>
-        /// The list is usually a list of Win32_Properties, with each Win32_Property.Name enclosed inside square brackets ([ ]). <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Path { get; set; }
-        /// <summary>
-        /// The SoftwareElementID is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The SoftwareElementState indicates the state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
     }
 }

@@ -244,168 +244,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    ///  <br/>
-    /// provider: UserProfileProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_FolderRedirectionHealth
-    {
-        /// <summary>
-        /// The health status of this folder, based on the values that were set in the Win32_FolderRedirectionHealthConfiguration properties. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte HealthStatus { get; set; }
-        /// <summary>
-        /// The last time this folder was successfully synchronized to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastSuccessfulSyncTime { get; set; }
-        /// <summary>
-        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte LastSyncStatus { get; set; }
-        /// <summary>
-        /// The last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastSyncTime { get; set; }
-        /// <summary>
-        /// If true, the Offline Files feature is enabled for this folder. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OfflineAccessEnabled { get; set; }
-        /// <summary>
-        /// known folder unique id (guid) <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String OfflineFileNameFolderGUID { get; set; }
-        /// <summary>
-        /// If true, indicate if this folder is being redirected. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Redirected { get; set; }
-    }
-
-    /// <summary>
-    /// The RegisterFonts action registers installed fonts with the system. <br/>
-    /// It maps the Font.FontTitle to the path of the font file installed. <br/>
-    /// The RegisterFonts action is triggered when the Component to which the Font.File_ belongs is selected for install. <br/>
-    /// This implies that fonts can be made private, shared or system by making the Components to which they belong so. <br/>
-    ///  <br/>
-    /// implementationsource: MSI <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {C63BAA94-DB32-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_FontInfoAction
-    {
-        /// <summary>
-        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ActionID { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Direction { get; set; }
-        /// <summary>
-        /// The FileID of a Win32_FileSpecification that represents this fonts file. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String File { get; set; }
-        /// <summary>
-        /// Font name. <br/>
-        /// For TrueType Fonts and TrueType Collections if NULL the installer registers the font after reading the correct font title from the font file. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String FontTitle { get; set; }
-        /// <summary>
-        /// Name is used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The SoftwareElementID is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The SoftwareElementState indicates the state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
     /// Each instance of this class represents a source file with it&apos;s various attributes, ordered by a unique, non-localized identifier. <br/>
     /// For uncompressed files, the File property is ignored, and the FileName column is used for both the source and destination file name. <br/>
     /// You must set the &apos;Uncompressed&apos; bit of the Attributes column for any file that is not compressed in a cabinet. <br/>
@@ -642,6 +480,89 @@ namespace CIMV2
 
     /// <summary>
     ///  <br/>
+    /// provider: UserProfileProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_FolderRedirectionHealth
+    {
+        /// <summary>
+        /// The health status of this folder, based on the values that were set in the Win32_FolderRedirectionHealthConfiguration properties. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte HealthStatus { get; set; }
+        /// <summary>
+        /// The last time this folder was successfully synchronized to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastSuccessfulSyncTime { get; set; }
+        /// <summary>
+        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte LastSyncStatus { get; set; }
+        /// <summary>
+        /// The last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastSyncTime { get; set; }
+        /// <summary>
+        /// If true, the Offline Files feature is enabled for this folder. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean OfflineAccessEnabled { get; set; }
+        /// <summary>
+        /// known folder unique id (guid) <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String OfflineFileNameFolderGUID { get; set; }
+        /// <summary>
+        /// If true, indicate if this folder is being redirected. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Redirected { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: UserProfileConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_FolderRedirectionHealthConfiguration
+    {
+        /// <summary>
+        /// Cautious threshold, in hours. <br/>
+        /// If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Caution. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 LastSyncDurationCautionInHours { get; set; }
+        /// <summary>
+        /// Unhealthy threshold, in hours. <br/>
+        /// If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Unhealthy. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 LastSyncDurationUnhealthyInHours { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
     /// provider: Win32_FolderRedirectionConfiguration <br/>
     ///  <br/>
     /// </summary>
@@ -755,27 +676,106 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The RegisterFonts action registers installed fonts with the system. <br/>
+    /// It maps the Font.FontTitle to the path of the font file installed. <br/>
+    /// The RegisterFonts action is triggered when the Component to which the Font.File_ belongs is selected for install. <br/>
+    /// This implies that fonts can be made private, shared or system by making the Components to which they belong so. <br/>
     ///  <br/>
-    /// provider: UserProfileConfigurationProvider <br/>
+    /// implementationsource: MSI <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {C63BAA94-DB32-11d2-85FC-0000F8102E5F} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_FolderRedirectionHealthConfiguration
+    public class Win32_FontInfoAction
     {
         /// <summary>
-        /// Cautious threshold, in hours. <br/>
-        /// If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Caution. <br/>
+        /// The ActionID property is a unique identifier assigned to a particular  action for a software element. <br/>
         ///  <br/>
-        /// cimtype: uint32 <br/>
+        /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 LastSyncDurationCautionInHours { get; set; }
+        public String ActionID { get; set; }
         /// <summary>
-        /// Unhealthy threshold, in hours. <br/>
-        /// If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Unhealthy. <br/>
         ///  <br/>
-        /// cimtype: uint32 <br/>
+        /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 LastSyncDurationUnhealthyInHours { get; set; }
+        public String Caption { get; set; }
+        /// <summary>
+        /// A description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The Direction property indicates whether a particular   CIM_Action object is part of a sequence of actions to transition the   current software element to its next state, such as &quot;Install&quot; or to  remove the current software element, such as &quot;Uninstall&quot;. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Direction { get; set; }
+        /// <summary>
+        /// The FileID of a Win32_FileSpecification that represents this fonts file. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String File { get; set; }
+        /// <summary>
+        /// Font name. <br/>
+        /// For TrueType Fonts and TrueType Collections if NULL the installer registers the font after reading the correct font title from the font file. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String FontTitle { get; set; }
+        /// <summary>
+        /// Name is used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The SoftwareElementID is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The SoftwareElementState indicates the state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The TargetOperatingSystem indicates the target operating system of the owning software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;major&gt;.&lt;minor&gt;.&lt;revision&gt; or &lt;major&gt;.&lt;minor&gt;&lt;letter&gt;&lt;revision&gt;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
     }
 }

@@ -5,6 +5,91 @@ using System;
 namespace CIMV2
 {
     /// <summary>
+    ///  <br/>
+    /// provider: Win32_WinSAT <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_WinSAT
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: CPUScore <br/>
+        ///  <br/>
+        /// </summary>
+        public Single CPUScore { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: D3DScore <br/>
+        ///  <br/>
+        /// </summary>
+        public Single D3DScore { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: DiskScore <br/>
+        ///  <br/>
+        /// </summary>
+        public Single DiskScore { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: GraphicsScore <br/>
+        ///  <br/>
+        /// </summary>
+        public Single GraphicsScore { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: MemoryScore <br/>
+        ///  <br/>
+        /// </summary>
+        public Single MemoryScore { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String TimeTaken { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// propertycontext: AssessmentState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 WinSATAssessmentState { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: real32 <br/>
+        ///  <br/>
+        /// propertycontext: WinSPRLevel <br/>
+        ///  <br/>
+        /// </summary>
+        public Single WinSPRLevel { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_WMIElementSetting class represents an association between a service running in the Win32 system, and the WMI settings it can use. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: WBEMCORE <br/>
+    ///  <br/>
+    /// uuid: {A83EF167-CA8D-11d2-B33D-00104BCC4B4A} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_WMIElementSetting
+    {
+    }
+
+    /// <summary>
     /// The Win32_WMISetting class is a Singleton class that contains the operational parameters for the WMI service. <br/>
     /// Win32_WMISetting can only have one instance. <br/>
     /// This single instance always exists for each Win32 system, and cannot be deleted. <br/>
@@ -253,90 +338,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String SettingID { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_WMIElementSetting class represents an association between a service running in the Win32 system, and the WMI settings it can use. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: WBEMCORE <br/>
-    ///  <br/>
-    /// uuid: {A83EF167-CA8D-11d2-B33D-00104BCC4B4A} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_WMIElementSetting
-    {
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_WinSAT <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_WinSAT
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: CPUScore <br/>
-        ///  <br/>
-        /// </summary>
-        public Single CPUScore { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: D3DScore <br/>
-        ///  <br/>
-        /// </summary>
-        public Single D3DScore { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: DiskScore <br/>
-        ///  <br/>
-        /// </summary>
-        public Single DiskScore { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: GraphicsScore <br/>
-        ///  <br/>
-        /// </summary>
-        public Single GraphicsScore { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: MemoryScore <br/>
-        ///  <br/>
-        /// </summary>
-        public Single MemoryScore { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String TimeTaken { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// propertycontext: AssessmentState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 WinSATAssessmentState { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: real32 <br/>
-        ///  <br/>
-        /// propertycontext: WinSPRLevel <br/>
-        ///  <br/>
-        /// </summary>
-        public Single WinSPRLevel { get; set; }
     }
 }

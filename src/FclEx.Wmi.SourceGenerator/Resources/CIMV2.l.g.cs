@@ -5,6 +5,308 @@ using System;
 namespace CIMV2
 {
     /// <summary>
+    /// The LaunchCondition class is used by the LaunchConditions action. <br/>
+    /// It contains a list of conditions, all of which must be satisfied for the action to succeed. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {E79C9694-DB32-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LaunchCondition
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// A condition that must evaluate to TRUE for installation to begin. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Condition { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_LoadOrderGroup class represents a group of system services that define execution dependencies. <br/>
+    /// The services must be initiated in the order specified by the Load Order Group, as the services are dependent on each other. <br/>
+    /// These dependent services require the presence of the antecedent services in order to function correctly. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4D4-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoadOrderGroup
+    {
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The DriverEnabled property indicates whether this load order group can include drivers along with system services. <br/>
+        /// Values:  TRUE or FALSE. <br/>
+        /// If TRUE, the load order group can includedrivers. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DriverEnabled { get; set; }
+        /// <summary>
+        /// The GroupOrder property indicates the sequence in which this group of services will be loaded onto the operating system. <br/>
+        /// Example: 2 <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 GroupOrder { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Name property indicates the name of the load order group. <br/>
+        /// Example: Primary disk <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_LoadOrderGroupServiceDependencies class represents an association between a base service and a load order group that the service depends on to start running. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FC-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoadOrderGroupServiceDependencies
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LoadOrderGroupServiceMembers class represents an association between a load order group and a base service. <br/>
+    /// Note: Win32_SystemDriver objects are members of that load order group. <br/>
+    /// Not all services are members of groups, and not all groups have services within them. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4EF-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoadOrderGroupServiceMembers
+    {
+    }
+
+    /// <summary>
+    /// Describes an instance in time as returned by Win32ClockProvider. <br/>
+    /// When a query is submitted to the Win32LocalClockProvider, the results are returned as Win32_LocalTime objects with times matching the query. <br/>
+    /// These are returned as part of __InstanceModificationEvents <br/>
+    ///  <br/>
+    /// provider: Win32ClockProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LocalTime
+    {
+        /// <summary>
+        /// The current matching day (1-31) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Day { get; set; }
+        /// <summary>
+        /// The current matching day of the current week (0-6, Sunday being 0) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 DayOfWeek { get; set; }
+        /// <summary>
+        /// The current hour of the current day (0-23) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Hour { get; set; }
+        /// <summary>
+        /// (currently not used) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Milliseconds { get; set; }
+        /// <summary>
+        /// The current minute (0-59) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Minute { get; set; }
+        /// <summary>
+        /// The current matching month (1-12) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Month { get; set; }
+        /// <summary>
+        /// The current quarter of the current year (1-4) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Quarter { get; set; }
+        /// <summary>
+        /// The current second of the current minute (0-59) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Second { get; set; }
+        /// <summary>
+        /// The current week in the current month (1-6) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 WeekInMonth { get; set; }
+        /// <summary>
+        /// The current matching year (4 digits) <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Year { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_LoggedOnUser association represents the relationship between a session and the user account using that session. <br/>
+    /// Although the association will usually be one to one - users are possible that involve more than one session. <br/>
+    /// At the termination of the session the association instance is deleted. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8BB5B3EC-E1F7-4b39-942A-605D5F55789A} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LoggedOnUser
+    {
+    }
+
+    /// <summary>
     /// The Win32_LogicalDisk class represents a data source that resolves to an actual local storage device on a Win32 system. <br/>
     /// The class returns both local as well as mapped logical disks. <br/>
     /// However, the recommended approach is to use this class for obtaining information on local disks and to use the Win32_MappedLogicalDisk class for information on mapped logical disk. <br/>
@@ -399,66 +701,229 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_LogicalProgramGroupItem class represents an element contained by a Win32_ProgramGroup, that is not itself another Win32_ProgramGroup. <br/>
+    /// The Win32_LogicalDiskRootDirectory class represents an association between a logical disk and its directory structure. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
-    /// uuid: {86E30E82-7DB2-11d2-90CB-0060081A46FD} <br/>
+    /// uuid: {F25FE468-783E-11d2-90BF-0060081A46FD} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_LogicalProgramGroupItem
+    public class Win32_LogicalDiskRootDirectory
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LogicalDiskToPartition class represents an association between a logical disk drive and the disk partition it resides on. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4FB-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalDiskToPartition
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        /// EndingAddress indicates where in lower level storage, the higher level extent ends. <br/>
+        /// This property is useful when mapping non-contiguous extents into a higher level grouping. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 EndingAddress { get; set; }
+        /// <summary>
+        /// StartingAddress indicates where in lower level storage, the higher level extent begins. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 StartingAddress { get; set; }
+    }
+
+    /// <summary>
+    /// Association between the security settings of a file/directory and one member of its DACL <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C590-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalFileAccess
+    {
+        /// <summary>
+        /// Bit flags specifying what permissions are affected <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AccessMask { get; set; }
+        /// <summary>
+        /// The guid of the type of object this object inherits from <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidInheritedObjectType { get; set; }
+        /// <summary>
+        /// The guid of the type of object the security settings are applied to <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidObjectType { get; set; }
+        /// <summary>
+        /// Bit flags specifying how the access rights are inherited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Inheritance { get; set; }
+        /// <summary>
+        /// The type of access specified for the trustee <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Type { get; set; }
+    }
+
+    /// <summary>
+    /// Association between the security settings of a file/directory one member of its SACL. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {FCC86599-DB20-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalFileAuditing
+    {
+        /// <summary>
+        /// Bit flags specifying what activities are audited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AuditedAccessMask { get; set; }
+        /// <summary>
+        /// The guid of the type of object this object inherits from <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidInheritedObjectType { get; set; }
+        /// <summary>
+        /// The guid of the type of object the security settings are applied to <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidObjectType { get; set; }
+        /// <summary>
+        /// Bit flags specifying how the audit policies are inherited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Inheritance { get; set; }
+        /// <summary>
+        /// The type of access specified for the trustee <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Type { get; set; }
+    }
+
+    /// <summary>
+    /// Association between the security settings of a file/directory and its group <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C58F-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalFileGroup
+    {
+    }
+
+    /// <summary>
+    /// Association between the security settings of a file/directory and its owner <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C58E-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalFileOwner
+    {
+    }
+
+    /// <summary>
+    /// security settings for a logical file <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C58C-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalFileSecuritySetting
+    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
+        /// Inheritance-related flags. <br/>
+        /// See SECURITY_DESCRIPTOR_CONTROL <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ControlFlags { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
+        /// Indicates whether the caller has Owner permissions to the object. <br/>
         ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The inherited Name property serves as key of a Win32_LogicalProgramGroupItem instance within a computer system. <br/>
-        /// Program Groups are implemented as file folders in Win32. <br/>
-        /// Full path names should be provided. <br/>
-        /// Example: f:\WINNT\Profiles\a-kevhu.000\ Start Menu\Programs\Accessories\WordPad.Lnk <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
+        /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
-        public String Name { get; set; }
+        public Boolean OwnerPermissions { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        /// The full pathname of the file or directory <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Status { get; set; }
+        public String Path { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
     }
 
     /// <summary>
@@ -543,18 +1008,30 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_LoadOrderGroup class represents a group of system services that define execution dependencies. <br/>
-    /// The services must be initiated in the order specified by the Load Order Group, as the services are dependent on each other. <br/>
-    /// These dependent services require the presence of the antecedent services in order to function correctly. <br/>
+    /// The Win32_LogicalProgramGroupDirectory class represents an association between logical program groups (groupings in the start menu) and the file directories in which they are stored. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
-    /// uuid: {8502C4D4-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    /// uuid: {F25FE467-783E-11d2-90BF-0060081A46FD} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_LoadOrderGroup
+    public class Win32_LogicalProgramGroupDirectory
+    {
+    }
+
+    /// <summary>
+    /// The Win32_LogicalProgramGroupItem class represents an element contained by a Win32_ProgramGroup, that is not itself another Win32_ProgramGroup. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {86E30E82-7DB2-11d2-90CB-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalProgramGroupItem
     {
         /// <summary>
         /// The Caption property is a short textual description (one-line string) of the object. <br/>
@@ -571,23 +1048,6 @@ namespace CIMV2
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The DriverEnabled property indicates whether this load order group can include drivers along with system services. <br/>
-        /// Values:  TRUE or FALSE. <br/>
-        /// If TRUE, the load order group can includedrivers. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DriverEnabled { get; set; }
-        /// <summary>
-        /// The GroupOrder property indicates the sequence in which this group of services will be loaded onto the operating system. <br/>
-        /// Example: 2 <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 GroupOrder { get; set; }
-        /// <summary>
         /// The InstallDate property is datetime value indicating when the object was installed. <br/>
         /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
@@ -596,8 +1056,10 @@ namespace CIMV2
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The Name property indicates the name of the load order group. <br/>
-        /// Example: Primary disk <br/>
+        /// The inherited Name property serves as key of a Win32_LogicalProgramGroupItem instance within a computer system. <br/>
+        /// Program Groups are implemented as file folders in Win32. <br/>
+        /// Full path names should be provided. <br/>
+        /// Example: f:\WINNT\Profiles\a-kevhu.000\ Start Menu\Programs\Accessories\WordPad.Lnk <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -620,6 +1082,168 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public String Status { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_LogicalProgramGroupItemDataFile class represents an association between the program group items of the start menu and the files in which they are stored. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {08FFAD62-8050-11d2-90CE-0060081A46FD} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalProgramGroupItemDataFile
+    {
+    }
+
+    /// <summary>
+    /// Association between the security settings of a share and one member of its DACL <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C593-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalShareAccess
+    {
+        /// <summary>
+        /// Bit flags specifying what permissions are affected <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AccessMask { get; set; }
+        /// <summary>
+        /// The guid of the type of object this object inherits from <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidInheritedObjectType { get; set; }
+        /// <summary>
+        /// The guid of the type of object the security settings are applied to <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidObjectType { get; set; }
+        /// <summary>
+        /// Bit flags specifying how the access rights are inherited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Inheritance { get; set; }
+        /// <summary>
+        /// The type of access specified for the trustee <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Type { get; set; }
+    }
+
+    /// <summary>
+    /// Association between the security settings of a share and one member of its SACL. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C594-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalShareAuditing
+    {
+        /// <summary>
+        /// Bit flags specifying what activities are audited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AuditedAccessMask { get; set; }
+        /// <summary>
+        /// The guid of the type of object this object inherits from <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidInheritedObjectType { get; set; }
+        /// <summary>
+        /// The guid of the type of object the security settings are applied to <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String GuidObjectType { get; set; }
+        /// <summary>
+        /// Bit flags specifying how the audit policies are inherited <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Inheritance { get; set; }
+        /// <summary>
+        /// The type of access specified for the trustee <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Type { get; set; }
+    }
+
+    /// <summary>
+    /// security settings for a logical file <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C591-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_LogicalShareSecuritySetting
+    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// Inheritance-related flags. <br/>
+        /// See SECURITY_DESCRIPTOR_CONTROL <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ControlFlags { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The name of the share <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
     }
 
     /// <summary>
@@ -726,224 +1350,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// security settings for a logical file <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C58C-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalFileSecuritySetting
-    {
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// Inheritance-related flags. <br/>
-        /// See SECURITY_DESCRIPTOR_CONTROL <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ControlFlags { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// Indicates whether the caller has Owner permissions to the object. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OwnerPermissions { get; set; }
-        /// <summary>
-        /// The full pathname of the file or directory <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Path { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-    }
-
-    /// <summary>
-    /// security settings for a logical file <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C591-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalShareSecuritySetting
-    {
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// Inheritance-related flags. <br/>
-        /// See SECURITY_DESCRIPTOR_CONTROL <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ControlFlags { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The name of the share <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-    }
-
-    /// <summary>
-    /// Describes an instance in time as returned by Win32ClockProvider. <br/>
-    /// When a query is submitted to the Win32LocalClockProvider, the results are returned as Win32_LocalTime objects with times matching the query. <br/>
-    /// These are returned as part of __InstanceModificationEvents <br/>
-    ///  <br/>
-    /// provider: Win32ClockProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LocalTime
-    {
-        /// <summary>
-        /// The current matching day (1-31) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Day { get; set; }
-        /// <summary>
-        /// The current matching day of the current week (0-6, Sunday being 0) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 DayOfWeek { get; set; }
-        /// <summary>
-        /// The current hour of the current day (0-23) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Hour { get; set; }
-        /// <summary>
-        /// (currently not used) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Milliseconds { get; set; }
-        /// <summary>
-        /// The current minute (0-59) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Minute { get; set; }
-        /// <summary>
-        /// The current matching month (1-12) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Month { get; set; }
-        /// <summary>
-        /// The current quarter of the current year (1-4) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Quarter { get; set; }
-        /// <summary>
-        /// The current second of the current minute (0-59) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Second { get; set; }
-        /// <summary>
-        /// The current week in the current month (1-6) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 WeekInMonth { get; set; }
-        /// <summary>
-        /// The current matching year (4 digits) <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Year { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_LogicalDiskToPartition class represents an association between a logical disk drive and the disk partition it resides on. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FB-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalDiskToPartition
-    {
-        /// <summary>
-        /// EndingAddress indicates where in lower level storage, the higher level extent ends. <br/>
-        /// This property is useful when mapping non-contiguous extents into a higher level grouping. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 EndingAddress { get; set; }
-        /// <summary>
-        /// StartingAddress indicates where in lower level storage, the higher level extent begins. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 StartingAddress { get; set; }
-    }
-
-    /// <summary>
     /// The Win32_LogonSessionMappedDisk class represents an association between a logon session and the mapped logical disks defined within the session. <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -953,122 +1359,6 @@ namespace CIMV2
     /// </summary>
     public class Win32_LogonSessionMappedDisk
     {
-    }
-
-    /// <summary>
-    /// The Win32_LoadOrderGroupServiceDependencies class represents an association between a base service and a load order group that the service depends on to start running. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4FC-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoadOrderGroupServiceDependencies
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LoggedOnUser association represents the relationship between a session and the user account using that session. <br/>
-    /// Although the association will usually be one to one - users are possible that involve more than one session. <br/>
-    /// At the termination of the session the association instance is deleted. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8BB5B3EC-E1F7-4b39-942A-605D5F55789A} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoggedOnUser
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalProgramGroupItemDataFile class represents an association between the program group items of the start menu and the files in which they are stored. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {08FFAD62-8050-11d2-90CE-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalProgramGroupItemDataFile
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalProgramGroupDirectory class represents an association between logical program groups (groupings in the start menu) and the file directories in which they are stored. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {F25FE467-783E-11d2-90BF-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalProgramGroupDirectory
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LoadOrderGroupServiceMembers class represents an association between a load order group and a base service. <br/>
-    /// Note: Win32_SystemDriver objects are members of that load order group. <br/>
-    /// Not all services are members of groups, and not all groups have services within them. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4EF-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LoadOrderGroupServiceMembers
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LogicalDiskRootDirectory class represents an association between a logical disk and its directory structure. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {F25FE468-783E-11d2-90BF-0060081A46FD} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalDiskRootDirectory
-    {
-    }
-
-    /// <summary>
-    /// The Win32_LUIDandAttributes abstract class represents a locally unique identifier (LUID) of a privilege and a set of bit flags that indicate the attributes of the privilege, such as whether the privilege is enabled. <br/>
-    /// Each LUID and attributes structure defines the availability of a security privilege for the process. <br/>
-    /// For more information, see LUID_AND_ATTRIBUTES. <br/>
-    ///  <br/>
-    /// uuid: {63021F4B-F377-4a88-ABD1-835D14142142} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LUIDandAttributes
-    {
-        /// <summary>
-        /// Specifies attributes of the LUID. <br/>
-        /// This value contains two 32-bit flags. <br/>
-        /// Its meaning is dependent on the definition and use of the LUIDSpecifies attributes of the LUID. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Attributes { get; set; }
-        /// <summary>
-        /// Specifies a LUID value. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_LUID <br/>
-        ///  <br/>
-        /// </summary>
-        public Object LUID { get; set; }
     }
 
     /// <summary>
@@ -1098,320 +1388,30 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The LaunchCondition class is used by the LaunchConditions action. <br/>
-    /// It contains a list of conditions, all of which must be satisfied for the action to succeed. <br/>
+    /// The Win32_LUIDandAttributes abstract class represents a locally unique identifier (LUID) of a privilege and a set of bit flags that indicate the attributes of the privilege, such as whether the privilege is enabled. <br/>
+    /// Each LUID and attributes structure defines the availability of a security privilege for the process. <br/>
+    /// For more information, see LUID_AND_ATTRIBUTES. <br/>
     ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {E79C9694-DB32-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LaunchCondition
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// A condition that must evaluate to TRUE for installation to begin. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Condition { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// Association between the security settings of a file/directory and its owner <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C58E-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    /// uuid: {63021F4B-F377-4a88-ABD1-835D14142142} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_LogicalFileOwner
-    {
-    }
-
-    /// <summary>
-    /// Association between the security settings of a file/directory and its group <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C58F-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalFileGroup
-    {
-    }
-
-    /// <summary>
-    /// Association between the security settings of a file/directory one member of its SACL. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {FCC86599-DB20-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalFileAuditing
+    public class Win32_LUIDandAttributes
     {
         /// <summary>
-        /// Bit flags specifying what activities are audited <br/>
+        /// Specifies attributes of the LUID. <br/>
+        /// This value contains two 32-bit flags. <br/>
+        /// Its meaning is dependent on the definition and use of the LUIDSpecifies attributes of the LUID. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 AuditedAccessMask { get; set; }
+        public UInt32 Attributes { get; set; }
         /// <summary>
-        /// The guid of the type of object this object inherits from <br/>
+        /// Specifies a LUID value. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: object:Win32_LUID <br/>
         ///  <br/>
         /// </summary>
-        public String GuidInheritedObjectType { get; set; }
-        /// <summary>
-        /// The guid of the type of object the security settings are applied to <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidObjectType { get; set; }
-        /// <summary>
-        /// Bit flags specifying how the audit policies are inherited <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Inheritance { get; set; }
-        /// <summary>
-        /// The type of access specified for the trustee <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Type { get; set; }
-    }
-
-    /// <summary>
-    /// Association between the security settings of a share and one member of its SACL. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C594-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalShareAuditing
-    {
-        /// <summary>
-        /// Bit flags specifying what activities are audited <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AuditedAccessMask { get; set; }
-        /// <summary>
-        /// The guid of the type of object this object inherits from <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidInheritedObjectType { get; set; }
-        /// <summary>
-        /// The guid of the type of object the security settings are applied to <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidObjectType { get; set; }
-        /// <summary>
-        /// Bit flags specifying how the audit policies are inherited <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Inheritance { get; set; }
-        /// <summary>
-        /// The type of access specified for the trustee <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Type { get; set; }
-    }
-
-    /// <summary>
-    /// Association between the security settings of a file/directory and one member of its DACL <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C590-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalFileAccess
-    {
-        /// <summary>
-        /// Bit flags specifying what permissions are affected <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AccessMask { get; set; }
-        /// <summary>
-        /// The guid of the type of object this object inherits from <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidInheritedObjectType { get; set; }
-        /// <summary>
-        /// The guid of the type of object the security settings are applied to <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidObjectType { get; set; }
-        /// <summary>
-        /// Bit flags specifying how the access rights are inherited <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Inheritance { get; set; }
-        /// <summary>
-        /// The type of access specified for the trustee <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Type { get; set; }
-    }
-
-    /// <summary>
-    /// Association between the security settings of a share and one member of its DACL <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C593-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_LogicalShareAccess
-    {
-        /// <summary>
-        /// Bit flags specifying what permissions are affected <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AccessMask { get; set; }
-        /// <summary>
-        /// The guid of the type of object this object inherits from <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidInheritedObjectType { get; set; }
-        /// <summary>
-        /// The guid of the type of object the security settings are applied to <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String GuidObjectType { get; set; }
-        /// <summary>
-        /// Bit flags specifying how the access rights are inherited <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Inheritance { get; set; }
-        /// <summary>
-        /// The type of access specified for the trustee <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Type { get; set; }
+        public Object LUID { get; set; }
     }
 }

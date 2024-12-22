@@ -5,105 +5,6 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The Win32_ApplicationService class represents any installed or advertised components or applications available on the system. <br/>
-    /// Instances of this class include all properly installed and instrumented executables. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {CC78410E-E3D1-11d2-8601-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ApplicationService
-    {
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
-        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CreationClassName { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The Name property uniquely identifies the service and provides an indication of the functionality that is managed. <br/>
-        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// Started is a boolean indicating whether the service has been started (TRUE), or stopped (FALSE). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Started { get; set; }
-        /// <summary>
-        /// StartMode is a string value indicating whether the Service is automatically started by a System, Operating System, etc. <br/>
-        /// or only started upon request. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String StartMode { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The scoping System&apos;s CreationClassName. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.CreationClassName <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemCreationClassName { get; set; }
-        /// <summary>
-        /// The name of the system that hosts this service <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_System.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String SystemName { get; set; }
-    }
-
-    /// <summary>
     /// The Win32_Account class contains information about user accounts and group accounts known to the Win32 system. <br/>
     /// User or group names recognized by a Windows NT domain are descendents (or members) of this class. <br/>
     /// The Win32_Account class is not included in a default hardware inventory operation. <br/>
@@ -209,111 +110,16 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// This class represents the settings for the autochk operation for a disk. <br/>
-    /// The setting applies to all disks on the computer system. <br/>
-    /// Note that the settings are applicable only to instances of logical disk that represent physical disks on the machine and not to mapped drives. <br/>
+    /// The SID of an account <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
     ///  <br/>
-    /// provider: CIMWin32 <br/>
+    /// provider: SECRCW32 <br/>
+    ///  <br/>
+    /// uuid: {8502C582-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_AutochkSetting
-    {
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: SettingId <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-        /// <summary>
-        /// The UserInputDelay property indicates the time to wait, in seconds, for the user to hit any key before it begins to autochk the disks. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: seconds <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 UserInputDelay { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_AssociatedProcessorMemory class represents an association between a processor and its cache memory. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {074737F0-ACBC-11d2-ABF6-00805F538618} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_AssociatedProcessorMemory
-    {
-        /// <summary>
-        /// Speed of the bus, in MHertz, between the processor and memory. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: megahertz <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 BusSpeed { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_AllocatedResource class represents an association between logical devices and system resources. <br/>
-    /// This class is used to discover which resources, such as IRQs, or DMA channels, are in-use by a specific device. <br/>
-    /// This class has been deprecated in favor of the Win32_PNPAllocatedResource class. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C50D-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_AllocatedResource
-    {
-    }
-
-    /// <summary>
-    /// The ApplicationCommandLine association allows one to  to identify connection between an application and it&apos;s command line access point. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {C170CF06-DB34-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ApplicationCommandLine
-    {
-    }
-
-    /// <summary>
-    /// The ActiveRoute class assoctiates the current IP4 Route being used with the persisted IP route table. <br/>
-    ///  <br/>
-    /// provider: RouteProvider <br/>
-    ///  <br/>
-    /// uuid: {7BA1437A-C51C-421B-A359-2906AF2BDD9F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ActiveRoute
+    public class Win32_AccountSID
     {
     }
 
@@ -378,20 +184,6 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The SID of an account <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: SECRCW32 <br/>
-    ///  <br/>
-    /// uuid: {8502C582-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_AccountSID
-    {
-    }
-
-    /// <summary>
     /// This association relates an MSI action with any locational information it requires. <br/>
     /// This location is in the form of a file and/or directory specification. <br/>
     ///  <br/>
@@ -402,5 +194,213 @@ namespace CIMV2
     /// </summary>
     public class Win32_ActionCheck
     {
+    }
+
+    /// <summary>
+    /// The ActiveRoute class assoctiates the current IP4 Route being used with the persisted IP route table. <br/>
+    ///  <br/>
+    /// provider: RouteProvider <br/>
+    ///  <br/>
+    /// uuid: {7BA1437A-C51C-421B-A359-2906AF2BDD9F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ActiveRoute
+    {
+    }
+
+    /// <summary>
+    /// The Win32_AllocatedResource class represents an association between logical devices and system resources. <br/>
+    /// This class is used to discover which resources, such as IRQs, or DMA channels, are in-use by a specific device. <br/>
+    /// This class has been deprecated in favor of the Win32_PNPAllocatedResource class. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C50D-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_AllocatedResource
+    {
+    }
+
+    /// <summary>
+    /// The ApplicationCommandLine association allows one to  to identify connection between an application and it&apos;s command line access point. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {C170CF06-DB34-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ApplicationCommandLine
+    {
+    }
+
+    /// <summary>
+    /// The Win32_ApplicationService class represents any installed or advertised components or applications available on the system. <br/>
+    /// Instances of this class include all properly installed and instrumented executables. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {CC78410E-E3D1-11d2-8601-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ApplicationService
+    {
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. <br/>
+        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CreationClassName { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Name property uniquely identifies the service and provides an indication of the functionality that is managed. <br/>
+        /// This functionality is described in more detail in the object&apos;s Description property. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// Started is a boolean indicating whether the service has been started (TRUE), or stopped (FALSE). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Started { get; set; }
+        /// <summary>
+        /// StartMode is a string value indicating whether the Service is automatically started by a System, Operating System, etc. <br/>
+        /// or only started upon request. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String StartMode { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// The scoping System&apos;s CreationClassName. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.CreationClassName <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemCreationClassName { get; set; }
+        /// <summary>
+        /// The name of the system that hosts this service <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_System.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String SystemName { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_AssociatedProcessorMemory class represents an association between a processor and its cache memory. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {074737F0-ACBC-11d2-ABF6-00805F538618} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_AssociatedProcessorMemory
+    {
+        /// <summary>
+        /// Speed of the bus, in MHertz, between the processor and memory. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: megahertz <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 BusSpeed { get; set; }
+    }
+
+    /// <summary>
+    /// This class represents the settings for the autochk operation for a disk. <br/>
+    /// The setting applies to all disks on the computer system. <br/>
+    /// Note that the settings are applicable only to instances of logical disk that represent physical disks on the machine and not to mapped drives. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_AutochkSetting
+    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: SettingId <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+        /// <summary>
+        /// The UserInputDelay property indicates the time to wait, in seconds, for the user to hit any key before it begins to autochk the disks. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: seconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 UserInputDelay { get; set; }
     }
 }

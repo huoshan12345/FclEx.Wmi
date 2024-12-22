@@ -5,240 +5,495 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The Win32_NTDomain class represents a NT Domain. <br/>
-    /// A domain is a single security boundary of a Windows NT computer network. <br/>
-    /// Active Directory is made up of one or more domains. <br/>
-    /// On a standalone workstation, the domain is the computer itself. <br/>
-    /// A domain can span more than one physical location. <br/>
-    /// Every domain has its own security policies and security relationships with other domains. <br/>
-    /// When multiple domains are connected by trust relationships and share a common schema, configuration, and global catalog, you have a domain tree. <br/>
-    /// Multiple domain trees can be connected together into a forest. <br/>
-    /// All the domains in a forest also share a common schema, configuration, and global catalog. <br/>
+    /// The Win32_NamedJobObject class represents a kernel object that is used to group processes for the sake of controlling the life and resources of the processes within the job object. <br/>
+    /// Only the job objects that have been named are instrumented. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
+    /// provider: NamedJobObjectProv <br/>
     ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: 78F4FA18-EE46-4D4C-AB9B-8CC0D42B7038 <br/>
+    /// uuid: {7552EF7F-7CC8-4022-9049-3B5E1B4B3852} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_NTDomain
+    public class Win32_NamedJobObject
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        /// The UIRestrictions property indicates the restrictions on the job regarding the UI. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 BasicUIRestrictions { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) of the CollectionOfMSEs object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The ClientSiteName property indicates the name of the site where the domain controller is configured to be in. <br/>
-        /// This value may be NULL if the site that the computer named by ComputerName cannot be found (for example, if the DS administrator has not associated the subnet that the computer is in with a valid site). <br/>
+        /// This property indicates a number that identifies the job object. <br/>
+        /// As a Kernel object job object names are case sensitive. <br/>
+        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
+        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: CollectionId <br/>
+        ///  <br/>
+        /// </summary>
+        public String CollectionID { get; set; }
+        /// <summary>
+        /// A textual description of the CollectionOfMSEs object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String ClientSiteName { get; set; }
+        public String Description { get; set; }
+    }
+
+    /// <summary>
+    /// This class represents the IO accounting information for a job object. <br/>
+    ///  <br/>
+    /// provider: NamedJobObjectActgInfoProv <br/>
+    ///  <br/>
+    /// uuid: {486F2A44-D0BF-46c1-9543-68EF5D37F1F9} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectActgInfo
+    {
         /// <summary>
-        /// The CreationClassName property indicates the name of the class or the subclass used in the creation of an instance. <br/>
-        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
+        /// Specifies the total number of processes currently associated with the job. <br/>
+        /// When a process is associated with a job, but the association fails because of a limit violation, this value is temporarily incremented. <br/>
+        /// When the terminated process exits and all references to the process are released, this value is decremented. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ActiveProcesses { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) for the statistic or metric. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String CreationClassName { get; set; }
+        public String Caption { get; set; }
         /// <summary>
-        /// The DcSiteName property indicates the name of the site where the domain controller is located. <br/>
-        /// This value may be NULL if the domain controller is not in a site (for example, the domain controller is a Windows NT 4.0 domain controller). <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DcSiteName { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
+        /// A textual description of the statistic or metric. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The DnsForestName property indicates the name of the domain at the root of the DS tree. <br/>
-        /// The DNS-style name (for example, microsoft.com.) will be returned if available. <br/>
+        /// The Name property defines the label by which the statistic or metric is known. <br/>
+        /// When subclassed, the property can be overridden to be a Key property. <br/>
+        /// As a Kernel object job object names are case sensitive. <br/>
+        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
+        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
-        /// </summary>
-        public String DnsForestName { get; set; }
-        /// <summary>
-        /// The DomainControllerAddress property indicates the address of the discovered domain controller. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DomainControllerAddress { get; set; }
-        /// <summary>
-        /// Indicates the type of address specified in DomainControllerAddress. <br/>
-        /// The following valid values are presented in order, DS_INET_ADDRESS = Address is a string IP address (for example, \\157.55.94.74) of the domain controller. <br/>
-        /// DS_NETBIOS_ADDRESS = The NetBIOS name (for example, \\phoenix) of the domain controller. <br/>
-        ///  <br/>
-        /// cimtype: sint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public int DomainControllerAddressType { get; set; }
-        /// <summary>
-        /// The DomainControllerName property indicates the computer name of the discovered domain controller. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DomainControllerName { get; set; }
-        /// <summary>
-        /// The GUID of the domain. <br/>
-        /// This member will be zero if the domain controller does not have a Domain GUID (for example, the domain controller is not a Windows 2000 domain controller). <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DomainGuid { get; set; }
-        /// <summary>
-        /// The DomainName property indicates the name of the domain. <br/>
-        /// The DNS-style name (for example, microsoft.com.) will be returned if available. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DomainName { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller is a directory service server for the domain. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSDirectoryServiceFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the Domain Controller Name is in DNS format (for example, www.mynode.com or 135.5.33.19). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSDnsControllerFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the DomainName is in DNS format(for example, www.mynode.com or 135.5.33.19). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSDnsDomainFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the DnsForestName is in DNS format (for example, www.mynode.com or 135.5.33.19). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSDnsForestFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller is a Global Catalog (GC) server for DnsForestName. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSGlobalCatalogFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller is a Kerberos Key Distribution Center for the domain. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSKerberosDistributionCenterFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller is the Primary Domain Controller (PDC) of the domain. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSPrimaryDomainControllerFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller is running the Windows Time service for the domain. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSTimeServiceFlag { get; set; }
-        /// <summary>
-        /// Directory Service (DS) flag indicating that the domain controller hosts a write able DS or Security Accounts Manager (SAM). <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DSWritableFlag { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
+        /// override: Name <br/>
         ///  <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The CIM_System object and its derivatives are top level objects of CIM. <br/>
-        /// They provide the scope for numerous components. <br/>
-        /// Having unique system keys is required. <br/>
-        /// A heuristic can be defined in individual system subclasses to attempt to always generate the same system name key. <br/>
-        /// The NameFormat property identifies how the system name was generated, using the subclass&apos; heuristic. <br/>
+        /// Specifies the number of I/O operations performed, other than read and write operations, by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
-        public String NameFormat { get; set; }
+        public UInt64 OtherOperationCount { get; set; }
         /// <summary>
-        /// A string that provides information on how the primary system owner can be reached (e.g. <br/>
-        /// phone number, email address, ...). <br/>
+        /// Specifies the number of bytes transferred during operations, other than read and write operations, by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
-        public String PrimaryOwnerContact { get; set; }
+        public UInt64 OtherTransferCount { get; set; }
         /// <summary>
-        /// The name of the primary system owner. <br/>
+        /// Specifies the peak memory in kilobytes usage of all processes associated with the job. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: kilobytes <br/>
         ///  <br/>
         /// </summary>
-        public String PrimaryOwnerName { get; set; }
+        public UInt32 PeakJobMemoryUsed { get; set; }
         /// <summary>
-        /// An array (bag) of strings that specify the roles this System plays in the IT-environment. <br/>
-        /// Subclasses of System may override this property to define explicit Roles values. <br/>
-        /// Alternately, a Working Group may describe the heuristics, conventions and guidelines for specifying Roles. <br/>
-        /// For example, for an instance of a networking system, the Roles property might contain the string, &apos;Switch&apos; or &apos;Bridge&apos;. <br/>
+        /// Specifies the most process memory in kilobytes used by any process ever associated with the job. <br/>
         ///  <br/>
-        /// cimtype: string <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: kilobytes <br/>
         ///  <br/>
         /// </summary>
-        public String[] Roles { get; set; }
+        public UInt32 PeakProcessMemoryUsed { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        /// Specifies the number of read operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ReadOperationCount { get; set; }
+        /// <summary>
+        /// Specifies the number of bytes read by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ReadTransferCount { get; set; }
+        /// <summary>
+        /// Specifies the total amount of kernel-mode execution time, in 100 nanoseconds, for all active processes associated with the job (as well as all terminated processes no longer associated with the job) since the last call that set a per-job kernel-mode time limit. <br/>
+        /// This property is set to 0 on creation of the job, and each time a per-job kernel-mode time limit is established. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ThisPeriodTotalKernelTime { get; set; }
+        /// <summary>
+        /// Specifies the total amount of user-mode execution time, in 100 nanoseconds, for all active processes associated with the job (as well as all terminated processes no longer associated with the job) since the last call that set a per-job user-mode time limit. <br/>
+        /// This property is set to 0 on creation of the job, and each time a per-job user-mode time limit is established <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 ThisPeriodTotalUserTime { get; set; }
+        /// <summary>
+        /// Specifies the total amount of kernel-mode execution time, in 100 nanoseconds, for all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TotalKernelTime { get; set; }
+        /// <summary>
+        /// Specifies the total number of page faults encountered by all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TotalPageFaultCount { get; set; }
+        /// <summary>
+        /// Specifies the total number of processes associated with the job during its lifetime, including those that have terminated. <br/>
+        /// For example, when a process is associated with a job, but the association fails because of a limit violation, this value is incremented. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TotalProcesses { get; set; }
+        /// <summary>
+        /// Specifies the total number of processes terminated because of a limit violation. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TotalTerminatedProcesses { get; set; }
+        /// <summary>
+        /// Specifies the total amount of user-mode execution time, in 100 nanoseconds, for all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 TotalUserTime { get; set; }
+        /// <summary>
+        /// Specifies the number of write operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 WriteOperationCount { get; set; }
+        /// <summary>
+        /// Specifies the number of bytes written by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 WriteTransferCount { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectLimit association class relates a job object and the job object limit settings for that job. <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {08E31939-FAAB-4a3b-9B10-50151D1B9D24} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectLimit
+    {
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectLimitSetting class represents the limit settings for a job object. <br/>
+    /// The limit settings specify the resources available to the job in accord with how the limit setting flags are set. <br/>
+    ///  <br/>
+    /// provider: NamedJobObjectLimitSettingProv <br/>
+    ///  <br/>
+    /// uuid: {F2D96E32-2A34-475b-878D-B0AE7657519F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectLimitSetting
+    {
+        /// <summary>
+        /// Specifies the active process limit for the job. <br/>
+        /// If you try to associate a process with a job, and this causes the active process count to exceed this limit, the process is terminated and the association fails. <br/>
+        /// Ignored unless LimitFlags specifies Active Process Limit. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ActiveProcessLimit { get; set; }
+        /// <summary>
+        /// Specifies the processor affinity for all processes associated with the job. <br/>
+        /// The affinity of each thread is set to this value, but threads are free to subsequently set their affinity, as long as it is a subset of the specified affinity mask. <br/>
+        /// Processes cannot set their own affinity mask. <br/>
+        /// Ignored unless LimitFlags specifies Limit Affinity. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 Affinity { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String Status { get; set; }
+        public String Caption { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// Specifies the per-job memory limit in kilobytes. <br/>
+        /// It is ignored unless the LimitFlags specifies the Limit Job Memory value. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 JobMemoryLimit { get; set; }
+        /// <summary>
+        /// The LimitFlags property indicates the limits that are in effect. <br/>
+        /// One or more of the following limits can be in effect: <br/>
+        /// Limit Working Set - Causes all processes associated with the job to use the same minimum and maximum working set sizes. <br/>
+        /// Limit Process Time - Establishes a user-mode execution time limit for each currently active process and for all future processes associated with the job. <br/>
+        /// Limit Job Time - Establishes a user-mode execution time limit for the job. <br/>
+        /// This flag cannot be used with Limit Preserve Job Time. <br/>
+        /// Active Process Limit - Establishes a maximum number of simultaneously active processes associated with the job. <br/>
+        /// Limit Affinity - Causes all processes associated with the job to use the same processor affinity. <br/>
+        /// Limit Priority Class - Causes all processes associated with the job to use the same priority class. <br/>
+        /// Limit Preserve Job Time - Preserves any job time limits you previously set. <br/>
+        /// As long as this flag is set, you can establish a per-job time limit once, then alter other limits in subsequent calls. <br/>
+        /// This flag cannot be used with Limit Job Time. <br/>
+        /// Limit Scheduling Class - Causes all processes in the job to use the same scheduling class. <br/>
+        /// Limit Process Memory - Causes all processes associated with the job to limit their committed memory. <br/>
+        /// When a process attempts to commit memory that would exceed the per-process limit, it fails. <br/>
+        /// If the job object is associated with a completion port, a JOB_OBJECT_MSG_PROCESS_MEMORY_LIMIT message is sent to the completion port. <br/>
+        /// Limit Job Memory - Causes all processes associated with the job to limit the job-wide sum of their committed memory. <br/>
+        /// When a process attempts to commit memory that would exceed the job-wide limit, it fails. <br/>
+        /// If the job object is associated with a completion port, a JOB_OBJECT_MSG_JOB_MEMORY_LIMIT message is sent to the completion port. <br/>
+        /// Limit Die On Unhandled Exception - Forces a call to the SetErrorMode function with the SEM_NOGPFAULTERRORBOX flag for each process associated with the job. <br/>
+        /// Limit Breakaway OK - If any process associated with the job creates a child process using the CREATE_BREAKAWAY_FROM_JOB flag while this limit is in effect, the child process is not associated with the job. <br/>
+        /// Silent Breakaway OK - Allows any process associated with the job to create child processes that are not associated with the job. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 LimitFlags { get; set; }
+        /// <summary>
+        /// Specifies the maximum working set size for all processes associated with the job. <br/>
+        /// Ignored unless LimitFlags specifies Limit Working Set <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 MaximumWorkingSetSize { get; set; }
+        /// <summary>
+        /// Specifies the minimum working set size for all processes associated with the job. <br/>
+        /// Ignored unless LimitFlags specifies Limit Working Set <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 MinimumWorkingSetSize { get; set; }
+        /// <summary>
+        /// Specifies the per-job user-mode execution time limit, in 100 nanoseconds. <br/>
+        /// The system adds the current time of the processes associated with the job to this limit. <br/>
+        /// For example, if you set this limit to 1 minute, and the job has a process that has accumulated 5 minutes of user-mode time, the limit actually enforced is 6 minutes. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 PerJobUserTimeLimit { get; set; }
+        /// <summary>
+        /// Specifies the per-process user-mode execution time limit, in 100 nanoseconds. <br/>
+        /// It is ignored unless LimitFlags specifies Limit Process Time.The system periodically checks to determine whether each process associated with the job has accumulated more user-mode time than the set limit. <br/>
+        /// If it has, the process is terminated. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: 100 nanoseconds <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 PerProcessUserTimeLimit { get; set; }
+        /// <summary>
+        /// Specifies the priority class for all processes associated with the job. <br/>
+        /// Processes and threads cannot modify their priority class. <br/>
+        /// Ignored unless LimitFlags specifies Limit Priority. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PriorityClass { get; set; }
+        /// <summary>
+        /// Specifies the per-process memory limit in kilobytes. <br/>
+        /// It is ignored unless the LimitFlags specifies the Limit Process Memory. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// units: kilobytes <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ProcessMemoryLimit { get; set; }
+        /// <summary>
+        /// Specifies the scheduling class for all processes associated with the job. <br/>
+        /// The valid values are 0 to 9. <br/>
+        /// Use 0 for the least favorable scheduling class relative to other threads, and 9 for the most favorable scheduling class relative to other threads. <br/>
+        /// Ignored unless LimitFlags specifies Limit Scheduling Class. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 SchedulingClass { get; set; }
+        /// <summary>
+        /// The identifier by which the job object limit setting instance is known. <br/>
+        /// As a Kernel object job object names are case sensitive. <br/>
+        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
+        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectProcess association class relates a job object and a process contained in the job object. <br/>
+    /// A job can contain multiple processes. <br/>
+    ///  <br/>
+    /// createby: PutInstance <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {486F2A44-D0BF-46c1-9543-68EF5D37F1F9} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectProcess
+    {
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectSecLimit association class relates a job object and the job object security limit settings. <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {08E31939-FAAB-4a3b-9B10-50151D1B9D24} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectSecLimit
+    {
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectSecLimitSetting class represents the security limit settings for a job object. <br/>
+    /// For more information about job object security limit settings, see the Job Object Security and Access Rights topic in the Platform SDK Base Services documentation. <br/>
+    ///  <br/>
+    /// provider: NamedJobObjectSecLimitSettingProv <br/>
+    ///  <br/>
+    /// uuid: {F2D96E32-2A34-475b-878D-B0AE7657519F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectSecLimitSetting
+    {
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// This property specifies the privileges to delete from the token, if SecurityLimitFlags is Filter Tokens. <br/>
+        /// This property can be NULL if you do not want to delete any privileges. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_TokenPrivileges <br/>
+        ///  <br/>
+        /// </summary>
+        public Object PrivilegesToDelete { get; set; }
+        /// <summary>
+        /// This property specifies the deny-only SIDs that will be added to the access token, if SecurityLimitFlags is Filter Tokens. <br/>
+        /// This property can be NULL if you do not want to specify any deny-only SIDs. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_TokenGroups <br/>
+        ///  <br/>
+        /// </summary>
+        public Object RestrictedSIDs { get; set; }
+        /// <summary>
+        /// Specifies the security limitations for the job.A value of No Administrator prevents any process in the job from using a token that specifies the local administrators group.A value of Rescricted Token prevents any process in the job from using a token that was not created with the CreateRestrictedToken function.A value of Specific Token forces processes in the job to run under.A value Filter Tokens of applies a filter to the token when a process impersonates a client. <br/>
+        /// Requires at least one of the following properties to be set - SidsToDisable, PrivilegesToDelete, or RestrictedSids. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 SecurityLimitFlags { get; set; }
+        /// <summary>
+        /// The identifier by which the job object security limit setting instance is known. <br/>
+        /// As a Kernel object job object names are case sensitive. <br/>
+        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
+        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+        /// <summary>
+        /// This property specifies the SIDs to disable for access checking, if SecurityLimitFlagss is Filter Tokens.This property can be NULL if you do not want to disable any SIDs. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_TokenGroups <br/>
+        ///  <br/>
+        /// </summary>
+        public Object SIDsToDisable { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_NamedJobObjectStatistics association class relates a job object instance and the I/O accounting information instance containing accounting information for the job. <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: {C741E1B8-2F7F-4f2b-9A0C-57FCFD89F5C8} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NamedJobObjectStatistics
+    {
     }
 
     /// <summary>
@@ -655,823 +910,6 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public DateTime TimeOfLastReset { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_NetworkConnection class represents an active network connection in a Win32 environment. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4CD-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NetworkConnection
-    {
-        /// <summary>
-        /// The AccessMask property is a bit array representing the access rights as set remotely on the network share held by the user or group on whose behalf the instance is returned. <br/>
-        /// This property is only supported under Windows NT and Windows 2000. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// schema: Win32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AccessMask { get; set; }
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The Comment property contains a comment supplied by the network provider. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Comment { get; set; }
-        /// <summary>
-        /// The ConnectionState property indicates the current state of the network connection. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ConnectionState { get; set; }
-        /// <summary>
-        /// The ConnectionType property indicates the persistence type of the connection used for connecting to the network. <br/>
-        /// Example: Permanent. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ConnectionType { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The DisplayType property indicates how the network object should be displayed in a network browsing user interface. <br/>
-        /// Example: Generic. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DisplayType { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The LocalName property indicates the local name of the connected network device. <br/>
-        /// Example: c:\public. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LocalName { get; set; }
-        /// <summary>
-        /// The Name property indicates the name of the current network connection. <br/>
-        /// It is the combination of the value in the RemoteName property and the value in the LocalName property. <br/>
-        /// Example: \\NTRELEASE (c:\public). <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The Persistent property determines whether this connection will be reconnected automatically by the operating system on the next logon. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the network connection will be automatically connected. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Persistent { get; set; }
-        /// <summary>
-        /// The ProviderName property contains the name of the provider that owns the resource. <br/>
-        /// This property can be NULL if the provider name is unknown. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ProviderName { get; set; }
-        /// <summary>
-        /// The RemoteName property contains the remote network resource name for a network resource. <br/>
-        /// For a current or persistent connection, RemoteName contains the network name associated with the name of the value in the LocalName property. <br/>
-        /// The name in RemoteName must follow the network provider&apos;s naming conventions. <br/>
-        /// Example: \\NTRELEASE. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String RemoteName { get; set; }
-        /// <summary>
-        /// The RemotePath property contains the full path to the network resource. <br/>
-        /// Example: \\infosrv1\public <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String RemotePath { get; set; }
-        /// <summary>
-        /// The ResourceType property identifies the type of resource to enumerate or connect to. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ResourceType { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The UserName property contains the user name or the default user name used to establish a network connection. <br/>
-        /// Example: SYSTEM. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String UserName { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_NetworkProtocol class represents a protocol and its network characteristics on a Win32 computer system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4D8-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NetworkProtocol
-    {
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The ConnectionlessService property indicates whether the protocol supports connectionless service. <br/>
-        /// A connectionless (datagram) service describes a communications protocol or transport in which data packets are routed independently of each other and may follow different routes and arrive in a different order from that in which they were sent. <br/>
-        /// Conversely, a connection-oriented service provides a virtual circuit through which data packets are received in the same order they were transmitted. <br/>
-        /// If the connection between machines fails, the application is notified. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol uses aconnectionless service. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean ConnectionlessService { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The GuaranteesDelivery property indicates whether the protocol guarantees that all data sent will reach the intended destination. <br/>
-        /// If this flag is FALSE, there is no such guarantee. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports guaranteed delivery of data packets. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean GuaranteesDelivery { get; set; }
-        /// <summary>
-        /// The GuaranteesSequencing property indicates whether the protocol guarantees that data will arrive in the order in which it was sent. <br/>
-        /// Note that this characteristic does not guarantee delivery of the data, only its order. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the order of data sent is guaranteed. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean GuaranteesSequencing { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The MaximumAddressSize property indicates the maximum length of a socket address supported by the protocol. <br/>
-        /// Socket addresses may be items like URLs (www.microsoft.com) or IP addresses (130.215.24.1). <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: characters <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 MaximumAddressSize { get; set; }
-        /// <summary>
-        /// The MaximumMessageSize property indicates the maximum message size supported by the protocol. <br/>
-        /// This is the maximum size of a message that can be sent from or received by the host. <br/>
-        /// For protocols that do not support message framing, the actual maximum size of a message that can be sent to a given address may be less than this value. <br/>
-        /// There are two special values defined for this property: <br/>
-        /// 0  - The protocol is stream-oriented; the concept of message size is not relevant. <br/>
-        /// 1  - The maximum outbound (send) message size is dependent on the underlying network MTU (maximum sized transmission unit) and hence cannot be known until after a socket is bound. <br/>
-        /// Applications should use getsockopt to retrieve the value of SO_MAX_MSG_SIZE after the socket has been bound to a local address. <br/>
-        /// 0xFFFFFFFF - There is no specified maximum message size defined. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: characters <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 MaximumMessageSize { get; set; }
-        /// <summary>
-        /// The MessageOriented property indicates whether the protocol is message-oriented. <br/>
-        /// A message-oriented protocol uses packets of data to transfer information. <br/>
-        /// Conversely, stream-oriented protocols transfer data as a continuous stream of bytes. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol is message oriented. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean MessageOriented { get; set; }
-        /// <summary>
-        /// The MinimumAddressSize property specifies the minimum length of a socket address supported by the protocol. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: characters <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 MinimumAddressSize { get; set; }
-        /// <summary>
-        /// The Name property contains the name for the protocol. <br/>
-        /// Example: TCP/IP <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The PseudoStreamOriented property indicates whether the protocol is a message-oriented protocol that can receive variable-length data packets or streamed data for all receive operations. <br/>
-        /// This optional capability is useful when an application does not want the protocol to frame messages, and requires stream-oriented characteristics. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol is pseudo stream-oriented. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean PseudoStreamOriented { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The SupportsBroadcasting property indicates whether the protocol supports a mechanism for broadcasting messages across the network. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports broadcasting. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsBroadcasting { get; set; }
-        /// <summary>
-        /// The SupportsConnectData property indicates whether the protocol allows data to be connected across the network. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol allows data to be connected. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsConnectData { get; set; }
-        /// <summary>
-        /// The SupportsDisconnectData property indicates whether the protocol allows data to be disconnected across the network. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol allows data to be disconnected. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsDisconnectData { get; set; }
-        /// <summary>
-        /// The SupportsEncryption property indicates whether the protocol supports data encryption. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports data encryption. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsEncryption { get; set; }
-        /// <summary>
-        /// The SupportsExpeditedData property indicates whether the protocol supports expedited data (also known as urgent data) across the network. <br/>
-        /// Expedited data can bypass flow control and receive priority over normal data packets. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports expedited data. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsExpeditedData { get; set; }
-        /// <summary>
-        /// The SupportsFragmentation property indicates whether the protocol supports transmitting the data in fragments. <br/>
-        /// Physical network Maximum Transfer Unit (MTU) is hidden from applications. <br/>
-        /// Each media type has a maximum frame size that cannot be exceeded. <br/>
-        /// The link layer is responsible for discovering the MTU and reporting it to the protocols being used. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports transmitting the data in fragments. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsFragmentation { get; set; }
-        /// <summary>
-        /// The SupportsGracefulClosing property indicates whether the protocol supports two-phase close operations - also known as graceful close operations. <br/>
-        /// If not, the protocol supports only abortive close operations. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports graceful closing of network connections. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsGracefulClosing { get; set; }
-        /// <summary>
-        /// The SupportsGuaranteedBandwidth property indicates whether the protocol has a mechanism to establish and maintain a guaranteed bandwidth. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports a guaranteed bandwidth. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsGuaranteedBandwidth { get; set; }
-        /// <summary>
-        /// The SupportsMulticasting property indicates whether the protocol supports multicasting. <br/>
-        /// Values: TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports multicasting. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsMulticasting { get; set; }
-        /// <summary>
-        /// The SupportsQualityofService property indicates whether the protocol is capable of Quality of Service (QOS) support via the underlying layered service provider or transport carrier. <br/>
-        /// QOS is a collection of components that enable differentiation and preferential treatment for subsets of data transmitted over the network. <br/>
-        /// QOS loosely means subsets of data get higher priority or guaranteed service when traversing a network. <br/>
-        /// Values:TRUE or FALSE. <br/>
-        /// A value of TRUE indicates the protocol supports QOS. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SupportsQualityofService { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_NetworkClient class represents a network client on a Win32 system. <br/>
-    /// Any computer system on the network with a client relationship to the system is a descendent (or member) of this class. <br/>
-    /// Example: A computer running Windows 2000 workstation or Windows 98 that is part of a Windows 2000 domain. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4D5-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NetworkClient
-    {
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The Manufacturer property indicates the name of the manufacturer of the network client running on the Win32 system. <br/>
-        /// Example: Microsoft Corporation <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Manufacturer { get; set; }
-        /// <summary>
-        /// The Name property identifies the network name of thenetwork client running on a Win32 system. <br/>
-        /// Example: Microsoft Windows Network <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-    }
-
-    /// <summary>
-    /// CIM_DataFile is a type of logical file that is a named collection of data or executable code. <br/>
-    /// &lt;B&gt;The behavior of the provider backing this class will be changed in future releases. <br/>
-    /// Currently the provider returns both files on fixed disks as well as files on mapped logical disks. <br/>
-    /// In the future, only instances of files on local fixed disks will be returned.&lt;B&gt; <br/>
-    ///  <br/>
-    /// provider: MS_NT_EVENTLOG_PROVIDER <br/>
-    ///  <br/>
-    /// uuid: {8502C57B-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NTEventlogFile
-    {
-        /// <summary>
-        /// The AccessMask property is a bit array representing the access rights to the given file or directory held by the user or group on whose behalf the instance is returned. <br/>
-        /// This property is only supported under Windows NT and Windows 2000. <br/>
-        /// On Windows 98 and on Windows NT/2000 FAT volumes, FULL_ACCESS is returned, indicating no security has been set on the object. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AccessMask { get; set; }
-        /// <summary>
-        /// The Archive property is a boolean value indicating that the file should be archived. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Archive { get; set; }
-        /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// The Compressed property is a boolean value indicating that the file is compressed. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Compressed { get; set; }
-        /// <summary>
-        /// The CompressionMethod property is a free form string indicating the algorithm or tool used to compress the logical file. <br/>
-        /// If it is not possible (or not desired) to describe the compression scheme (perhaps because it is not known), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is compressed or not, &quot;Compressed&quot; to represent that the file is compressed but either its compression scheme is not known or not disclosed, and &quot;Not Compressed&quot; to represent that the logical file is not compressed. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CompressionMethod { get; set; }
-        /// <summary>
-        /// The CreationClassName property is a string indicating the name of this class. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CreationClassName { get; set; }
-        /// <summary>
-        /// The CreationDate property is a datetime value indicating the file&apos;s creation date. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime CreationDate { get; set; }
-        /// <summary>
-        /// The CSCreationClassName property is a string indicating the class of the computer system. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_FileSystem.CSCreationClassName <br/>
-        ///  <br/>
-        /// </summary>
-        public String CSCreationClassName { get; set; }
-        /// <summary>
-        /// The CSName property is a string indicating the name of the computer system. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_FileSystem.CSName <br/>
-        ///  <br/>
-        /// </summary>
-        public String CSName { get; set; }
-        /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The Drive property is a string representing the drive letter (including colon) of the file. <br/>
-        /// Example: c: <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Drive { get; set; }
-        /// <summary>
-        /// The EightDotThreeFileName property is a string representing the DOS-compatible file name for this file. <br/>
-        /// Example: c:\progra~1 <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String EightDotThreeFileName { get; set; }
-        /// <summary>
-        /// The Encrypted property is a boolean value indicating that the file is encrypted. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Encrypted { get; set; }
-        /// <summary>
-        /// The EncryptionMethod property is a free form string indicating the algorithm or tool used to encrypt the logical file. <br/>
-        /// If it is not possible (or not desired) to describe the encryption scheme (perhaps for security reasons), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is encrypted or not, &quot;Encrypted&quot; to represent that the file is encrypted but either its encryption scheme is not known or not disclosed, and &quot;Not Encrypted&quot; to represent that the logical file is not encrypted. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String EncryptionMethod { get; set; }
-        /// <summary>
-        /// The Extension property is a string representing the file&apos;s extension (without the dot). <br/>
-        /// Example: txt, mof, mdb. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Extension { get; set; }
-        /// <summary>
-        /// The FileName property is a string representing the filename (without extension) of the file. <br/>
-        /// Example: autoexec <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String FileName { get; set; }
-        /// <summary>
-        /// The FileSize property represents the size of the file (in bytes). <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bytes <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 FileSize { get; set; }
-        /// <summary>
-        /// The FileType property is a string descriptor representing the file type (indicated by the Extension property). <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String FileType { get; set; }
-        /// <summary>
-        /// The FSCreationClassName property is a string indicating the class of the file system. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_FileSystem.CreationClassName <br/>
-        ///  <br/>
-        /// </summary>
-        public String FSCreationClassName { get; set; }
-        /// <summary>
-        /// The FSName property is string indicating the name of the file system. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_FileSystem.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String FSName { get; set; }
-        /// <summary>
-        /// The Hidden property is a boolean value indicating if the file is hidden. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Hidden { get; set; }
-        /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime InstallDate { get; set; }
-        /// <summary>
-        /// The InUseCount property is an integer indicating the number of &apos;file opens&apos; that are currently active against the file. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 InUseCount { get; set; }
-        /// <summary>
-        /// The LastAccessed property is a datetime value indicating the time the file was last accessed. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastAccessed { get; set; }
-        /// <summary>
-        /// The LastModified property is a datetime value indicating the time the file was last modified. <br/>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LastModified { get; set; }
-        /// <summary>
-        /// The LogFileName property indicates name of the log file. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LogfileName { get; set; }
-        /// <summary>
-        /// Manufacturer string from version resource if one is present. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Manufacturer { get; set; }
-        /// <summary>
-        /// The MaxFileSize property indicates the maximum size (in bytes) permitted for the log file. <br/>
-        /// If the file exceeds its maximum size, its contents are moved to another file and the primary file is emptied. <br/>
-        /// A value of zero indicates no size limit. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 MaxFileSize { get; set; }
-        /// <summary>
-        /// The Name property is a string representing the inherited name that serves as a key of a logical file instance within a file system. <br/>
-        /// Full path names should be provided. <br/>
-        /// Example: c:\winnt\system\win.ini <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// Number of records in the log file. <br/>
-        /// This value is determined by calling the Win32 function GetNumberOfEventLogRecords. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 NumberOfRecords { get; set; }
-        /// <summary>
-        /// Number of days after which an event can be overwritten. <br/>
-        /// Values are: <br/>
-        /// 0 = Any entry can be overwritten when necessary.1..365 = Events that have been in the log file for one year (365 days) or less can be overwritten.4294967295 = Nothing can be ever be overwritten. <br/>
-        /// There is an interdependence between the OverWriteOutDated property (which is writable) value and the OverWritePolicy property (which is not writable) value. <br/>
-        /// If one changes the OverWriteOutDated property value to 0, the OverWritePolicy property value will be &apos;henNeeded&apos; <br/>
-        /// If one changes the OverWriteOutDated property value to 1-365, the OverWritePolicy property value will be &apos;outDated&apos; <br/>
-        /// If one changes the OverWriteOutDated property value to 4294967295, the OverWritePolicy property value will be &apos;Never&apos;. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// range: 0-365 | 4294967295 <br/>
-        ///  <br/>
-        /// units: days <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 OverwriteOutDated { get; set; }
-        /// <summary>
-        /// Current overwrite policy the Windows NT/Windows 2000 Event Log service employs for this log file. <br/>
-        /// The possible values of the property are: <br/>
-        /// WhenNeeded - This corresponds to OverWriteOutdated = 0. <br/>
-        /// OutDated - This corresponds to OverWriteOutdated of 1 to 365. <br/>
-        /// Never - This corresponds to OverWriteOutdated = 4294967295. <br/>
-        /// There is an interdependence between the OverWriteOutDated property (which is writable) value and the OverWritePolicy property (which is not writable) value. <br/>
-        /// If one changes the OverWriteOutDated property value to 0, the OverWritePolicy property value will be &apos;henNeeded&apos; <br/>
-        /// If one changes the OverWriteOutDated property value to 1-365, the OverWritePolicy property value will be &apos;outDated&apos; <br/>
-        /// If one changes the OverWriteOutDated property value to 4294967295, the OverWritePolicy property value will be &apos;Never&apos;. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String OverWritePolicy { get; set; }
-        /// <summary>
-        /// The Path property is a string representing the path of the file. <br/>
-        /// This includes leading and trailing backslashes. <br/>
-        /// Example: \windows\system\ <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Path { get; set; }
-        /// <summary>
-        /// The Readable property is a boolean value indicating if the file can be read. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Readable { get; set; }
-        /// <summary>
-        /// The Sources property indicates the applications that are registered to log into this log file. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] Sources { get; set; }
-        /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Status { get; set; }
-        /// <summary>
-        /// The system property is a boolean value indicating if the file is a system file. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean System { get; set; }
-        /// <summary>
-        /// Version string from version resource if one is present. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-        /// <summary>
-        /// The Writeable property is a boolean value indicating if the file can be written. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Writeable { get; set; }
     }
 
     /// <summary>
@@ -2073,6 +1511,251 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// The Win32_NetworkAdapterSetting class represents an association between a network adapter and its configuration settings. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C50A-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NetworkAdapterSetting
+    {
+    }
+
+    /// <summary>
+    /// The Win32_NetworkClient class represents a network client on a Win32 system. <br/>
+    /// Any computer system on the network with a client relationship to the system is a descendent (or member) of this class. <br/>
+    /// Example: A computer running Windows 2000 workstation or Windows 98 that is part of a Windows 2000 domain. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4D5-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NetworkClient
+    {
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Manufacturer property indicates the name of the manufacturer of the network client running on the Win32 system. <br/>
+        /// Example: Microsoft Corporation <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Manufacturer { get; set; }
+        /// <summary>
+        /// The Name property identifies the network name of thenetwork client running on a Win32 system. <br/>
+        /// Example: Microsoft Windows Network <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+    }
+
+    /// <summary>
+    /// The Win32_NetworkConnection class represents an active network connection in a Win32 environment. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4CD-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NetworkConnection
+    {
+        /// <summary>
+        /// The AccessMask property is a bit array representing the access rights as set remotely on the network share held by the user or group on whose behalf the instance is returned. <br/>
+        /// This property is only supported under Windows NT and Windows 2000. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// schema: Win32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AccessMask { get; set; }
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The Comment property contains a comment supplied by the network provider. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Comment { get; set; }
+        /// <summary>
+        /// The ConnectionState property indicates the current state of the network connection. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ConnectionState { get; set; }
+        /// <summary>
+        /// The ConnectionType property indicates the persistence type of the connection used for connecting to the network. <br/>
+        /// Example: Permanent. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ConnectionType { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The DisplayType property indicates how the network object should be displayed in a network browsing user interface. <br/>
+        /// Example: Generic. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DisplayType { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The LocalName property indicates the local name of the connected network device. <br/>
+        /// Example: c:\public. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LocalName { get; set; }
+        /// <summary>
+        /// The Name property indicates the name of the current network connection. <br/>
+        /// It is the combination of the value in the RemoteName property and the value in the LocalName property. <br/>
+        /// Example: \\NTRELEASE (c:\public). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// override: Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The Persistent property determines whether this connection will be reconnected automatically by the operating system on the next logon. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the network connection will be automatically connected. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Persistent { get; set; }
+        /// <summary>
+        /// The ProviderName property contains the name of the provider that owns the resource. <br/>
+        /// This property can be NULL if the provider name is unknown. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ProviderName { get; set; }
+        /// <summary>
+        /// The RemoteName property contains the remote network resource name for a network resource. <br/>
+        /// For a current or persistent connection, RemoteName contains the network name associated with the name of the value in the LocalName property. <br/>
+        /// The name in RemoteName must follow the network provider&apos;s naming conventions. <br/>
+        /// Example: \\NTRELEASE. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String RemoteName { get; set; }
+        /// <summary>
+        /// The RemotePath property contains the full path to the network resource. <br/>
+        /// Example: \\infosrv1\public <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String RemotePath { get; set; }
+        /// <summary>
+        /// The ResourceType property identifies the type of resource to enumerate or connect to. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ResourceType { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// The UserName property contains the user name or the default user name used to establish a network connection. <br/>
+        /// Example: SYSTEM. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String UserName { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_NetworkLoginProfile class represents the network login information of a particular user on a Win32 system. <br/>
     /// This includes, but is not limited to, password status, access privileges, disk quotas, and login directory paths. <br/>
     ///  <br/>
@@ -2393,230 +2076,826 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// The Win32_NamedJobObjectLimitSetting class represents the limit settings for a job object. <br/>
-    /// The limit settings specify the resources available to the job in accord with how the limit setting flags are set. <br/>
+    /// The Win32_NetworkProtocol class represents a protocol and its network characteristics on a Win32 computer system. <br/>
     ///  <br/>
-    /// provider: NamedJobObjectLimitSettingProv <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
-    /// uuid: {F2D96E32-2A34-475b-878D-B0AE7657519F} <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {8502C4D8-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_NamedJobObjectLimitSetting
+    public class Win32_NetworkProtocol
     {
         /// <summary>
-        /// Specifies the active process limit for the job. <br/>
-        /// If you try to associate a process with a job, and this causes the active process count to exceed this limit, the process is terminated and the association fails. <br/>
-        /// Ignored unless LimitFlags specifies Active Process Limit. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ActiveProcessLimit { get; set; }
-        /// <summary>
-        /// Specifies the processor affinity for all processes associated with the job. <br/>
-        /// The affinity of each thread is set to this value, but threads are free to subsequently set their affinity, as long as it is a subset of the specified affinity mask. <br/>
-        /// Processes cannot set their own affinity mask. <br/>
-        /// Ignored unless LimitFlags specifies Limit Affinity. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 Affinity { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
+        /// The ConnectionlessService property indicates whether the protocol supports connectionless service. <br/>
+        /// A connectionless (datagram) service describes a communications protocol or transport in which data packets are routed independently of each other and may follow different routes and arrive in a different order from that in which they were sent. <br/>
+        /// Conversely, a connection-oriented service provides a virtual circuit through which data packets are received in the same order they were transmitted. <br/>
+        /// If the connection between machines fails, the application is notified. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol uses aconnectionless service. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean ConnectionlessService { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// Specifies the per-job memory limit in kilobytes. <br/>
-        /// It is ignored unless the LimitFlags specifies the Limit Job Memory value. <br/>
+        /// The GuaranteesDelivery property indicates whether the protocol guarantees that all data sent will reach the intended destination. <br/>
+        /// If this flag is FALSE, there is no such guarantee. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports guaranteed delivery of data packets. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean GuaranteesDelivery { get; set; }
+        /// <summary>
+        /// The GuaranteesSequencing property indicates whether the protocol guarantees that data will arrive in the order in which it was sent. <br/>
+        /// Note that this characteristic does not guarantee delivery of the data, only its order. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the order of data sent is guaranteed. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean GuaranteesSequencing { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The MaximumAddressSize property indicates the maximum length of a socket address supported by the protocol. <br/>
+        /// Socket addresses may be items like URLs (www.microsoft.com) or IP addresses (130.215.24.1). <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
+        /// units: characters <br/>
+        ///  <br/>
         /// </summary>
-        public UInt32 JobMemoryLimit { get; set; }
+        public UInt32 MaximumAddressSize { get; set; }
         /// <summary>
-        /// The LimitFlags property indicates the limits that are in effect. <br/>
-        /// One or more of the following limits can be in effect: <br/>
-        /// Limit Working Set - Causes all processes associated with the job to use the same minimum and maximum working set sizes. <br/>
-        /// Limit Process Time - Establishes a user-mode execution time limit for each currently active process and for all future processes associated with the job. <br/>
-        /// Limit Job Time - Establishes a user-mode execution time limit for the job. <br/>
-        /// This flag cannot be used with Limit Preserve Job Time. <br/>
-        /// Active Process Limit - Establishes a maximum number of simultaneously active processes associated with the job. <br/>
-        /// Limit Affinity - Causes all processes associated with the job to use the same processor affinity. <br/>
-        /// Limit Priority Class - Causes all processes associated with the job to use the same priority class. <br/>
-        /// Limit Preserve Job Time - Preserves any job time limits you previously set. <br/>
-        /// As long as this flag is set, you can establish a per-job time limit once, then alter other limits in subsequent calls. <br/>
-        /// This flag cannot be used with Limit Job Time. <br/>
-        /// Limit Scheduling Class - Causes all processes in the job to use the same scheduling class. <br/>
-        /// Limit Process Memory - Causes all processes associated with the job to limit their committed memory. <br/>
-        /// When a process attempts to commit memory that would exceed the per-process limit, it fails. <br/>
-        /// If the job object is associated with a completion port, a JOB_OBJECT_MSG_PROCESS_MEMORY_LIMIT message is sent to the completion port. <br/>
-        /// Limit Job Memory - Causes all processes associated with the job to limit the job-wide sum of their committed memory. <br/>
-        /// When a process attempts to commit memory that would exceed the job-wide limit, it fails. <br/>
-        /// If the job object is associated with a completion port, a JOB_OBJECT_MSG_JOB_MEMORY_LIMIT message is sent to the completion port. <br/>
-        /// Limit Die On Unhandled Exception - Forces a call to the SetErrorMode function with the SEM_NOGPFAULTERRORBOX flag for each process associated with the job. <br/>
-        /// Limit Breakaway OK - If any process associated with the job creates a child process using the CREATE_BREAKAWAY_FROM_JOB flag while this limit is in effect, the child process is not associated with the job. <br/>
-        /// Silent Breakaway OK - Allows any process associated with the job to create child processes that are not associated with the job. <br/>
+        /// The MaximumMessageSize property indicates the maximum message size supported by the protocol. <br/>
+        /// This is the maximum size of a message that can be sent from or received by the host. <br/>
+        /// For protocols that do not support message framing, the actual maximum size of a message that can be sent to a given address may be less than this value. <br/>
+        /// There are two special values defined for this property: <br/>
+        /// 0  - The protocol is stream-oriented; the concept of message size is not relevant. <br/>
+        /// 1  - The maximum outbound (send) message size is dependent on the underlying network MTU (maximum sized transmission unit) and hence cannot be known until after a socket is bound. <br/>
+        /// Applications should use getsockopt to retrieve the value of SO_MAX_MSG_SIZE after the socket has been bound to a local address. <br/>
+        /// 0xFFFFFFFF - There is no specified maximum message size defined. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
+        /// units: characters <br/>
+        ///  <br/>
         /// </summary>
-        public UInt32 LimitFlags { get; set; }
+        public UInt32 MaximumMessageSize { get; set; }
         /// <summary>
-        /// Specifies the maximum working set size for all processes associated with the job. <br/>
-        /// Ignored unless LimitFlags specifies Limit Working Set <br/>
+        /// The MessageOriented property indicates whether the protocol is message-oriented. <br/>
+        /// A message-oriented protocol uses packets of data to transfer information. <br/>
+        /// Conversely, stream-oriented protocols transfer data as a continuous stream of bytes. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol is message oriented. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean MessageOriented { get; set; }
+        /// <summary>
+        /// The MinimumAddressSize property specifies the minimum length of a socket address supported by the protocol. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
-        /// </summary>
-        public UInt32 MaximumWorkingSetSize { get; set; }
-        /// <summary>
-        /// Specifies the minimum working set size for all processes associated with the job. <br/>
-        /// Ignored unless LimitFlags specifies Limit Working Set <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
+        /// units: characters <br/>
         ///  <br/>
         /// </summary>
-        public UInt32 MinimumWorkingSetSize { get; set; }
+        public UInt32 MinimumAddressSize { get; set; }
         /// <summary>
-        /// Specifies the per-job user-mode execution time limit, in 100 nanoseconds. <br/>
-        /// The system adds the current time of the processes associated with the job to this limit. <br/>
-        /// For example, if you set this limit to 1 minute, and the job has a process that has accumulated 5 minutes of user-mode time, the limit actually enforced is 6 minutes. <br/>
+        /// The Name property contains the name for the protocol. <br/>
+        /// Example: TCP/IP <br/>
         ///  <br/>
-        /// cimtype: uint64 <br/>
+        /// cimtype: string <br/>
         ///  <br/>
-        /// units: 100 nanoseconds <br/>
+        /// override: Name <br/>
         ///  <br/>
         /// </summary>
-        public UInt64 PerJobUserTimeLimit { get; set; }
+        public String Name { get; set; }
         /// <summary>
-        /// Specifies the per-process user-mode execution time limit, in 100 nanoseconds. <br/>
-        /// It is ignored unless LimitFlags specifies Limit Process Time.The system periodically checks to determine whether each process associated with the job has accumulated more user-mode time than the set limit. <br/>
-        /// If it has, the process is terminated. <br/>
+        /// The PseudoStreamOriented property indicates whether the protocol is a message-oriented protocol that can receive variable-length data packets or streamed data for all receive operations. <br/>
+        /// This optional capability is useful when an application does not want the protocol to frame messages, and requires stream-oriented characteristics. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol is pseudo stream-oriented. <br/>
         ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: 100 nanoseconds <br/>
+        /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
-        public UInt64 PerProcessUserTimeLimit { get; set; }
+        public Boolean PseudoStreamOriented { get; set; }
         /// <summary>
-        /// Specifies the priority class for all processes associated with the job. <br/>
-        /// Processes and threads cannot modify their priority class. <br/>
-        /// Ignored unless LimitFlags specifies Limit Priority. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PriorityClass { get; set; }
-        /// <summary>
-        /// Specifies the per-process memory limit in kilobytes. <br/>
-        /// It is ignored unless the LimitFlags specifies the Limit Process Memory. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: kilobytes <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ProcessMemoryLimit { get; set; }
-        /// <summary>
-        /// Specifies the scheduling class for all processes associated with the job. <br/>
-        /// The valid values are 0 to 9. <br/>
-        /// Use 0 for the least favorable scheduling class relative to other threads, and 9 for the most favorable scheduling class relative to other threads. <br/>
-        /// Ignored unless LimitFlags specifies Limit Scheduling Class. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 SchedulingClass { get; set; }
-        /// <summary>
-        /// The identifier by which the job object limit setting instance is known. <br/>
-        /// As a Kernel object job object names are case sensitive. <br/>
-        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
-        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String SettingID { get; set; }
+        public String Status { get; set; }
+        /// <summary>
+        /// The SupportsBroadcasting property indicates whether the protocol supports a mechanism for broadcasting messages across the network. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports broadcasting. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsBroadcasting { get; set; }
+        /// <summary>
+        /// The SupportsConnectData property indicates whether the protocol allows data to be connected across the network. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol allows data to be connected. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsConnectData { get; set; }
+        /// <summary>
+        /// The SupportsDisconnectData property indicates whether the protocol allows data to be disconnected across the network. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol allows data to be disconnected. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsDisconnectData { get; set; }
+        /// <summary>
+        /// The SupportsEncryption property indicates whether the protocol supports data encryption. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports data encryption. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsEncryption { get; set; }
+        /// <summary>
+        /// The SupportsExpeditedData property indicates whether the protocol supports expedited data (also known as urgent data) across the network. <br/>
+        /// Expedited data can bypass flow control and receive priority over normal data packets. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports expedited data. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsExpeditedData { get; set; }
+        /// <summary>
+        /// The SupportsFragmentation property indicates whether the protocol supports transmitting the data in fragments. <br/>
+        /// Physical network Maximum Transfer Unit (MTU) is hidden from applications. <br/>
+        /// Each media type has a maximum frame size that cannot be exceeded. <br/>
+        /// The link layer is responsible for discovering the MTU and reporting it to the protocols being used. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports transmitting the data in fragments. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsFragmentation { get; set; }
+        /// <summary>
+        /// The SupportsGracefulClosing property indicates whether the protocol supports two-phase close operations - also known as graceful close operations. <br/>
+        /// If not, the protocol supports only abortive close operations. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports graceful closing of network connections. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsGracefulClosing { get; set; }
+        /// <summary>
+        /// The SupportsGuaranteedBandwidth property indicates whether the protocol has a mechanism to establish and maintain a guaranteed bandwidth. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports a guaranteed bandwidth. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsGuaranteedBandwidth { get; set; }
+        /// <summary>
+        /// The SupportsMulticasting property indicates whether the protocol supports multicasting. <br/>
+        /// Values: TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports multicasting. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsMulticasting { get; set; }
+        /// <summary>
+        /// The SupportsQualityofService property indicates whether the protocol is capable of Quality of Service (QOS) support via the underlying layered service provider or transport carrier. <br/>
+        /// QOS is a collection of components that enable differentiation and preferential treatment for subsets of data transmitted over the network. <br/>
+        /// QOS loosely means subsets of data get higher priority or guaranteed service when traversing a network. <br/>
+        /// Values:TRUE or FALSE. <br/>
+        /// A value of TRUE indicates the protocol supports QOS. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SupportsQualityofService { get; set; }
     }
 
     /// <summary>
-    /// The Win32_NamedJobObjectSecLimitSetting class represents the security limit settings for a job object. <br/>
-    /// For more information about job object security limit settings, see the Job Object Security and Access Rights topic in the Platform SDK Base Services documentation. <br/>
+    /// The Win32_NTDomain class represents a NT Domain. <br/>
+    /// A domain is a single security boundary of a Windows NT computer network. <br/>
+    /// Active Directory is made up of one or more domains. <br/>
+    /// On a standalone workstation, the domain is the computer itself. <br/>
+    /// A domain can span more than one physical location. <br/>
+    /// Every domain has its own security policies and security relationships with other domains. <br/>
+    /// When multiple domains are connected by trust relationships and share a common schema, configuration, and global catalog, you have a domain tree. <br/>
+    /// Multiple domain trees can be connected together into a forest. <br/>
+    /// All the domains in a forest also share a common schema, configuration, and global catalog. <br/>
     ///  <br/>
-    /// provider: NamedJobObjectSecLimitSettingProv <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
-    /// uuid: {F2D96E32-2A34-475b-878D-B0AE7657519F} <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// uuid: 78F4FA18-EE46-4D4C-AB9B-8CC0D42B7038 <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_NamedJobObjectSecLimitSetting
+    public class Win32_NTDomain
     {
         /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
+        /// The ClientSiteName property indicates the name of the site where the domain controller is configured to be in. <br/>
+        /// This value may be NULL if the site that the computer named by ComputerName cannot be found (for example, if the DS administrator has not associated the subnet that the computer is in with a valid site). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ClientSiteName { get; set; }
+        /// <summary>
+        /// The CreationClassName property indicates the name of the class or the subclass used in the creation of an instance. <br/>
+        /// When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CreationClassName { get; set; }
+        /// <summary>
+        /// The DcSiteName property indicates the name of the site where the domain controller is located. <br/>
+        /// This value may be NULL if the domain controller is not in a site (for example, the domain controller is a Windows NT 4.0 domain controller). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DcSiteName { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// This property specifies the privileges to delete from the token, if SecurityLimitFlags is Filter Tokens. <br/>
-        /// This property can be NULL if you do not want to delete any privileges. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_TokenPrivileges <br/>
-        ///  <br/>
-        /// </summary>
-        public Object PrivilegesToDelete { get; set; }
-        /// <summary>
-        /// This property specifies the deny-only SIDs that will be added to the access token, if SecurityLimitFlags is Filter Tokens. <br/>
-        /// This property can be NULL if you do not want to specify any deny-only SIDs. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_TokenGroups <br/>
-        ///  <br/>
-        /// </summary>
-        public Object RestrictedSIDs { get; set; }
-        /// <summary>
-        /// Specifies the security limitations for the job.A value of No Administrator prevents any process in the job from using a token that specifies the local administrators group.A value of Rescricted Token prevents any process in the job from using a token that was not created with the CreateRestrictedToken function.A value of Specific Token forces processes in the job to run under.A value Filter Tokens of applies a filter to the token when a process impersonates a client. <br/>
-        /// Requires at least one of the following properties to be set - SidsToDisable, PrivilegesToDelete, or RestrictedSids. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 SecurityLimitFlags { get; set; }
-        /// <summary>
-        /// The identifier by which the job object security limit setting instance is known. <br/>
-        /// As a Kernel object job object names are case sensitive. <br/>
-        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
-        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
+        /// The DnsForestName property indicates the name of the domain at the root of the DS tree. <br/>
+        /// The DNS-style name (for example, microsoft.com.) will be returned if available. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public String SettingID { get; set; }
+        public String DnsForestName { get; set; }
         /// <summary>
-        /// This property specifies the SIDs to disable for access checking, if SecurityLimitFlagss is Filter Tokens.This property can be NULL if you do not want to disable any SIDs. <br/>
+        /// The DomainControllerAddress property indicates the address of the discovered domain controller. <br/>
         ///  <br/>
-        /// cimtype: object:Win32_TokenGroups <br/>
+        /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
-        public Object SIDsToDisable { get; set; }
+        public String DomainControllerAddress { get; set; }
+        /// <summary>
+        /// Indicates the type of address specified in DomainControllerAddress. <br/>
+        /// The following valid values are presented in order, DS_INET_ADDRESS = Address is a string IP address (for example, \\157.55.94.74) of the domain controller. <br/>
+        /// DS_NETBIOS_ADDRESS = The NetBIOS name (for example, \\phoenix) of the domain controller. <br/>
+        ///  <br/>
+        /// cimtype: sint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public int DomainControllerAddressType { get; set; }
+        /// <summary>
+        /// The DomainControllerName property indicates the computer name of the discovered domain controller. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DomainControllerName { get; set; }
+        /// <summary>
+        /// The GUID of the domain. <br/>
+        /// This member will be zero if the domain controller does not have a Domain GUID (for example, the domain controller is not a Windows 2000 domain controller). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DomainGuid { get; set; }
+        /// <summary>
+        /// The DomainName property indicates the name of the domain. <br/>
+        /// The DNS-style name (for example, microsoft.com.) will be returned if available. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DomainName { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller is a directory service server for the domain. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSDirectoryServiceFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the Domain Controller Name is in DNS format (for example, www.mynode.com or 135.5.33.19). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSDnsControllerFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the DomainName is in DNS format(for example, www.mynode.com or 135.5.33.19). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSDnsDomainFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the DnsForestName is in DNS format (for example, www.mynode.com or 135.5.33.19). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSDnsForestFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller is a Global Catalog (GC) server for DnsForestName. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSGlobalCatalogFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller is a Kerberos Key Distribution Center for the domain. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSKerberosDistributionCenterFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller is the Primary Domain Controller (PDC) of the domain. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSPrimaryDomainControllerFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller is running the Windows Time service for the domain. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSTimeServiceFlag { get; set; }
+        /// <summary>
+        /// Directory Service (DS) flag indicating that the domain controller hosts a write able DS or Security Accounts Manager (SAM). <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DSWritableFlag { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The Name property defines the label by which the object is known. <br/>
+        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The CIM_System object and its derivatives are top level objects of CIM. <br/>
+        /// They provide the scope for numerous components. <br/>
+        /// Having unique system keys is required. <br/>
+        /// A heuristic can be defined in individual system subclasses to attempt to always generate the same system name key. <br/>
+        /// The NameFormat property identifies how the system name was generated, using the subclass&apos; heuristic. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String NameFormat { get; set; }
+        /// <summary>
+        /// A string that provides information on how the primary system owner can be reached (e.g. <br/>
+        /// phone number, email address, ...). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String PrimaryOwnerContact { get; set; }
+        /// <summary>
+        /// The name of the primary system owner. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String PrimaryOwnerName { get; set; }
+        /// <summary>
+        /// An array (bag) of strings that specify the roles this System plays in the IT-environment. <br/>
+        /// Subclasses of System may override this property to define explicit Roles values. <br/>
+        /// Alternately, a Working Group may describe the heuristics, conventions and guidelines for specifying Roles. <br/>
+        /// For example, for an instance of a networking system, the Roles property might contain the string, &apos;Switch&apos; or &apos;Bridge&apos;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] Roles { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+    }
+
+    /// <summary>
+    /// CIM_DataFile is a type of logical file that is a named collection of data or executable code. <br/>
+    /// &lt;B&gt;The behavior of the provider backing this class will be changed in future releases. <br/>
+    /// Currently the provider returns both files on fixed disks as well as files on mapped logical disks. <br/>
+    /// In the future, only instances of files on local fixed disks will be returned.&lt;B&gt; <br/>
+    ///  <br/>
+    /// provider: MS_NT_EVENTLOG_PROVIDER <br/>
+    ///  <br/>
+    /// uuid: {8502C57B-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_NTEventlogFile
+    {
+        /// <summary>
+        /// The AccessMask property is a bit array representing the access rights to the given file or directory held by the user or group on whose behalf the instance is returned. <br/>
+        /// This property is only supported under Windows NT and Windows 2000. <br/>
+        /// On Windows 98 and on Windows NT/2000 FAT volumes, FULL_ACCESS is returned, indicating no security has been set on the object. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AccessMask { get; set; }
+        /// <summary>
+        /// The Archive property is a boolean value indicating that the file should be archived. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Archive { get; set; }
+        /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// The Compressed property is a boolean value indicating that the file is compressed. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Compressed { get; set; }
+        /// <summary>
+        /// The CompressionMethod property is a free form string indicating the algorithm or tool used to compress the logical file. <br/>
+        /// If it is not possible (or not desired) to describe the compression scheme (perhaps because it is not known), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is compressed or not, &quot;Compressed&quot; to represent that the file is compressed but either its compression scheme is not known or not disclosed, and &quot;Not Compressed&quot; to represent that the logical file is not compressed. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CompressionMethod { get; set; }
+        /// <summary>
+        /// The CreationClassName property is a string indicating the name of this class. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CreationClassName { get; set; }
+        /// <summary>
+        /// The CreationDate property is a datetime value indicating the file&apos;s creation date. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime CreationDate { get; set; }
+        /// <summary>
+        /// The CSCreationClassName property is a string indicating the class of the computer system. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_FileSystem.CSCreationClassName <br/>
+        ///  <br/>
+        /// </summary>
+        public String CSCreationClassName { get; set; }
+        /// <summary>
+        /// The CSName property is a string indicating the name of the computer system. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_FileSystem.CSName <br/>
+        ///  <br/>
+        /// </summary>
+        public String CSName { get; set; }
+        /// <summary>
+        /// The Description property provides a textual description of the object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The Drive property is a string representing the drive letter (including colon) of the file. <br/>
+        /// Example: c: <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Drive { get; set; }
+        /// <summary>
+        /// The EightDotThreeFileName property is a string representing the DOS-compatible file name for this file. <br/>
+        /// Example: c:\progra~1 <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String EightDotThreeFileName { get; set; }
+        /// <summary>
+        /// The Encrypted property is a boolean value indicating that the file is encrypted. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Encrypted { get; set; }
+        /// <summary>
+        /// The EncryptionMethod property is a free form string indicating the algorithm or tool used to encrypt the logical file. <br/>
+        /// If it is not possible (or not desired) to describe the encryption scheme (perhaps for security reasons), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is encrypted or not, &quot;Encrypted&quot; to represent that the file is encrypted but either its encryption scheme is not known or not disclosed, and &quot;Not Encrypted&quot; to represent that the logical file is not encrypted. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String EncryptionMethod { get; set; }
+        /// <summary>
+        /// The Extension property is a string representing the file&apos;s extension (without the dot). <br/>
+        /// Example: txt, mof, mdb. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Extension { get; set; }
+        /// <summary>
+        /// The FileName property is a string representing the filename (without extension) of the file. <br/>
+        /// Example: autoexec <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String FileName { get; set; }
+        /// <summary>
+        /// The FileSize property represents the size of the file (in bytes). <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// units: bytes <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 FileSize { get; set; }
+        /// <summary>
+        /// The FileType property is a string descriptor representing the file type (indicated by the Extension property). <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String FileType { get; set; }
+        /// <summary>
+        /// The FSCreationClassName property is a string indicating the class of the file system. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_FileSystem.CreationClassName <br/>
+        ///  <br/>
+        /// </summary>
+        public String FSCreationClassName { get; set; }
+        /// <summary>
+        /// The FSName property is string indicating the name of the file system. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_FileSystem.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String FSName { get; set; }
+        /// <summary>
+        /// The Hidden property is a boolean value indicating if the file is hidden. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Hidden { get; set; }
+        /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
+        /// A lack of a value does not indicate that the object is not installed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime InstallDate { get; set; }
+        /// <summary>
+        /// The InUseCount property is an integer indicating the number of &apos;file opens&apos; that are currently active against the file. <br/>
+        ///  <br/>
+        /// cimtype: uint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt64 InUseCount { get; set; }
+        /// <summary>
+        /// The LastAccessed property is a datetime value indicating the time the file was last accessed. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastAccessed { get; set; }
+        /// <summary>
+        /// The LastModified property is a datetime value indicating the time the file was last modified. <br/>
+        ///  <br/>
+        /// cimtype: datetime <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LastModified { get; set; }
+        /// <summary>
+        /// The LogFileName property indicates name of the log file. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LogfileName { get; set; }
+        /// <summary>
+        /// Manufacturer string from version resource if one is present. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Manufacturer { get; set; }
+        /// <summary>
+        /// The MaxFileSize property indicates the maximum size (in bytes) permitted for the log file. <br/>
+        /// If the file exceeds its maximum size, its contents are moved to another file and the primary file is emptied. <br/>
+        /// A value of zero indicates no size limit. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 MaxFileSize { get; set; }
+        /// <summary>
+        /// The Name property is a string representing the inherited name that serves as a key of a logical file instance within a file system. <br/>
+        /// Full path names should be provided. <br/>
+        /// Example: c:\winnt\system\win.ini <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// Number of records in the log file. <br/>
+        /// This value is determined by calling the Win32 function GetNumberOfEventLogRecords. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 NumberOfRecords { get; set; }
+        /// <summary>
+        /// Number of days after which an event can be overwritten. <br/>
+        /// Values are: <br/>
+        /// 0 = Any entry can be overwritten when necessary.1..365 = Events that have been in the log file for one year (365 days) or less can be overwritten.4294967295 = Nothing can be ever be overwritten. <br/>
+        /// There is an interdependence between the OverWriteOutDated property (which is writable) value and the OverWritePolicy property (which is not writable) value. <br/>
+        /// If one changes the OverWriteOutDated property value to 0, the OverWritePolicy property value will be &apos;henNeeded&apos; <br/>
+        /// If one changes the OverWriteOutDated property value to 1-365, the OverWritePolicy property value will be &apos;outDated&apos; <br/>
+        /// If one changes the OverWriteOutDated property value to 4294967295, the OverWritePolicy property value will be &apos;Never&apos;. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// range: 0-365 | 4294967295 <br/>
+        ///  <br/>
+        /// units: days <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 OverwriteOutDated { get; set; }
+        /// <summary>
+        /// Current overwrite policy the Windows NT/Windows 2000 Event Log service employs for this log file. <br/>
+        /// The possible values of the property are: <br/>
+        /// WhenNeeded - This corresponds to OverWriteOutdated = 0. <br/>
+        /// OutDated - This corresponds to OverWriteOutdated of 1 to 365. <br/>
+        /// Never - This corresponds to OverWriteOutdated = 4294967295. <br/>
+        /// There is an interdependence between the OverWriteOutDated property (which is writable) value and the OverWritePolicy property (which is not writable) value. <br/>
+        /// If one changes the OverWriteOutDated property value to 0, the OverWritePolicy property value will be &apos;henNeeded&apos; <br/>
+        /// If one changes the OverWriteOutDated property value to 1-365, the OverWritePolicy property value will be &apos;outDated&apos; <br/>
+        /// If one changes the OverWriteOutDated property value to 4294967295, the OverWritePolicy property value will be &apos;Never&apos;. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String OverWritePolicy { get; set; }
+        /// <summary>
+        /// The Path property is a string representing the path of the file. <br/>
+        /// This includes leading and trailing backslashes. <br/>
+        /// Example: \windows\system\ <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Path { get; set; }
+        /// <summary>
+        /// The Readable property is a boolean value indicating if the file can be read. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Readable { get; set; }
+        /// <summary>
+        /// The Sources property indicates the applications that are registered to log into this log file. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] Sources { get; set; }
+        /// <summary>
+        /// The Status property is a string indicating the current status of the object. <br/>
+        /// Various operational and non-operational statuses can be defined. <br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
+        /// An example is a SMART-enabled hard drive. <br/>
+        /// Non-operational statuses can also be specified. <br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Status { get; set; }
+        /// <summary>
+        /// The system property is a boolean value indicating if the file is a system file. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean System { get; set; }
+        /// <summary>
+        /// Version string from version resource if one is present. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+        /// <summary>
+        /// The Writeable property is a boolean value indicating if the file can be written. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Writeable { get; set; }
     }
 
     /// <summary>
@@ -2791,258 +3070,15 @@ namespace CIMV2
     }
 
     /// <summary>
-    /// This class represents the IO accounting information for a job object. <br/>
+    /// The Win32_NTLogEventComputer class represents an association between an NT log event and the computer from which the event was generated. <br/>
     ///  <br/>
-    /// provider: NamedJobObjectActgInfoProv <br/>
+    /// provider: MS_NT_EVENTLOG_PROVIDER <br/>
     ///  <br/>
-    /// uuid: {486F2A44-D0BF-46c1-9543-68EF5D37F1F9} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectActgInfo
-    {
-        /// <summary>
-        /// Specifies the total number of processes currently associated with the job. <br/>
-        /// When a process is associated with a job, but the association fails because of a limit violation, this value is temporarily incremented. <br/>
-        /// When the terminated process exits and all references to the process are released, this value is decremented. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ActiveProcesses { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) for the statistic or metric. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A textual description of the statistic or metric. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The Name property defines the label by which the statistic or metric is known. <br/>
-        /// When subclassed, the property can be overridden to be a Key property. <br/>
-        /// As a Kernel object job object names are case sensitive. <br/>
-        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
-        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// Specifies the number of I/O operations performed, other than read and write operations, by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 OtherOperationCount { get; set; }
-        /// <summary>
-        /// Specifies the number of bytes transferred during operations, other than read and write operations, by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 OtherTransferCount { get; set; }
-        /// <summary>
-        /// Specifies the peak memory in kilobytes usage of all processes associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: kilobytes <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PeakJobMemoryUsed { get; set; }
-        /// <summary>
-        /// Specifies the most process memory in kilobytes used by any process ever associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// units: kilobytes <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PeakProcessMemoryUsed { get; set; }
-        /// <summary>
-        /// Specifies the number of read operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ReadOperationCount { get; set; }
-        /// <summary>
-        /// Specifies the number of bytes read by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ReadTransferCount { get; set; }
-        /// <summary>
-        /// Specifies the total amount of kernel-mode execution time, in 100 nanoseconds, for all active processes associated with the job (as well as all terminated processes no longer associated with the job) since the last call that set a per-job kernel-mode time limit. <br/>
-        /// This property is set to 0 on creation of the job, and each time a per-job kernel-mode time limit is established. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: 100 nanoseconds <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ThisPeriodTotalKernelTime { get; set; }
-        /// <summary>
-        /// Specifies the total amount of user-mode execution time, in 100 nanoseconds, for all active processes associated with the job (as well as all terminated processes no longer associated with the job) since the last call that set a per-job user-mode time limit. <br/>
-        /// This property is set to 0 on creation of the job, and each time a per-job user-mode time limit is established <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: 100 nanoseconds <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 ThisPeriodTotalUserTime { get; set; }
-        /// <summary>
-        /// Specifies the total amount of kernel-mode execution time, in 100 nanoseconds, for all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: 100 nanoseconds <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TotalKernelTime { get; set; }
-        /// <summary>
-        /// Specifies the total number of page faults encountered by all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TotalPageFaultCount { get; set; }
-        /// <summary>
-        /// Specifies the total number of processes associated with the job during its lifetime, including those that have terminated. <br/>
-        /// For example, when a process is associated with a job, but the association fails because of a limit violation, this value is incremented. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TotalProcesses { get; set; }
-        /// <summary>
-        /// Specifies the total number of processes terminated because of a limit violation. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TotalTerminatedProcesses { get; set; }
-        /// <summary>
-        /// Specifies the total amount of user-mode execution time, in 100 nanoseconds, for all active processes associated with the job, as well as all terminated processes no longer associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: 100 nanoseconds <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 TotalUserTime { get; set; }
-        /// <summary>
-        /// Specifies the number of write operations performed by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 WriteOperationCount { get; set; }
-        /// <summary>
-        /// Specifies the number of bytes written by all processes that have ever been associated with the job, in addition to all processes currently associated with the job. <br/>
-        ///  <br/>
-        /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt64 WriteTransferCount { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_NetworkAdapterSetting class represents an association between a network adapter and its configuration settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C50A-5FBB-11D2-AAC1-006008C78BC7} <br/>
+    /// uuid: {8502C57F-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
-    public class Win32_NetworkAdapterSetting
+    public class Win32_NTLogEventComputer
     {
-    }
-
-    /// <summary>
-    /// The Win32_NamedJobObjectProcess association class relates a job object and a process contained in the job object. <br/>
-    /// A job can contain multiple processes. <br/>
-    ///  <br/>
-    /// createby: PutInstance <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {486F2A44-D0BF-46c1-9543-68EF5D37F1F9} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectProcess
-    {
-    }
-
-    /// <summary>
-    /// The Win32_NamedJobObjectStatistics association class relates a job object instance and the I/O accounting information instance containing accounting information for the job. <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {C741E1B8-2F7F-4f2b-9A0C-57FCFD89F5C8} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectStatistics
-    {
-    }
-
-    /// <summary>
-    /// The Win32_NamedJobObject class represents a kernel object that is used to group processes for the sake of controlling the life and resources of the processes within the job object. <br/>
-    /// Only the job objects that have been named are instrumented. <br/>
-    ///  <br/>
-    /// provider: NamedJobObjectProv <br/>
-    ///  <br/>
-    /// uuid: {7552EF7F-7CC8-4022-9049-3B5E1B4B3852} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObject
-    {
-        /// <summary>
-        /// The UIRestrictions property indicates the restrictions on the job regarding the UI. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 BasicUIRestrictions { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) of the CollectionOfMSEs object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// This property indicates a number that identifies the job object. <br/>
-        /// As a Kernel object job object names are case sensitive. <br/>
-        /// Because WMI keys are case insensitive, the name of the named job object must be decorated as follows: a capital letter should be preceded by a backslash. <br/>
-        /// As a consequence of this convention, &apos;A&apos; and &apos;a&apos; are lower case and &apos;\A&apos; and &apos;\a&apos; are upper case. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: CollectionId <br/>
-        ///  <br/>
-        /// </summary>
-        public String CollectionID { get; set; }
-        /// <summary>
-        /// A textual description of the CollectionOfMSEs object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
     }
 
     /// <summary>
@@ -3066,42 +3102,6 @@ namespace CIMV2
     ///  <br/>
     /// </summary>
     public class Win32_NTLogEventUser
-    {
-    }
-
-    /// <summary>
-    /// The Win32_NamedJobObjectLimit association class relates a job object and the job object limit settings for that job. <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {08E31939-FAAB-4a3b-9B10-50151D1B9D24} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectLimit
-    {
-    }
-
-    /// <summary>
-    /// The Win32_NamedJobObjectSecLimit association class relates a job object and the job object security limit settings. <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: {08E31939-FAAB-4a3b-9B10-50151D1B9D24} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NamedJobObjectSecLimit
-    {
-    }
-
-    /// <summary>
-    /// The Win32_NTLogEventComputer class represents an association between an NT log event and the computer from which the event was generated. <br/>
-    ///  <br/>
-    /// provider: MS_NT_EVENTLOG_PROVIDER <br/>
-    ///  <br/>
-    /// uuid: {8502C57F-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_NTLogEventComputer
     {
     }
 }

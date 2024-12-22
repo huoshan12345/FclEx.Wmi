@@ -5,6 +5,1139 @@ using System;
 namespace CIMV2
 {
     /// <summary>
+    /// The Setting class represents configuration-related and operational parameters for one or more ManagedSystemElement(s). <br/>
+    /// A ManagedSystemElement may have multiple Setting objects associated with it. <br/>
+    /// The current operational values for an Element&apos;s parameters are reflected by properties in the Element itself or by properties in its associations. <br/>
+    /// These properties do not have to be the same values present in the Setting object. <br/>
+    /// For example, a modem may have a Setting baud rate of 56Kb/sec but be operating at 19.2Kb/sec. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {023763EC-E3D2-11d2-8601-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCAttribute
+    {
+        /// <summary>
+        /// The name of the ODBC attribute. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Attribute { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Driver { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+        /// <summary>
+        /// The value of this attribute. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Value { get; set; }
+    }
+
+    /// <summary>
+    /// This association relates an MSI check with any setting information it requires. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {0E5ACD14-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCDataSourceAttribute
+    {
+    }
+
+    /// <summary>
+    /// This class specifies any Data Sources (DSNs) that need to be registered as part of an installation. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {1F20B83E-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCDataSourceSpecification
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// Token name for the data source within its package. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DataSource { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The associated ODBC driver name. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DriverDescription { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The type of registration for this data source. <br/>
+        /// ) indicates per machine, <br/>
+        /// 1 indicates per user. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Registration { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// This association relates an MSI check with any setting information it requires. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {2B306494-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCDriverAttribute
+    {
+    }
+
+    /// <summary>
+    /// Since software elements in a ready to run state cannot transition into  another state, the value of the phase property is restricted to  in-state for CIM_SoftwareElement objects in a ready to run state. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {3A20796C-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCDriverSoftwareElement
+    {
+        /// <summary>
+        /// The Phase property indicates whether the referenced check is an  in-state check or a next-state check. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 Phase { get; set; }
+    }
+
+    /// <summary>
+    /// This class represents any ODBC drivers that are to be installed as part of a particular product. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {45BD8DD2-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCDriverSpecification
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// Token name for the driver within its package. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Driver { get; set; }
+        /// <summary>
+        /// The FileID of the Win32_FileSpecification representing this driver. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String File { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The FileID of the Win32_FileSpecification representing this drivers setup dll. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SetupFile { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    /// The Setting class represents configuration-related and operational parameters for one or more ManagedSystemElement(s). <br/>
+    /// A ManagedSystemElement may have multiple Setting objects associated with it. <br/>
+    /// The current operational values for an Element&apos;s parameters are reflected by properties in the Element itself or by properties in its associations. <br/>
+    /// These properties do not have to be the same values present in the Setting object. <br/>
+    /// For example, a modem may have a Setting baud rate of 56Kb/sec but be operating at 19.2Kb/sec. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {100985A4-E3D2-11d2-8601-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCSourceAttribute
+    {
+        /// <summary>
+        /// The name of the data source attribute. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Attribute { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// Token name for the data source within its package to which this attribute applies. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String DataSource { get; set; }
+        /// <summary>
+        /// A textual description of the CIM_Setting object. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The identifier by which the CIM_Setting object is known. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SettingID { get; set; }
+        /// <summary>
+        /// The value for this data source attribute. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Value { get; set; }
+    }
+
+    /// <summary>
+    /// Instances of this class represent any ODBC Translators that are included as part of a products installation. <br/>
+    ///  <br/>
+    /// provider: MSIProv <br/>
+    ///  <br/>
+    /// uuid: {51E28842-DB33-11d2-85FC-0000F8102E5F} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_ODBCTranslatorSpecification
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String CheckID { get; set; }
+        /// <summary>
+        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
+        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
+        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CheckMode { get; set; }
+        /// <summary>
+        /// A description of the objects. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// The FileID of the Win32_FileSpecification representing this translator. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String File { get; set; }
+        /// <summary>
+        /// The name used to identify this software element <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Name <br/>
+        ///  <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// The FileID of the Win32_FileSpecification representing this translators setup dll. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String SetupFile { get; set; }
+        /// <summary>
+        /// This is an identifier for this software element. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
+        ///  <br/>
+        /// </summary>
+        public String SoftwareElementID { get; set; }
+        /// <summary>
+        /// The software element state of a software element <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SoftwareElementState { get; set; }
+        /// <summary>
+        /// The target operating system of the this software element. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 TargetOperatingSystem { get; set; }
+        /// <summary>
+        /// Token name for the translator within its package. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Translator { get; set; }
+        /// <summary>
+        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// propagated: CIM_SoftwareElement.Version <br/>
+        ///  <br/>
+        /// </summary>
+        public String Version { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// uuid: {db089a12-f250-47aa-b9d0-89806d928ba6} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesAssociatedItems
+    {
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesBackgroundSync
+    {
+        /// <summary>
+        /// If true, enable background synchronization for shares that the user has forced into work offline mode <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean BackgroundSyncWorkOfflineSharesEnabled { get; set; }
+        /// <summary>
+        /// The length of time, in minutes, when background synchronization is disabled. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 BlockOutDurationMin { get; set; }
+        /// <summary>
+        /// The time of the day when background synchronization is disabled. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 BlockOutStartTimeHoursMinutes { get; set; }
+        /// <summary>
+        /// The maximum time, in minutes, until a synchronization operation must start. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 MaxTimeBetweenSyncs { get; set; }
+        /// <summary>
+        /// The synchronization interval, in minutes. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SyncInterval { get; set; }
+        /// <summary>
+        /// The amount of time, in minutes, by which the synchronization interval can vary. <br/>
+        ///  <br/>
+        /// cimtype: uint16 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt16 SyncVariance { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesCache
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Active { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Enabled { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String Location { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesChangeInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean CreatedOffline { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DeletedOffline { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Dirty { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean ModifiedAttributes { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean ModifiedData { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean ModifiedTime { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesConnectionInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ConnectState { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 OfflineReason { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesDirtyInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: sint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public long LocalDirtyByteCount { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: sint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public long RemoteDirtyByteCount { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesDiskSpaceLimit
+    {
+        /// <summary>
+        /// The maximum total size, in megabytes (MB), of all files that reside on network shares and are marked to be cached automatically, that can be cached by the Offline Files feature. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 AutoCacheSizeInMB { get; set; }
+        /// <summary>
+        /// The total amount of disk space, in megabytes (MB), that can be used by the Offline Files feature. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TotalSizeInMB { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesFileSysInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 LocalAttributes { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LocalChangeTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LocalCreationTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LocalLastAccessTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime LocalLastWriteTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: sint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public long LocalSize { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 OriginalAttributes { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime OriginalChangeTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime OriginalCreationTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime OriginalLastAccessTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime OriginalLastWriteTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: sint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public long OriginalSize { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 RemoteAttributes { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime RemoteChangeTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime RemoteCreationTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime RemoteLastAccessTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: DATETIME <br/>
+        ///  <br/>
+        /// </summary>
+        public DateTime RemoteLastWriteTime { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: sint64 <br/>
+        ///  <br/>
+        /// </summary>
+        public long RemoteSize { get; set; }
+    }
+
+    /// <summary>
+    /// Private Interface <br/>
+    ///  <br/>
+    /// provider: UserProfileConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesHealth
+    {
+        /// <summary>
+        /// A DATETIME value, in string format, that represents the last time this folder was successfully synchronized to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LastSuccessfulSyncTime { get; set; }
+        /// <summary>
+        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
+        ///  <br/>
+        /// cimtype: uint8 <br/>
+        ///  <br/>
+        /// </summary>
+        public byte LastSyncStatus { get; set; }
+        /// <summary>
+        /// A DATETIME value, in string format, that represents the last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String LastSyncTime { get; set; }
+        /// <summary>
+        /// If true, the Offline Files feature is enabled for this folder. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean OfflineAccessEnabled { get; set; }
+        /// <summary>
+        /// If true, the share is working in Online mode <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean OnlineMode { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesItem
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesChangeInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object ChangeInfo { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesConnectionInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object ConnectionInfo { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesDirtyInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object DirtyInfo { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Encrypted { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesFileSysInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object FileSysInfo { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ItemName { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ItemPath { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 ItemType { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String ParentItemPath { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesPinInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object PinInfo { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Sparse { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesSuspendInfo <br/>
+        ///  <br/>
+        /// </summary>
+        public Object SuspendInfo { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesMachineConfiguration
+    {
+        /// <summary>
+        /// If true, background synchronization is enabled <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean BackgroundSyncEnabled { get; set; }
+        /// <summary>
+        /// the background synchronization parameters. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesBackgroundSync <br/>
+        ///  <br/>
+        /// </summary>
+        public Object BackgroundSyncParams { get; set; }
+        /// <summary>
+        /// If true, the disk space used by offline files is limited <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean DiskSpaceLimitEnabled { get; set; }
+        /// <summary>
+        /// This object&apos;s properties determine how the disk space is managed. <br/>
+        ///  <br/>
+        /// cimtype: object:Win32_OfflineFilesDiskSpaceLimit <br/>
+        ///  <br/>
+        /// </summary>
+        public Object DiskSpaceLimitParams { get; set; }
+        /// <summary>
+        /// If true, only administratively assigned offline files are synchronized when the user logs on. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean EconomicalAdminPinningEnabled { get; set; }
+        /// <summary>
+        /// If true, the Offline Files feature is enabled through a policy setting. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Enabled { get; set; }
+        /// <summary>
+        /// Array strings that specify the types of files that are excluded from being cached <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] ExcludedFileTypes { get; set; }
+        /// <summary>
+        /// Indicate if the configuration settings are taking affect <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean IsConfiguredByWMI { get; set; }
+        /// <summary>
+        /// If true, the Make Available Offline button is removed. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean MakeAvailableOfflineButtonRemoved { get; set; }
+        /// <summary>
+        /// If true, the Offline Files cache will be encrypted. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean OfflineFilesCacheEncrypted { get; set; }
+        /// <summary>
+        /// If true, slow-link mode is enabled as specified in the SlowLinkParams property. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SlowLinkEnabled { get; set; }
+        /// <summary>
+        /// An array of strings that contain the slow-link mode parameters. <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] SlowLinkParams { get; set; }
+        /// <summary>
+        /// Allow syncing to occur on a costed network where the user is charged by usage. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SyncOnCostedNetworkEnabled { get; set; }
+        /// <summary>
+        /// The transparent caching latency, in milliseconds. <br/>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 TransparentCachingLatencyThreshold { get; set; }
+        /// <summary>
+        /// If true, the Work Offline button is removed. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean WorkOfflineButtonRemoved { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesPinInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Pinned { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PinnedForComputer { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PinnedForFolderRedirection { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PinnedForUser { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: uint32 <br/>
+        ///  <br/>
+        /// </summary>
+        public UInt32 PinnedForUserByPolicy { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesSuspendInfo
+    {
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean Suspended { get; set; }
+        /// <summary>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean SuspendedRoot { get; set; }
+    }
+
+    /// <summary>
+    ///  <br/>
+    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OfflineFilesUserConfiguration
+    {
+        /// <summary>
+        /// An array of strings containing administratively assigned offline files. <br/>
+        /// Each string contains a file path <br/>
+        ///  <br/>
+        /// cimtype: string <br/>
+        ///  <br/>
+        /// </summary>
+        public String[] AssignedOfflineFiles { get; set; }
+        /// <summary>
+        /// Indicate if the configuration settings are taking affect <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean IsConfiguredByWMI { get; set; }
+        /// <summary>
+        /// If true, the Make Available Offline button is removed from Explorer. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean MakeAvailableOfflineButtonRemoved { get; set; }
+        /// <summary>
+        /// If true, the Work Offline button is removed from Explorer. <br/>
+        ///  <br/>
+        /// cimtype: boolean <br/>
+        ///  <br/>
+        /// </summary>
+        public Boolean WorkOfflineButtonRemoved { get; set; }
+    }
+
+    /// <summary>
     /// The Win32_OnBoardDevice class represents common adapter devices built into the motherboard (system board). <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -782,6 +1915,32 @@ namespace CIMV2
     }
 
     /// <summary>
+    /// This class represents the association between an operating system and the autochk settings that apply to the disks on the machine.Note that the setting is associated to operating system rather than computer system since there can be one or more operating systems installed on the machine, each with its own autochk settings. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32a <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OperatingSystemAutochkSetting
+    {
+    }
+
+    /// <summary>
+    /// The Win32_OperatingSystemQFE class represents an association between an operating system and product updates applied as represented in Win32_QuickFixEngineering. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
+    /// provider: CIMWin32 <br/>
+    ///  <br/>
+    /// uuid: {2CB2C452-C516-11D2-B364-00105A1F77A1} <br/>
+    ///  <br/>
+    /// </summary>
+    public class Win32_OperatingSystemQFE
+    {
+    }
+
+    /// <summary>
     /// This class represents status of the Optional Features present on the operating system <br/>
     ///  <br/>
     /// locale: ms_409 <br/>
@@ -992,1164 +2151,5 @@ namespace CIMV2
         ///  <br/>
         /// </summary>
         public Boolean WriteToSystemLog { get; set; }
-    }
-
-    /// <summary>
-    /// The Setting class represents configuration-related and operational parameters for one or more ManagedSystemElement(s). <br/>
-    /// A ManagedSystemElement may have multiple Setting objects associated with it. <br/>
-    /// The current operational values for an Element&apos;s parameters are reflected by properties in the Element itself or by properties in its associations. <br/>
-    /// These properties do not have to be the same values present in the Setting object. <br/>
-    /// For example, a modem may have a Setting baud rate of 56Kb/sec but be operating at 19.2Kb/sec. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {023763EC-E3D2-11d2-8601-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCAttribute
-    {
-        /// <summary>
-        /// The name of the ODBC attribute. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Attribute { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Driver { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-        /// <summary>
-        /// The value of this attribute. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Value { get; set; }
-    }
-
-    /// <summary>
-    /// The Setting class represents configuration-related and operational parameters for one or more ManagedSystemElement(s). <br/>
-    /// A ManagedSystemElement may have multiple Setting objects associated with it. <br/>
-    /// The current operational values for an Element&apos;s parameters are reflected by properties in the Element itself or by properties in its associations. <br/>
-    /// These properties do not have to be the same values present in the Setting object. <br/>
-    /// For example, a modem may have a Setting baud rate of 56Kb/sec but be operating at 19.2Kb/sec. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {100985A4-E3D2-11d2-8601-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCSourceAttribute
-    {
-        /// <summary>
-        /// The name of the data source attribute. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Attribute { get; set; }
-        /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// Token name for the data source within its package to which this attribute applies. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DataSource { get; set; }
-        /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SettingID { get; set; }
-        /// <summary>
-        /// The value for this data source attribute. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Value { get; set; }
-    }
-
-    /// <summary>
-    /// The Win32_OperatingSystemQFE class represents an association between an operating system and product updates applied as represented in Win32_QuickFixEngineering. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {2CB2C452-C516-11D2-B364-00105A1F77A1} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OperatingSystemQFE
-    {
-    }
-
-    /// <summary>
-    /// This class represents the association between an operating system and the autochk settings that apply to the disks on the machine.Note that the setting is associated to operating system rather than computer system since there can be one or more operating systems installed on the machine, each with its own autochk settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OperatingSystemAutochkSetting
-    {
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesUserConfiguration
-    {
-        /// <summary>
-        /// An array of strings containing administratively assigned offline files. <br/>
-        /// Each string contains a file path <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] AssignedOfflineFiles { get; set; }
-        /// <summary>
-        /// Indicate if the configuration settings are taking affect <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean IsConfiguredByWMI { get; set; }
-        /// <summary>
-        /// If true, the Make Available Offline button is removed from Explorer. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean MakeAvailableOfflineButtonRemoved { get; set; }
-        /// <summary>
-        /// If true, the Work Offline button is removed from Explorer. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean WorkOfflineButtonRemoved { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// uuid: {db089a12-f250-47aa-b9d0-89806d928ba6} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesAssociatedItems
-    {
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesChangeInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CreatedOffline { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DeletedOffline { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Dirty { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean ModifiedAttributes { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean ModifiedData { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean ModifiedTime { get; set; }
-    }
-
-    /// <summary>
-    /// This class represents any ODBC drivers that are to be installed as part of a particular product. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {45BD8DD2-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCDriverSpecification
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// Token name for the driver within its package. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Driver { get; set; }
-        /// <summary>
-        /// The FileID of the Win32_FileSpecification representing this driver. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String File { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The FileID of the Win32_FileSpecification representing this drivers setup dll. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SetupFile { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// This class specifies any Data Sources (DSNs) that need to be registered as part of an installation. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {1F20B83E-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCDataSourceSpecification
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// Token name for the data source within its package. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DataSource { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The associated ODBC driver name. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String DriverDescription { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The type of registration for this data source. <br/>
-        /// ) indicates per machine, <br/>
-        /// 1 indicates per user. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Registration { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
-    /// Instances of this class represent any ODBC Translators that are included as part of a products installation. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {51E28842-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCTranslatorSpecification
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Caption { get; set; }
-        /// <summary>
-        /// An identifier used in conjunction with other keys to uniquely identify the check <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String CheckID { get; set; }
-        /// <summary>
-        /// The CheckMode property is used to indicate whether the condition is  expected to exist or not exist in the environment. <br/>
-        /// When the value is True, the condition is expected to exist  (e.g., a file is expected to be on a system) so invoke() is expected to  return True. <br/>
-        /// When the value is False, the condition is not expect to exist  (e.g., a file is not to be on a system) so invoke is expected to return false <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean CheckMode { get; set; }
-        /// <summary>
-        /// A description of the objects. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Description { get; set; }
-        /// <summary>
-        /// The FileID of the Win32_FileSpecification representing this translator. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String File { get; set; }
-        /// <summary>
-        /// The name used to identify this software element <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Name <br/>
-        ///  <br/>
-        /// </summary>
-        public String Name { get; set; }
-        /// <summary>
-        /// The FileID of the Win32_FileSpecification representing this translators setup dll. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String SetupFile { get; set; }
-        /// <summary>
-        /// This is an identifier for this software element. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementID <br/>
-        ///  <br/>
-        /// </summary>
-        public String SoftwareElementID { get; set; }
-        /// <summary>
-        /// The software element state of a software element <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.SoftwareElementState <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SoftwareElementState { get; set; }
-        /// <summary>
-        /// The target operating system of the this software element. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.TargetOperatingSystem <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 TargetOperatingSystem { get; set; }
-        /// <summary>
-        /// Token name for the translator within its package. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Translator { get; set; }
-        /// <summary>
-        /// Version should be in the form &lt;Major&gt;.&lt;Minor&gt;.&lt;Revision&gt; or &lt;Major&gt;.&lt;Minor&gt;&lt;letter&gt;&lt;revision&gt; <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_SoftwareElement.Version <br/>
-        ///  <br/>
-        /// </summary>
-        public String Version { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesItem
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesChangeInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object ChangeInfo { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesConnectionInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object ConnectionInfo { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesDirtyInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object DirtyInfo { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Encrypted { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesFileSysInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object FileSysInfo { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ItemName { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ItemPath { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ItemType { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String ParentItemPath { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesPinInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object PinInfo { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Sparse { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesSuspendInfo <br/>
-        ///  <br/>
-        /// </summary>
-        public Object SuspendInfo { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesBackgroundSync
-    {
-        /// <summary>
-        /// If true, enable background synchronization for shares that the user has forced into work offline mode <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean BackgroundSyncWorkOfflineSharesEnabled { get; set; }
-        /// <summary>
-        /// The length of time, in minutes, when background synchronization is disabled. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 BlockOutDurationMin { get; set; }
-        /// <summary>
-        /// The time of the day when background synchronization is disabled. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 BlockOutStartTimeHoursMinutes { get; set; }
-        /// <summary>
-        /// The maximum time, in minutes, until a synchronization operation must start. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 MaxTimeBetweenSyncs { get; set; }
-        /// <summary>
-        /// The synchronization interval, in minutes. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SyncInterval { get; set; }
-        /// <summary>
-        /// The amount of time, in minutes, by which the synchronization interval can vary. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 SyncVariance { get; set; }
-    }
-
-    /// <summary>
-    /// This association relates an MSI check with any setting information it requires. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {2B306494-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCDriverAttribute
-    {
-    }
-
-    /// <summary>
-    /// This association relates an MSI check with any setting information it requires. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {0E5ACD14-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCDataSourceAttribute
-    {
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesPinInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Pinned { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PinnedForComputer { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PinnedForFolderRedirection { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PinnedForUser { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 PinnedForUserByPolicy { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesFileSysInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 LocalAttributes { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LocalChangeTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LocalCreationTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LocalLastAccessTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime LocalLastWriteTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public long LocalSize { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 OriginalAttributes { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime OriginalChangeTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime OriginalCreationTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime OriginalLastAccessTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime OriginalLastWriteTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public long OriginalSize { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 RemoteAttributes { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime RemoteChangeTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime RemoteCreationTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime RemoteLastAccessTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: DATETIME <br/>
-        ///  <br/>
-        /// </summary>
-        public DateTime RemoteLastWriteTime { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public long RemoteSize { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesSuspendInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Suspended { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SuspendedRoot { get; set; }
-    }
-
-    /// <summary>
-    /// Since software elements in a ready to run state cannot transition into  another state, the value of the phase property is restricted to  in-state for CIM_SoftwareElement objects in a ready to run state. <br/>
-    ///  <br/>
-    /// provider: MSIProv <br/>
-    ///  <br/>
-    /// uuid: {3A20796C-DB33-11d2-85FC-0000F8102E5F} <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_ODBCDriverSoftwareElement
-    {
-        /// <summary>
-        /// The Phase property indicates whether the referenced check is an  in-state check or a next-state check. <br/>
-        ///  <br/>
-        /// cimtype: uint16 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt16 Phase { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesMachineConfiguration
-    {
-        /// <summary>
-        /// If true, background synchronization is enabled <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean BackgroundSyncEnabled { get; set; }
-        /// <summary>
-        /// the background synchronization parameters. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesBackgroundSync <br/>
-        ///  <br/>
-        /// </summary>
-        public Object BackgroundSyncParams { get; set; }
-        /// <summary>
-        /// If true, the disk space used by offline files is limited <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean DiskSpaceLimitEnabled { get; set; }
-        /// <summary>
-        /// This object&apos;s properties determine how the disk space is managed. <br/>
-        ///  <br/>
-        /// cimtype: object:Win32_OfflineFilesDiskSpaceLimit <br/>
-        ///  <br/>
-        /// </summary>
-        public Object DiskSpaceLimitParams { get; set; }
-        /// <summary>
-        /// If true, only administratively assigned offline files are synchronized when the user logs on. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean EconomicalAdminPinningEnabled { get; set; }
-        /// <summary>
-        /// If true, the Offline Files feature is enabled through a policy setting. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Enabled { get; set; }
-        /// <summary>
-        /// Array strings that specify the types of files that are excluded from being cached <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] ExcludedFileTypes { get; set; }
-        /// <summary>
-        /// Indicate if the configuration settings are taking affect <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean IsConfiguredByWMI { get; set; }
-        /// <summary>
-        /// If true, the Make Available Offline button is removed. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean MakeAvailableOfflineButtonRemoved { get; set; }
-        /// <summary>
-        /// If true, the Offline Files cache will be encrypted. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OfflineFilesCacheEncrypted { get; set; }
-        /// <summary>
-        /// If true, slow-link mode is enabled as specified in the SlowLinkParams property. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SlowLinkEnabled { get; set; }
-        /// <summary>
-        /// An array of strings that contain the slow-link mode parameters. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String[] SlowLinkParams { get; set; }
-        /// <summary>
-        /// Allow syncing to occur on a costed network where the user is charged by usage. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean SyncOnCostedNetworkEnabled { get; set; }
-        /// <summary>
-        /// The transparent caching latency, in milliseconds. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TransparentCachingLatencyThreshold { get; set; }
-        /// <summary>
-        /// If true, the Work Offline button is removed. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean WorkOfflineButtonRemoved { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesCache
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Active { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean Enabled { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String Location { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesConnectionInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 ConnectState { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 OfflineReason { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesDiskSpaceLimit
-    {
-        /// <summary>
-        /// The maximum total size, in megabytes (MB), of all files that reside on network shares and are marked to be cached automatically, that can be cached by the Offline Files feature. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 AutoCacheSizeInMB { get; set; }
-        /// <summary>
-        /// The total amount of disk space, in megabytes (MB), that can be used by the Offline Files feature. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
-        /// </summary>
-        public UInt32 TotalSizeInMB { get; set; }
-    }
-
-    /// <summary>
-    ///  <br/>
-    /// provider: Win32_OfflineFilesProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesDirtyInfo
-    {
-        /// <summary>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public long LocalDirtyByteCount { get; set; }
-        /// <summary>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// </summary>
-        public long RemoteDirtyByteCount { get; set; }
-    }
-
-    /// <summary>
-    /// Private Interface <br/>
-    ///  <br/>
-    /// provider: UserProfileConfigurationProvider <br/>
-    ///  <br/>
-    /// </summary>
-    public class Win32_OfflineFilesHealth
-    {
-        /// <summary>
-        /// A DATETIME value, in string format, that represents the last time this folder was successfully synchronized to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LastSuccessfulSyncTime { get; set; }
-        /// <summary>
-        /// The status of the last attempt to synchronize this folder to the Offline Files cache. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
-        /// </summary>
-        public byte LastSyncStatus { get; set; }
-        /// <summary>
-        /// A DATETIME value, in string format, that represents the last time an attempt was made to synchronized this folder to the Offline Files cache, even if it was unsuccessful. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// </summary>
-        public String LastSyncTime { get; set; }
-        /// <summary>
-        /// If true, the Offline Files feature is enabled for this folder. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OfflineAccessEnabled { get; set; }
-        /// <summary>
-        /// If true, the share is working in Online mode <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
-        /// </summary>
-        public Boolean OnlineMode { get; set; }
     }
 }
