@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FclEx.Wmi.SourceGenerator.Models;
+﻿namespace FclEx.Wmi.SourceGenerator.Models;
 
 /// <summary>
 /// Represents a WMI class

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.Collections.Extensions;
-
-namespace FclEx.Wmi.SourceGenerator.Models;
+﻿namespace FclEx.Wmi.SourceGenerator.Models;
 
 public class Qualifiers
 {
