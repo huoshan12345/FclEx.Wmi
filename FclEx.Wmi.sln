@@ -37,6 +37,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F6DA59D1-6
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FclEx.Wmi", "src\FclEx.Wmi\FclEx.Wmi.csproj", "{5FCC21C3-E1B3-44D9-AC25-E0F25E07D784}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85412FFF-F39D-4362-9E38-31401CCD4548} = {85412FFF-F39D-4362-9E38-31401CCD4548}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FclEx.Wmi.SourceGenerator", "src\FclEx.Wmi.SourceGenerator\FclEx.Wmi.SourceGenerator.csproj", "{85412FFF-F39D-4362-9E38-31401CCD4548}"
 EndProject
