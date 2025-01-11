@@ -15,6 +15,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!--NOTE: GetTargetFrameworkVersion('netstandard2.0') is 0.0-->
     <TargetFrameworkVersion>v$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
+    <!--workaround for https://github.com/dotnet/msbuild/issues/4303-->
+    <AddSyntheticProjectReferencesForSolutionDependencies>false</AddSyntheticProjectReferencesForSolutionDependencies>
   </PropertyGroup>
 
   <ItemGroup>
