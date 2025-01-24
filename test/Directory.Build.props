@@ -9,13 +9,13 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!--NOTE: GetTargetFrameworkVersion('netstandard2.0') is 0.0-->
     <TargetFrameworkVersion>v$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
 
   <PropertyGroup>
     <_RootDir>$(MSBuildThisFileDirectory)../</_RootDir>
     <VSTestLogger>trx%3bLogFileName=$(MSBuildProjectName).trx</VSTestLogger>
     <VSTestResultsDirectory>$(_RootDir)TestResults/$(Configuration)/$(TargetFramework)</VSTestResultsDirectory>
-    <_SettingFile>appsettings.json</_SettingFile>
   </PropertyGroup>
 
 </Project>
