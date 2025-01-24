@@ -4,8 +4,13 @@
     <TargetFrameworks>net6.0-windows;net7.0-windows;net8.0-windows;net9.0-windows</TargetFrameworks>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), 8.0)) ">
     <PackageReference Include="System.Management" Version="9.0.1" />
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::VersionLessThan($(TargetFrameworkVersion), 8.0)) ">
+    <!--System.Management 9.0 has some dependencies that don't support net6.0 or net7.0, so we use 8.x for the frameworks.-->
+    <!--System.Management currently is only supported for Windows desktop applications.-->
+    <PackageReference Include="System.Management" Version="[8.0.0, 9.0.0)" />
   </ItemGroup>
 
   <PropertyGroup>
