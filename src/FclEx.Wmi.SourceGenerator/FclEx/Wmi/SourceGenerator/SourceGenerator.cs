@@ -16,13 +16,13 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace FclEx.Wmi.SourceGenerator;
 
-[Generator]
-public class SourceGenerator : ISourceGenerator
+[Generator(LanguageNames.CSharp)]
+public class SourceGenerator : IIncrementalGenerator
 {
     private static readonly bool IsGithubAction = Environment.GetEnvironmentVariable("GITHUB_ACTION") is { Length: > 0 };
     private static readonly bool IsWin = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
-    public static void GenerateToFiles(string? folder)
+    public static void GenerateFiles(string? folder)
     {
         var di = new DirectoryInfo(folder ?? Path.Combine(".", "Generated"));
         if (di.Exists)
@@ -30,18 +30,15 @@ public class SourceGenerator : ISourceGenerator
             di.Delete(true);
             di.Create();
         }
-        ExecuteInternal(new OutputOptions(OutputType.File, di.FullName), default);
+        ExecuteInternal(new OutputOptions(OutputType.File, di.FullName), default, null);
     }
 
-    public void Execute(GeneratorExecutionContext context)
+    public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        ExecuteInternal(new OutputOptions(OutputType.Context, null), context);
-    }
-
-    public void Initialize(GeneratorInitializationContext context)
-    {
-        //if (Debugger.IsAttached == false)
-        //    Debugger.Launch();
+        context.RegisterImplementationSourceOutput(context.AnalyzerConfigOptionsProvider, (ctx, provider) =>
+        {
+            ExecuteInternal(new OutputOptions(OutputType.Context, null), ctx, provider);
+        });
     }
 
     private static readonly string[] Namespaces =
@@ -149,9 +146,8 @@ public class SourceGenerator : ISourceGenerator
         }
     }
 
-    private static DirectoryInfo GetResourcesDir(GeneratorExecutionContext context)
+    private static DirectoryInfo GetResourcesDir(AnalyzerConfigOptionsProvider? options)
     {
-        var options = context.AnalyzerConfigOptions;
         const string key = "build_property.projectdir";
         // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
         var path = options?.GetGlobalOption(key) ?? AppContext.BaseDirectory;
@@ -177,7 +173,7 @@ public class SourceGenerator : ISourceGenerator
         return resourcesDir;
     }
 
-    private static (List<SourceInfo> Sources, DateTime? Oldest, DirectoryInfo ResourcesDir) ReadFiles(GeneratorExecutionContext context)
+    private static (List<SourceInfo> Sources, DateTime? Oldest, DirectoryInfo ResourcesDir) ReadFiles(AnalyzerConfigOptionsProvider? context)
     {
         var resourcesDir = GetResourcesDir(context);
 
@@ -195,9 +191,9 @@ public class SourceGenerator : ISourceGenerator
 
     //By not inlining we make sure we can catch assembly loading errors when jitting this method
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private static void ExecuteInternal(OutputOptions options, GeneratorExecutionContext context)
+    private static void ExecuteInternal(OutputOptions outputOptions, SourceProductionContext context, AnalyzerConfigOptionsProvider? options)
     {
-        var (fileSources, oldest, resourcesDir) = ReadFiles(context);
+        var (fileSources, oldest, resourcesDir) = ReadFiles(options);
 
         if (IsGithubAction || IsWin == false)
         {
@@ -215,10 +211,10 @@ public class SourceGenerator : ISourceGenerator
 
         foreach (var (_, name, code) in sources)
         {
-            switch (options.OutputType)
+            switch (outputOptions.OutputType)
             {
                 case OutputType.File:
-                    var fi = new FileInfo(Path.Combine(options.Folder ?? ".", name));
+                    var fi = new FileInfo(Path.Combine(outputOptions.Folder ?? ".", name));
                     fi.Directory!.Create();
                     File.WriteAllText(fi.FullName, code);
                     break;

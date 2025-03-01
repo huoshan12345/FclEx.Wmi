@@ -7,6 +7,6 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        SourceGenerator.GenerateToFiles(args.FirstOrDefault());
+        SourceGenerator.GenerateFiles(args.FirstOrDefault());
     }
 }
