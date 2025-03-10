@@ -54,7 +54,8 @@ jobs:
         run: dotnet restore ${{ env.SOLUTION }}
 
       - name: Test Release
-        run: dotnet test -c Release --no-restore ${{ env.SOLUTION }} -v q --property:WarningLevel=0 /clp:ErrorsOnly
+        # disable parallel execution for frameworks to avoid issues like "it is being used by another process" happened on github-windows
+        run: dotnet test -c Release --no-restore ${{ env.SOLUTION }} -v q --property:WarningLevel=0 /clp:ErrorsOnly -p:TestTfmsInParallel=false
 
       - name: Test Report
         uses: dorny/test-reporter@main
