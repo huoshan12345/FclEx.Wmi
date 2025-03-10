@@ -3,7 +3,7 @@ using System.Linq;
 using System.Management;
 using System.Text;
 using FclEx.CodeAnalysis;
-using FclEx.Wmi.SourceGenerator.Extensions;
+using FclEx.Extensions;
 using FclEx.Wmi.SourceGenerator.Models;
 
 namespace FclEx.Wmi.SourceGenerator.Sources;
@@ -22,7 +22,7 @@ public static class ClassItemSource
             .WriteUsings(usings)
             .WriteLine();
 
-        var ns = @namespace.TrimStart("root\\", StringComparison.OrdinalIgnoreCase).Replace("\\", ".");
+        var ns = @namespace.SkipUntil("root\\", true, StringComparison.OrdinalIgnoreCase).Replace("\\", ".");
 
         // Namespace declaration
         builder.WriteLine($"namespace {ns}")
@@ -72,7 +72,7 @@ public static class ClassItemSource
             var sb = new StringBuilder(256);
             sb.Append(key);
             sb.Append(": ");
-            foreach (var (value, _, _, isLast) in values.IndexExt())
+            foreach (var (value, _, _, isLast) in values.IndexEx())
             {
                 sb.Append(value);
                 if (!isLast)

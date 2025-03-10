@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -7,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using FclEx.CodeAnalysis;
-using FclEx.Wmi.SourceGenerator.Extensions;
+using FclEx.Extensions;
 using FclEx.Wmi.SourceGenerator.Models;
 using FclEx.Wmi.SourceGenerator.Sources;
 using Microsoft.CodeAnalysis;
@@ -100,7 +99,7 @@ public class SourceGenerator : IIncrementalGenerator
                 var lines = _dot.Replace(value, ".\r\n")
                     .Split(LineSeparators)
                     .Select(m => m.Trim())
-                    .Where(m => m.IsValid());
+                    .Where(m => m.IsNotEmpty());
 
                 foreach (var line in lines)
                 {
