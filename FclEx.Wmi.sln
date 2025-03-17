@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4FBBC7F5
 		build\pkg.version = build\pkg.version
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{B9E45210-0531-4DEB-9E03-B3CAEF4C52C8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{B9E45210-0531-4DEB-9E03-B3CAEF4C52C8}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build.yml = .github\workflows\build.yml
 		.github\dependabot.yml = .github\dependabot.yml
