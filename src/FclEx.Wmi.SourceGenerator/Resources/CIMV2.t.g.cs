@@ -8,8 +8,6 @@ namespace CIMV2
     /// The Win32_TapeDrive class represents a tape drive on a Win32 computer. <br/>
     /// Tape drives are primarily distinguished by the fact that they can be accessed only sequentially. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4B1-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -49,7 +47,6 @@ namespace CIMV2
         /// </summary>
         public String[] CapabilityDescriptions { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -141,7 +138,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 DefaultBlockSize { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -219,8 +215,6 @@ namespace CIMV2
         /// </summary>
         public String Id { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -285,8 +279,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 MinBlockSize { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -361,15 +353,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 ReportSetMarks { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -428,7 +411,6 @@ namespace CIMV2
         /// </summary>
         public Boolean ByteCount { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -443,7 +425,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -457,8 +438,6 @@ namespace CIMV2
         /// </summary>
         public String HostAddress { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -517,15 +496,6 @@ namespace CIMV2
         /// </summary>
         public Boolean SNMPEnabled { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -563,8 +533,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_TemperatureProbe class represents the properties of a temperature sensor (electronic thermometer). <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {464FFABB-946F-11d2-AAE2-006008C78BC7} <br/>
@@ -594,7 +562,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 Availability { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -669,7 +636,6 @@ namespace CIMV2
         /// </summary>
         public int CurrentReading { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -699,8 +665,6 @@ namespace CIMV2
         /// </summary>
         public String ErrorDescription { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -770,8 +734,6 @@ namespace CIMV2
         /// </summary>
         public int MinReadable { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -846,15 +808,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 Resolution { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -959,7 +912,6 @@ namespace CIMV2
         /// </summary>
         public Boolean AcceptStop { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -991,7 +943,6 @@ namespace CIMV2
         /// </summary>
         public Boolean DelayedAutoStart { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1049,8 +1000,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 ExitCode { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1141,15 +1090,6 @@ namespace CIMV2
         /// </summary>
         public String State { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1206,8 +1146,6 @@ namespace CIMV2
     /// The Win32_Thread class represents a thread of execution.While a process must have one thread of execution, the process can create other threads to execute tasks in parallel. <br/>
     /// Threads share the process environment, thus multiple threads under the same process use less memory than the same number of processes. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4DD-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -1216,7 +1154,6 @@ namespace CIMV2
     public class Win32_Thread
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1249,7 +1186,6 @@ namespace CIMV2
         /// </summary>
         public String CSName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1285,8 +1221,6 @@ namespace CIMV2
         /// </summary>
         public String Handle { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1306,8 +1240,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 KernelModeTime { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1385,15 +1317,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 StartAddress { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1584,8 +1507,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_TimeZone class represents the time zone information for a Win32 system. <br/>
     /// This includes changes needed for the transition to and from daylight savings time. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -1854,8 +1775,6 @@ namespace CIMV2
     /// Specifies a trustee. <br/>
     /// Either a name or a SID (byte array) can be used <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {8502C589-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
@@ -1907,6 +1826,8 @@ namespace CIMV2
     /// <summary>
     /// The RegisterTypeLibraries action registers type libraries with the system. <br/>
     /// The action works on each file referenced which is triggered to be installed. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>

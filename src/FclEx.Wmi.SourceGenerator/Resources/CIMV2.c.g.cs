@@ -7,8 +7,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_CacheMemory class represents cache memory (internal and external) on a computer system. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {FAF76B97-798C-11D2-AAD1-006008C78BC7} <br/>
@@ -81,7 +79,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 CacheType { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -162,7 +159,6 @@ namespace CIMV2
         /// </summary>
         public UInt16[] CurrentSRAM { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -307,8 +303,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 FlushTimer { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -364,8 +358,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 MaxCacheSize { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -454,15 +446,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 StartingAddress { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -523,8 +506,6 @@ namespace CIMV2
     /// The Win32_CDROMDrive class represents a CD-ROM drive on a Win32_ComputerSystem. <br/>
     /// Note: The name of the drive does not correspond to the logical drive letter assigned to device. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4B3-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -564,7 +545,6 @@ namespace CIMV2
         /// </summary>
         public String[] CapabilityDescriptions { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -647,7 +627,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 DefaultBlockSize { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -725,8 +704,6 @@ namespace CIMV2
         /// </summary>
         public String Id { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -812,8 +789,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 MinBlockSize { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -924,15 +899,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 Size { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -996,6 +962,8 @@ namespace CIMV2
     /// This association relates a MSI Check with any locational information it requires. <br/>
     /// The location is in the form of a file and/or directory specification. <br/>
     ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
     /// uuid: {2C6811D2-DB32-11d2-85FC-0000F8102E5F} <br/>
@@ -1008,8 +976,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_CIMLogicalDeviceCIMDataFile class represents an association between logical devices and data files, indicating the driver files used by the device. <br/>
     /// This class is used to discover which device drivers a device uses. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -1038,8 +1004,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ClassicCOMApplicationClasses class represents an association between a DCOM application and a COM component grouped under it. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {0F73ED54-8ED9-11d2-B340-00105A1F8569} <br/>
@@ -1052,8 +1016,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ClassicCOMClass class represents the properties of a COM component. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {0F73ED53-8ED9-11d2-B340-00105A1F8569} <br/>
@@ -1062,7 +1024,6 @@ namespace CIMV2
     public class Win32_ClassicCOMClass
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1076,15 +1037,12 @@ namespace CIMV2
         /// </summary>
         public String ComponentId { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1100,15 +1058,6 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1118,8 +1067,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_ClassicCOMClassSetting class represents the settings of a COM component. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -1330,8 +1277,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ClassicCOMClassSettings class represents an association between a COM class and the settings used to configure instances of the COM class. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {E5D8A564-F6C0-11d2-B35E-00105A1F8569} <br/>
@@ -1345,6 +1290,8 @@ namespace CIMV2
     /// The RegisterClassInfo action manages the registration of COM class information with the system. <br/>
     /// In the Advertise mode the action registers all COM classes for which the corresponding feature is enabled. <br/>
     /// Else the action registers COM classes for which the corresponding feature is currently selected to be installed. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -1513,8 +1460,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ClientApplicationSetting class represents an association between an executable and a DCOM application that contains the DCOM configuration options for the executable. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {0F73ED5E-8ED9-11d2-B340-00105A1F8569} <br/>
@@ -1530,8 +1475,6 @@ namespace CIMV2
     /// createby: Create <br/>
     ///  <br/>
     /// deleteby: DeleteInstance <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -1558,22 +1501,18 @@ namespace CIMV2
         /// </summary>
         public Boolean AllowMaximum { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1616,15 +1555,6 @@ namespace CIMV2
         /// </summary>
         public String ServerName { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1645,8 +1575,6 @@ namespace CIMV2
     /// Codecs convert one media format type to another, typically a compressed format to an uncompressed format. <br/>
     /// The name &quot;codec&quot; is derived from a combination of &quot;compress&quot; and &quot;decompress.&quot;  For example, a codec can convert a compressed format such as MS-ADPCM to an uncompressed format such as PCM, which most audio hardware can play directly. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4C3-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -1655,59 +1583,48 @@ namespace CIMV2
     public class Win32_CodecFile
     {
         /// <summary>
-        /// The AccessMask property is a bit array representing the access rights to the given file or directory held by the user or group on whose behalf the instance is returned. <br/>
-        /// This property is only supported under Windows NT and Windows 2000. <br/>
-        /// On Windows 98 and on Windows NT/2000 FAT volumes, FULL_ACCESS is returned, indicating no security has been set on the object. <br/>
         ///  <br/>
         /// cimtype: uint32 <br/>
         ///  <br/>
         /// </summary>
         public UInt32 AccessMask { get; set; }
         /// <summary>
-        /// The Archive property is a boolean value indicating that the file should be archived. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean Archive { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Compressed property is a boolean value indicating that the file is compressed. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean Compressed { get; set; }
         /// <summary>
-        /// The CompressionMethod property is a free form string indicating the algorithm or tool used to compress the logical file. <br/>
-        /// If it is not possible (or not desired) to describe the compression scheme (perhaps because it is not known), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is compressed or not, &quot;Compressed&quot; to represent that the file is compressed but either its compression scheme is not known or not disclosed, and &quot;Not Compressed&quot; to represent that the logical file is not compressed. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String CompressionMethod { get; set; }
         /// <summary>
-        /// The CreationClassName property is a string indicating the name of this class. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The CreationDate property is a datetime value indicating the file&apos;s creation date. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime CreationDate { get; set; }
         /// <summary>
-        /// The CSCreationClassName property is a string indicating the class of the computer system. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1716,7 +1633,6 @@ namespace CIMV2
         /// </summary>
         public String CSCreationClassName { get; set; }
         /// <summary>
-        /// The CSName property is a string indicating the name of the computer system. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1734,70 +1650,54 @@ namespace CIMV2
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The Drive property is a string representing the drive letter (including colon) of the file. <br/>
-        /// Example: c: <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Drive { get; set; }
         /// <summary>
-        /// The EightDotThreeFileName property is a string representing the DOS-compatible file name for this file. <br/>
-        /// Example: c:\progra~1 <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String EightDotThreeFileName { get; set; }
         /// <summary>
-        /// The Encrypted property is a boolean value indicating that the file is encrypted. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean Encrypted { get; set; }
         /// <summary>
-        /// The EncryptionMethod property is a free form string indicating the algorithm or tool used to encrypt the logical file. <br/>
-        /// If it is not possible (or not desired) to describe the encryption scheme (perhaps for security reasons), use the following words: &quot;Unknown&quot; to represent that it is not known whether the logical file is encrypted or not, &quot;Encrypted&quot; to represent that the file is encrypted but either its encryption scheme is not known or not disclosed, and &quot;Not Encrypted&quot; to represent that the logical file is not encrypted. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String EncryptionMethod { get; set; }
         /// <summary>
-        /// The Extension property is a string representing the file&apos;s extension (without the dot). <br/>
-        /// Example: txt, mof, mdb. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Extension { get; set; }
         /// <summary>
-        /// The FileName property is a string representing the filename (without extension) of the file. <br/>
-        /// Example: autoexec <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String FileName { get; set; }
         /// <summary>
-        /// The FileSize property represents the size of the file (in bytes). <br/>
         ///  <br/>
         /// cimtype: uint64 <br/>
-        ///  <br/>
-        /// units: bytes <br/>
         ///  <br/>
         /// </summary>
         public UInt64 FileSize { get; set; }
         /// <summary>
-        /// The FileType property is a string descriptor representing the file type (indicated by the Extension property). <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String FileType { get; set; }
         /// <summary>
-        /// The FSCreationClassName property is a string indicating the class of the file system. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1806,7 +1706,6 @@ namespace CIMV2
         /// </summary>
         public String FSCreationClassName { get; set; }
         /// <summary>
-        /// The FSName property is string indicating the name of the file system. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1822,104 +1721,78 @@ namespace CIMV2
         /// </summary>
         public String Group { get; set; }
         /// <summary>
-        /// The Hidden property is a boolean value indicating if the file is hidden. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean Hidden { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The InUseCount property is an integer indicating the number of &apos;file opens&apos; that are currently active against the file. <br/>
         ///  <br/>
         /// cimtype: uint64 <br/>
         ///  <br/>
         /// </summary>
         public UInt64 InUseCount { get; set; }
         /// <summary>
-        /// The LastAccessed property is a datetime value indicating the time the file was last accessed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime LastAccessed { get; set; }
         /// <summary>
-        /// The LastModified property is a datetime value indicating the time the file was last modified. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime LastModified { get; set; }
         /// <summary>
-        /// Manufacturer string from version resource if one is present. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Manufacturer { get; set; }
         /// <summary>
-        /// The Name property is a string representing the inherited name that serves as a key of a logical file instance within a file system. <br/>
-        /// Full path names should be provided. <br/>
-        /// Example: c:\winnt\system\win.ini <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Path property is a string representing the path of the file. <br/>
-        /// This includes leading and trailing backslashes. <br/>
-        /// Example: \windows\system\ <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Path { get; set; }
         /// <summary>
-        /// The Readable property is a boolean value indicating if the file can be read. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean Readable { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Status { get; set; }
         /// <summary>
-        /// The system property is a boolean value indicating if the file is a system file. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
         /// </summary>
         public Boolean System { get; set; }
         /// <summary>
-        /// Version string from version resource if one is present. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Version { get; set; }
         /// <summary>
-        /// The Writeable property is a boolean value indicating if the file can be written. <br/>
         ///  <br/>
         /// cimtype: boolean <br/>
         ///  <br/>
@@ -1929,8 +1802,6 @@ namespace CIMV2
 
     /// <summary>
     /// This class represents an association between a managed system element collection and the class representing statistical information about the collection. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// uuid: {13FFA73F-25AA-4b66-B63C-B635514678C5} <br/>
     ///  <br/>
@@ -1943,53 +1814,36 @@ namespace CIMV2
     /// The Win32_COMApplication class represents a COM application. <br/>
     /// In this context, a COM application is a logical grouping of COM classes. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {0F73ED4F-8ED9-11d2-B340-00105A1F8569} <br/>
     ///  <br/>
     /// </summary>
     public class Win32_COMApplication
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2000,8 +1854,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_COMApplicationClasses class represents an association between a COM component and the COM application where it resides. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {0F73ED51-8ED9-11d2-B340-00105A1F8569} <br/>
     ///  <br/>
     /// </summary>
@@ -2011,8 +1863,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_COMApplicationSettings class represents an association between a DCOM application and its configuration settings. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -2026,53 +1876,36 @@ namespace CIMV2
     /// <summary>
     /// The Win32_COMClass class represents the properties of a Component Object Model (COM) component. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {0F73ED50-8ED9-11d2-B340-00105A1F8569} <br/>
     ///  <br/>
     /// </summary>
     public class Win32_COMClass
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2082,8 +1915,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_ComClassAutoEmulator class represents an association between a COM class and another COM class that it automatically emulates. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -2096,8 +1927,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_ComClassEmulator class represents an association between two versions of a COM class. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -2112,6 +1941,8 @@ namespace CIMV2
     /// The Win32_CommandLineAccess class represents the command line interface to a service or application. <br/>
     /// The name of the access point is always the full command line text. <br/>
     ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
     /// uuid: {656E1F1E-E3D2-11d2-8601-0000F8102E5F} <br/>
@@ -2120,7 +1951,6 @@ namespace CIMV2
     public class Win32_CommandLineAccess
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2142,15 +1972,12 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -2165,15 +1992,6 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2213,8 +2031,6 @@ namespace CIMV2
     /// Component categories are groups of COM classes with a defined functionality set shared between them. <br/>
     /// A client using these interfaces queries the registry for the category title and unique identifier called a CategoryID, which is created from a globally unique identifier (GUID). <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {0F73ED5A-8ED9-11d2-B340-00105A1F8569} <br/>
@@ -2223,7 +2039,6 @@ namespace CIMV2
     public class Win32_ComponentCategory
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2237,15 +2052,12 @@ namespace CIMV2
         /// </summary>
         public String CategoryId { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -2261,15 +2073,6 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2279,8 +2082,6 @@ namespace CIMV2
 
     /// <summary>
     /// This event class represents events when a computer has begun the process of shutting down. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// uuid: {A6B834B1-F974-4445-8F2E-FC996638B350} <br/>
     ///  <br/>
@@ -2318,8 +2119,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_ComputerSystem class represents a computer system operating in a Win32 environment. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -2406,7 +2205,6 @@ namespace CIMV2
         /// </summary>
         public String BootupState { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2454,7 +2252,6 @@ namespace CIMV2
         /// </summary>
         public Boolean DaylightInEffect { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2526,8 +2323,6 @@ namespace CIMV2
         /// </summary>
         public String[] InitialLoadInfo { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -2761,15 +2556,6 @@ namespace CIMV2
         /// </summary>
         public String[] Roles { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -2885,8 +2671,6 @@ namespace CIMV2
     /// <summary>
     /// This event class represents events related to a computer sytem. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {999A286E-CF9C-4f0c-8F0F-827C4C0D9CC6} <br/>
     ///  <br/>
     /// </summary>
@@ -2916,8 +2700,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ComputerSystemProcessor class represents an association between a computer system and a processor running on that system. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {719A6839-C124-11d2-85E8-0000F8102E5F} <br/>
@@ -2930,8 +2712,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_ComputerSystemProduct class represents a product. <br/>
     /// This includes software and hardware used on this computer system. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -3005,8 +2785,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_COMSetting class represents the settings associated with a COM component or COM application. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {E5D8A560-F6C0-11d2-B35E-00105A1F8569} <br/>
     ///  <br/>
     /// </summary>
@@ -3040,6 +2818,8 @@ namespace CIMV2
     /// If Condition evaluates to True, the corresponding Level value in the Feature class will be set to the value specified in the Condition class&apos;s Level column. <br/>
     /// Using this mechanism, any feature can be permanently disabled (by setting the Level to 0), set to be always installed (by setting the Level to 1), or set to a different install priority (by setting Level to an intermediate value). <br/>
     /// The Level may be set based upon any conditional statement, such as a test for platform, operating system, a particular property setting, etc. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -3158,8 +2938,6 @@ namespace CIMV2
     /// <summary>
     /// USBControllerHasHub defines the Hub(s) that are downstream of the USBController. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32a <br/>
     ///  <br/>
     /// </summary>
@@ -3220,6 +2998,8 @@ namespace CIMV2
     /// The CreateFolder action creates empty folders for components set to be installed locally. <br/>
     /// The removal of these folders is handled by the RemoveFolders action. <br/>
     /// When a folder is created (and didn&apos;t already exist), it is registered with the appropriate component id. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -3312,8 +3092,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_CurrentProbe class represents the properties of a current monitoring sensor (ammeter). <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {464FFABA-946F-11d2-AAE2-006008C78BC7} <br/>
@@ -3343,7 +3121,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 Availability { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -3418,7 +3195,6 @@ namespace CIMV2
         /// </summary>
         public int CurrentReading { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -3448,8 +3224,6 @@ namespace CIMV2
         /// </summary>
         public String ErrorDescription { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -3519,8 +3293,6 @@ namespace CIMV2
         /// </summary>
         public int MinReadable { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -3595,15 +3367,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 Resolution { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>

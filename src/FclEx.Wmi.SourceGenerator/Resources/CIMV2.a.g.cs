@@ -9,22 +9,18 @@ namespace CIMV2
     /// User or group names recognized by a Windows NT domain are descendents (or members) of this class. <br/>
     /// The Win32_Account class is not included in a default hardware inventory operation. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {8502C4C9-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
     public class Win32_Account
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -39,8 +35,6 @@ namespace CIMV2
         /// </summary>
         public String Domain { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -93,15 +87,6 @@ namespace CIMV2
         /// </summary>
         public byte SIDType { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -111,8 +96,6 @@ namespace CIMV2
 
     /// <summary>
     /// The SID of an account <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: SECRCW32 <br/>
     ///  <br/>
@@ -125,8 +108,6 @@ namespace CIMV2
 
     /// <summary>
     /// Specifies an access control entry <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// uuid: {8502C58A-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
@@ -187,6 +168,8 @@ namespace CIMV2
     /// This association relates an MSI action with any locational information it requires. <br/>
     /// This location is in the form of a file and/or directory specification. <br/>
     ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
     /// uuid: {0D51A84E-DB32-11d2-85FC-0000F8102E5F} <br/>
@@ -213,8 +196,6 @@ namespace CIMV2
     /// This class is used to discover which resources, such as IRQs, or DMA channels, are in-use by a specific device. <br/>
     /// This class has been deprecated in favor of the Win32_PNPAllocatedResource class. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C50D-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -226,6 +207,8 @@ namespace CIMV2
 
     /// <summary>
     /// The ApplicationCommandLine association allows one to  to identify connection between an application and it&apos;s command line access point. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -240,6 +223,8 @@ namespace CIMV2
     /// The Win32_ApplicationService class represents any installed or advertised components or applications available on the system. <br/>
     /// Instances of this class include all properly installed and instrumented executables. <br/>
     ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
     /// uuid: {CC78410E-E3D1-11d2-8601-0000F8102E5F} <br/>
@@ -248,7 +233,6 @@ namespace CIMV2
     public class Win32_ApplicationService
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -263,15 +247,12 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -301,15 +282,6 @@ namespace CIMV2
         /// </summary>
         public String StartMode { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -338,8 +310,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_AssociatedProcessorMemory class represents an association between a processor and its cache memory. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {074737F0-ACBC-11d2-ABF6-00805F538618} <br/>
@@ -362,8 +332,6 @@ namespace CIMV2
     /// This class represents the settings for the autochk operation for a disk. <br/>
     /// The setting applies to all disks on the computer system. <br/>
     /// Note that the settings are applicable only to instances of logical disk that represent physical disks on the machine and not to mapped drives. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>

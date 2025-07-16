@@ -9,8 +9,6 @@ namespace CIMV2
     /// A group account allows access privileges to be changed for a list of users. <br/>
     /// Example: Marketing2. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4CB-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -19,14 +17,12 @@ namespace CIMV2
     public class Win32_Group
     {
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -43,8 +39,6 @@ namespace CIMV2
         /// </summary>
         public String Domain { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -97,15 +91,6 @@ namespace CIMV2
         /// </summary>
         public byte SIDType { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -115,8 +100,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_GroupInDomain relationship identifies the group accounts associated with a NT domain. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32a <br/>
     ///  <br/>
@@ -129,8 +112,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_GroupUser class represents an association between a group and an account that is a member of that group. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>

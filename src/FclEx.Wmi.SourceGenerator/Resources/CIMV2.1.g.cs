@@ -8,8 +8,6 @@ namespace CIMV2
     /// The Win32_1394Controller class represents the capabilities and management of a 1394 controller. <br/>
     /// IEEE 1394 is a specification for a high speed serial bus. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {2A7DC003-BAEF-11d2-85E5-0000F8102E5F} <br/>
@@ -27,7 +25,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 Availability { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -93,7 +90,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -123,8 +119,6 @@ namespace CIMV2
         /// </summary>
         public String ErrorDescription { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -154,8 +148,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 MaxNumberControlled { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -200,15 +192,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 ProtocolSupported { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -254,8 +237,6 @@ namespace CIMV2
     /// The Win32_1394ControllerDevice class represents an association between the high-speed serial bus (IEEE 1394 Firewire) Controller and the CIM_LogicalDevice connected to it. <br/>
     /// This serial bus provides enhanced connectivity for a wide range of devices, including consumer audio/video components, storage peripherals, other computers, and portable devices. <br/>
     /// IEEE 1394 has been adopted by the consumer electronics industry and provides a Plug and Play-compatible expansion interface. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>

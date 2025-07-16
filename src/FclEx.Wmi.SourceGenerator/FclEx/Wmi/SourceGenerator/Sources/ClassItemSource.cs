@@ -72,7 +72,7 @@ public static class ClassItemSource
             var sb = new StringBuilder(256);
             sb.Append(key);
             sb.Append(": ");
-            foreach (var (value, _, _, isLast) in values.IndexEx())
+            foreach (var (_, value, _, isLast) in values.IndexEx())
             {
                 sb.Append(value);
                 if (!isLast)

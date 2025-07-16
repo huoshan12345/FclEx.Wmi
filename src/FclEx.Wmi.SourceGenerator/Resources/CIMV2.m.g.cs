@@ -7,6 +7,8 @@ namespace CIMV2
     /// <summary>
     /// This association relates an MSI feature with an action used to register and/or publish the feature <br/>
     ///  <br/>
+    /// locale: ms_409 <br/>
+    ///  <br/>
     /// uuid: {E40D5488-DB31-11d2-85FC-0000F8102E5F} <br/>
     ///  <br/>
     /// </summary>
@@ -24,8 +26,6 @@ namespace CIMV2
     /// This case supports the scenario of helpdesk wanting to see the instances of a locally logged on user. <br/>
     /// Again, if there is more than one session of user B running on the machine, then the provider has no way of deciding which to use. <br/>
     /// In this case no mapped drive instances will be returned. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -63,7 +63,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 BlockSize { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -137,7 +136,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -191,8 +189,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 FreeSpace { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -218,8 +214,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 MaximumComponentLength { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -319,15 +313,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 Size { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -398,8 +383,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_MemoryArray class represents the properties of the computer system memory array and mapped addresses. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {FAF76B9A-798C-11D2-AAD1-006008C78BC7} <br/>
@@ -447,7 +430,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 BlockSize { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -523,7 +505,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -651,8 +632,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 ErrorTransferSize { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -666,8 +645,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 LastErrorCode { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -736,15 +713,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 StartingAddress { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -791,8 +759,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_MemoryArrayLocation class represents an association between a logical memory array and the physical memory array upon which it exists. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {B24EF561-BBBE-11d2-ABFB-00805F538618} <br/>
@@ -804,8 +770,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_MemoryDevice class represents the properties of a computer system&apos;s memory device along with it&apos;s associated mapped addresses. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -854,7 +818,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 BlockSize { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -930,7 +893,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1058,8 +1020,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 ErrorTransferSize { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1073,8 +1033,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 LastErrorCode { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1143,15 +1101,6 @@ namespace CIMV2
         /// </summary>
         public UInt64 StartingAddress { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1198,8 +1147,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_MemoryDeviceArray class represents an association between a memory device and the memory array in which it resides. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {B24EF563-BBBE-11d2-ABFB-00805F538618} <br/>
@@ -1211,8 +1158,6 @@ namespace CIMV2
 
     /// <summary>
     /// The Win32_MemoryDeviceLocation class represents an association between a memory device and the physical memory on which it exists. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
@@ -1226,8 +1171,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_MethodParameter class is a base class forimplementation of method parameters derived from this class. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {8502C4DA-5FBB-11D2-AAC1-006008C78BC7} <br/>
     ///  <br/>
     /// </summary>
@@ -1239,6 +1182,8 @@ namespace CIMV2
     /// The RegisterMIMEInfo action registers the MIME related registry information with the system. <br/>
     /// In the Advertise mode the action registers all MIME info for servers for which the corresponding feature is enabled. <br/>
     /// Else the action registers MIME info for servers for which the corresponding feature is currently selected to be installed. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -1437,8 +1382,6 @@ namespace CIMV2
     /// The Win32_MotherboardDevice class represents a device that contains the central components of the Win32 computer system. <br/>
     /// Example: A single piece of hardware containing a processor, bus, memory, and basic system interfaces <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: CIMWin32 <br/>
     ///  <br/>
     /// uuid: {8502C4BA-5FBB-11D2-AAC1-006008C78BC7} <br/>
@@ -1456,7 +1399,6 @@ namespace CIMV2
         /// </summary>
         public UInt16 Availability { get; set; }
         /// <summary>
-        /// The Caption property is a short textual description (one-line string) of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1522,7 +1464,6 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
-        /// The Description property provides a textual description of the object. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1552,8 +1493,6 @@ namespace CIMV2
         /// </summary>
         public String ErrorDescription { get; set; }
         /// <summary>
-        /// The InstallDate property is datetime value indicating when the object was installed. <br/>
-        /// A lack of a value does not indicate that the object is not installed. <br/>
         ///  <br/>
         /// cimtype: datetime <br/>
         ///  <br/>
@@ -1567,8 +1506,6 @@ namespace CIMV2
         /// </summary>
         public UInt32 LastErrorCode { get; set; }
         /// <summary>
-        /// The Name property defines the label by which the object is known. <br/>
-        /// When subclassed, the Name property can be overridden to be a Key property. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1630,15 +1567,6 @@ namespace CIMV2
         /// </summary>
         public String SecondaryBusType { get; set; }
         /// <summary>
-        /// The Status property is a string indicating the current status of the object. <br/>
-        /// Various operational and non-operational statuses can be defined. <br/>
-        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;. <br/>
-        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future. <br/>
-        /// An example is a SMART-enabled hard drive. <br/>
-        /// Non-operational statuses can also be specified. <br/>
-        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;. <br/>
-        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work. <br/>
-        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states. <br/>
         ///  <br/>
         /// cimtype: string <br/>
         ///  <br/>
@@ -1684,6 +1612,8 @@ namespace CIMV2
 
     /// <summary>
     /// The MoveFiles action allows the author to locate files that already exist on the user&apos;s machine, and move or copy those files to a new location. <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: MSIProv <br/>
     ///  <br/>
@@ -1816,6 +1746,8 @@ namespace CIMV2
 
     /// <summary>
     /// This abstract class represents any resources that are used by the MSI installer durring the course of an installation, patch or upgrade <br/>
+    ///  <br/>
+    /// locale: ms_409 <br/>
     ///  <br/>
     /// uuid: {CD7CA121-E3D2-11d2-8601-0000F8102E5F} <br/>
     ///  <br/>

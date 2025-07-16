@@ -78,8 +78,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_WMIElementSetting class represents an association between a service running in the Win32 system, and the WMI settings it can use. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// provider: WBEMCORE <br/>
     ///  <br/>
     /// uuid: {A83EF167-CA8D-11d2-B33D-00104BCC4B4A} <br/>
@@ -94,8 +92,6 @@ namespace CIMV2
     /// Win32_WMISetting can only have one instance. <br/>
     /// This single instance always exists for each Win32 system, and cannot be deleted. <br/>
     /// Additional instances cannot be created. <br/>
-    ///  <br/>
-    /// locale: ms_409 <br/>
     ///  <br/>
     /// provider: WBEMCORE <br/>
     ///  <br/>
