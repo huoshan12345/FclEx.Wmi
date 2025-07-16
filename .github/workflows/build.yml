@@ -52,7 +52,7 @@ jobs:
         run: dotnet restore ${{ env.SOLUTION }}
 
       - name: Test Release
-        run: dotnet test -c Release --no-restore ${{ env.SOLUTION }} -v d
+        run: dotnet test -c Release --no-restore ${{ env.SOLUTION }} -v q
 
       - name: Test Report
         uses: dorny/test-reporter@main
