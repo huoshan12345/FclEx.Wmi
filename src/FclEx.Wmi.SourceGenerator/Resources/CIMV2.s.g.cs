@@ -2288,7 +2288,7 @@ namespace CIMV2
         /// Description <br/>
         /// SERVICE_WIN32_OWN_PROCESS <br/>
         /// 0x00000010 <br/>
-        /// A Microsoft Win32® service that runs its own process. <br/>
+        /// A Microsoft Win32Â® service that runs its own process. <br/>
         /// SERVICE_WIN32_SHARE_PROCESS <br/>
         /// 0x00000020 <br/>
         /// A Win32 service that shares a process. <br/>

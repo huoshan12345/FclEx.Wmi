@@ -2045,8 +2045,6 @@ namespace CIMV2
     /// <summary>
     /// The Win32_PnPDeviceProperty class represents a property returned by Win32_PnPEntity&apos;s GetDeviceProperties() Method. <br/>
     ///  <br/>
-    /// locale: ms_409 <br/>
-    ///  <br/>
     /// uuid: {ee0b76cd-314b-41f1-99d4-d4f3b0421430} <br/>
     ///  <br/>
     /// </summary>
