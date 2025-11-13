@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <!--System.Management only supports net8.0-windows and above. Do not try to add net6.0-windows or net7.0-windows, it won't work.-->
-    <TargetFrameworks>net8.0-windows;net9.0-windows</TargetFrameworks>
+    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

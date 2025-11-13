@@ -23,7 +23,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - name: Get PR
         if: ${{ github.event_name == 'pull_request_target' }}
@@ -47,6 +47,7 @@ jobs:
           dotnet-version: |
             8.0.x
             9.0.x
+            10.0.x
 
       - name: NuGet Restore
         run: dotnet restore ${{ env.SOLUTION }}
