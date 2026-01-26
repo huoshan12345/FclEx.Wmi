@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <ToolName>FclEx.Wmi.SourceGenerator</ToolName>
-    <ToolFramework>net9.0-windows</ToolFramework>
+    <ToolFramework>net10.0-windows</ToolFramework>
     <ToolProjectDir>$(MSBuildProjectDirectory)\..\$(ToolName)\</ToolProjectDir>
     <ToolPath>$(ToolProjectDir)bin\$(Configuration)\$(ToolFramework)\$(ToolName).dll</ToolPath>
     <SourceDir>$(MSBuildProjectDirectory)\obj\Generated\</SourceDir>

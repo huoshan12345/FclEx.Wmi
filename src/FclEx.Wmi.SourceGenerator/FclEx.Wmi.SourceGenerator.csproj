@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
-    <!--To fix the error 'The library 'hostpolicy.dll' required to execute the application was not found'-->
+    <!--To fix the error The library 'hostpolicy.dll' required to execute the application was not found-->
     <OutputType>exe</OutputType>
-    <TargetFrameworks>net9.0-windows</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows</TargetFrameworks>
     <IsPackable>false</IsPackable>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <NoWarn>RS1035;CS1591</NoWarn>
