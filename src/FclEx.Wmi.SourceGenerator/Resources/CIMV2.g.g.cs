@@ -5,120 +5,121 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The Win32_Group class represents data about a group account. <br/>
-    /// A group account allows access privileges to be changed for a list of users. <br/>
-    /// Example: Marketing2. <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C4CB-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
+    /// The Win32_Group class represents data about a group account.<br/>
+    /// A group account allows access privileges to be changed for a list of users.<br/>
+    /// Example: Marketing2.<br/>
+    /// <br/>
+    /// provider: CIMWin32<br/>
+    /// <br/>
+    /// uuid: {8502C4CB-5FBB-11D2-AAC1-006008C78BC7}<br/>
+    /// <br/>
     /// </summary>
     public class Win32_Group
     {
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The Domain property indicates the name of the Windows domain to which the group account belongs. <br/>
-        /// Example: NA-SALES <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Domain <br/>
-        ///  <br/>
+        /// The Domain property indicates the name of the Windows domain to which the group account belongs.<br/>
+        /// Example: NA-SALES<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// override: Domain<br/>
+        /// <br/>
         /// </summary>
         public String Domain { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: datetime<br/>
+        /// <br/>
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The LocalAccount property indicates whether the account is defined on the local machine. <br/>
-        /// To retrieve only accounts defined on the local machine state a query that includes the condition &apos;LocalAccount=TRUE&apos;. <br/>
-        ///  <br/>
-        /// cimtype: Boolean <br/>
-        ///  <br/>
+        /// The LocalAccount property indicates whether the account is defined on the local machine.<br/>
+        /// To retrieve only accounts defined on the local machine state a query that includes the condition &apos;LocalAccount=TRUE&apos;.<br/>
+        /// <br/>
+        /// cimtype: Boolean<br/>
+        /// <br/>
         /// </summary>
         public Boolean LocalAccount { get; set; }
         /// <summary>
-        /// The Name property indicates the name of the Win32 group account on the domain specified by the Domain member of this class. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// override: Name <br/>
-        ///  <br/>
+        /// The Name property indicates the name of the Win32 group account on the domain specified by the Domain member of this class.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// override: Name<br/>
+        /// <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The SID property contains the security identifier (SID) for this account. <br/>
-        /// a SID is a string value of variable length used to identify a trustee. <br/>
-        /// Each account has a unique SID issued by an authority (such as a Windows domain), stored in a security database. <br/>
-        /// When a user logs on, the system retrieves the user&apos;s SID from the database and places it in the user&apos;s access token. <br/>
-        /// The system uses the SID in the user&apos;s access token to identify the user in all subsequent interactions with Windows security. <br/>
-        /// When a SID has been used as the unique identifier for a user or group, it cannot be used again to identify another user or group. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The SID property contains the security identifier (SID) for this account.<br/>
+        /// a SID is a string value of variable length used to identify a trustee.<br/>
+        /// Each account has a unique SID issued by an authority (such as a Windows domain), stored in a security database.<br/>
+        /// When a user logs on, the system retrieves the user&apos;s SID from the database and places it in the user&apos;s access token.<br/>
+        /// The system uses the SID in the user&apos;s access token to identify the user in all subsequent interactions with Windows security.<br/>
+        /// When a SID has been used as the unique identifier for a user or group, it cannot be used again to identify another user or group.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String SID { get; set; }
         /// <summary>
-        /// The SIDType property contains enumerated values that specify the type of security identifier (SID). <br/>
-        /// SIDTypes include: <br/>
-        /// SidTypeUser - Indicates a user SID. <br/>
-        /// SidTypeGroup - Indicates a group SID. <br/>
-        /// SidTypeDomain - Indicates a domain SID. <br/>
-        /// SidTypeAlias - Indicates an alias SID. <br/>
-        /// SidTypeWellKnownGroup - Indicates a SID for a well-known group. <br/>
-        /// SidTypeDeletedAccount - Indicates a SID for a deleted account. <br/>
-        /// SidTypeInvalid - Indicates an invalid SID. <br/>
-        /// SidTypeUnknown - Indicates an unknown SID type. <br/>
-        /// SidTypeComputer - Indicates a SID for a computer. <br/>
-        ///  <br/>
-        /// cimtype: uint8 <br/>
-        ///  <br/>
+        /// The SIDType property contains enumerated values that specify the type of security identifier (SID).<br/>
+        /// SIDTypes include:<br/>
+        /// SidTypeUser - Indicates a user SID.<br/>
+        /// SidTypeGroup - Indicates a group SID.<br/>
+        /// SidTypeDomain - Indicates a domain SID.<br/>
+        /// SidTypeAlias - Indicates an alias SID.<br/>
+        /// SidTypeWellKnownGroup - Indicates a SID for a well-known group.<br/>
+        /// SidTypeDeletedAccount - Indicates a SID for a deleted account.<br/>
+        /// SidTypeInvalid - Indicates an invalid SID.<br/>
+        /// SidTypeUnknown - Indicates an unknown SID type.<br/>
+        /// SidTypeComputer - Indicates a SID for a computer.<br/>
+        /// <br/>
+        /// cimtype: uint8<br/>
+        /// <br/>
         /// </summary>
         public byte SIDType { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Status { get; set; }
     }
-
+    
     /// <summary>
-    /// The Win32_GroupInDomain relationship identifies the group accounts associated with a NT domain. <br/>
-    ///  <br/>
-    /// provider: CIMWin32a <br/>
-    ///  <br/>
-    /// uuid: C1717231-5F16-4AE6-966F-6CA856B7AAF6 <br/>
-    ///  <br/>
+    /// The Win32_GroupInDomain relationship identifies the group accounts associated with a NT domain.<br/>
+    /// <br/>
+    /// provider: CIMWin32a<br/>
+    /// <br/>
+    /// uuid: C1717231-5F16-4AE6-966F-6CA856B7AAF6<br/>
+    /// <br/>
     /// </summary>
     public class Win32_GroupInDomain
     {
     }
-
+    
     /// <summary>
-    /// The Win32_GroupUser class represents an association between a group and an account that is a member of that group. <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {8502C508-5FBB-11D2-AAC1-006008C78BC7} <br/>
-    ///  <br/>
+    /// The Win32_GroupUser class represents an association between a group and an account that is a member of that group.<br/>
+    /// <br/>
+    /// provider: CIMWin32<br/>
+    /// <br/>
+    /// uuid: {8502C508-5FBB-11D2-AAC1-006008C78BC7}<br/>
+    /// <br/>
     /// </summary>
     public class Win32_GroupUser
     {
     }
+    
 }

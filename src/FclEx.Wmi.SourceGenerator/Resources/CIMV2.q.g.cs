@@ -5,176 +5,177 @@ using System;
 namespace CIMV2
 {
     /// <summary>
-    /// The Win32_QuickFixEngineering class represents system-wide Quick Fix Engineering (QFE) or updates that have been applied to the current operating system. <br/>
-    ///  <br/>
-    /// provider: CIMWin32 <br/>
-    ///  <br/>
-    /// uuid: {0827250D-BA3E-11d2-B361-00105A1F77A1} <br/>
-    ///  <br/>
+    /// The Win32_QuickFixEngineering class represents system-wide Quick Fix Engineering (QFE) or updates that have been applied to the current operating system.<br/>
+    /// <br/>
+    /// provider: CIMWin32<br/>
+    /// <br/>
+    /// uuid: {0827250D-BA3E-11d2-B361-00105A1F77A1}<br/>
+    /// <br/>
     /// </summary>
     public class Win32_QuickFixEngineering
     {
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The CSName property contains the local name of the computer system. <br/>
-        /// The value for this member comes from the CIM_ComputerSystem class. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
-        /// propagated: CIM_ComputerSystem.Name <br/>
-        ///  <br/>
+        /// The CSName property contains the local name of the computer system.<br/>
+        /// The value for this member comes from the CIM_ComputerSystem class.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// propagated: CIM_ComputerSystem.Name<br/>
+        /// <br/>
         /// </summary>
         public String CSName { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The FixComments property contains additional comments relating to the update. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The FixComments property contains additional comments relating to the update.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String FixComments { get; set; }
         /// <summary>
-        /// The HotFixID property specifies the unique identifier associated with a particular QFE. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The HotFixID property specifies the unique identifier associated with a particular QFE.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String HotFixID { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: datetime <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: datetime<br/>
+        /// <br/>
         /// </summary>
         public DateTime InstallDate { get; set; }
         /// <summary>
-        /// The InstalledBy property identifies who installed the update. <br/>
-        /// If this value is unknown, the property will be empty. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The InstalledBy property identifies who installed the update.<br/>
+        /// If this value is unknown, the property will be empty.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String InstalledBy { get; set; }
         /// <summary>
-        /// The InstalledOn property provides the date and time when the update was installed. <br/>
-        /// If this value is unknown, the property will be empty. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The InstalledOn property provides the date and time when the update was installed.<br/>
+        /// If this value is unknown, the property will be empty.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String InstalledOn { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Name { get; set; }
         /// <summary>
-        /// The ServicePackInEffect property specifies what servicepack was in effect when the update was applied. <br/>
-        /// If no service pack has been applied, the property takes on the value SP0. <br/>
-        /// If it can not be determined what service pack was in effect, this property will be NULL. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The ServicePackInEffect property specifies what servicepack was in effect when the update was applied.<br/>
+        /// If no service pack has been applied, the property takes on the value SP0.<br/>
+        /// If it can not be determined what service pack was in effect, this property will be NULL.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String ServicePackInEffect { get; set; }
         /// <summary>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Status { get; set; }
     }
-
+    
     /// <summary>
-    /// The Win32_QuotaSetting class contains setting information for disk quotas on a volume. <br/>
-    ///  <br/>
-    /// provider: DskQuotaProvider <br/>
-    ///  <br/>
-    /// uuid: 29013152-7F77-4A8A-A8BB-E1F24DECE9F7 <br/>
-    ///  <br/>
+    /// The Win32_QuotaSetting class contains setting information for disk quotas on a volume.<br/>
+    /// <br/>
+    /// provider: DskQuotaProvider<br/>
+    /// <br/>
+    /// uuid: 29013152-7F77-4A8A-A8BB-E1F24DECE9F7<br/>
+    /// <br/>
     /// </summary>
     public class Win32_QuotaSetting
     {
         /// <summary>
-        /// A short textual description (one-line string) of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// A short textual description (one-line string) of the CIM_Setting object.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
-        /// The DefaultLimit property indicates the default limit set for quotas on this particular volume. <br/>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// units: bytes <br/>
-        ///  <br/>
+        /// The DefaultLimit property indicates the default limit set for quotas on this particular volume.<br/>
+        /// <br/>
+        /// cimtype: sint64<br/>
+        /// <br/>
+        /// units: bytes<br/>
+        /// <br/>
         /// </summary>
         public long DefaultLimit { get; set; }
         /// <summary>
-        /// The DefaultWarningLimit property indicates the default warning limit set for quotas on this particular volume. <br/>
-        ///  <br/>
-        /// cimtype: sint64 <br/>
-        ///  <br/>
-        /// units: bytes <br/>
-        ///  <br/>
+        /// The DefaultWarningLimit property indicates the default warning limit set for quotas on this particular volume.<br/>
+        /// <br/>
+        /// cimtype: sint64<br/>
+        /// <br/>
+        /// units: bytes<br/>
+        /// <br/>
         /// </summary>
         public long DefaultWarningLimit { get; set; }
         /// <summary>
-        /// A textual description of the CIM_Setting object. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// A textual description of the CIM_Setting object.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
-        /// The ExceedNotification property indicates whether or not events will be written to the event log when quotas are exceeded. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
+        /// The ExceedNotification property indicates whether or not events will be written to the event log when quotas are exceeded.<br/>
+        /// <br/>
+        /// cimtype: boolean<br/>
+        /// <br/>
         /// </summary>
         public Boolean ExceededNotification { get; set; }
         /// <summary>
-        /// The identifier by which the CIM_Setting object is known. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The identifier by which the CIM_Setting object is known.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String SettingID { get; set; }
         /// <summary>
-        /// The State property indicates what the level of quota management set for this particular volume. <br/>
-        /// Disabled indicates that Quota management is not enabled on this volume. <br/>
-        /// Tracked indicates that Quota&apos;s are tracked but the limit value is not enforced and users may exceed their quota limit. <br/>
-        /// Enforced indicates that Quota&apos;s are tracked and enforce on this volume. <br/>
-        ///  <br/>
-        /// cimtype: uint32 <br/>
-        ///  <br/>
+        /// The State property indicates what the level of quota management set for this particular volume.<br/>
+        /// Disabled indicates that Quota management is not enabled on this volume.<br/>
+        /// Tracked indicates that Quota&apos;s are tracked but the limit value is not enforced and users may exceed their quota limit.<br/>
+        /// Enforced indicates that Quota&apos;s are tracked and enforce on this volume.<br/>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
         /// </summary>
         public UInt32 State { get; set; }
         /// <summary>
-        /// The VolumePath property indicates the name of the volume that disk quotas are on. <br/>
-        /// It can be volume name, volume path (ex D:\) or it can be the unique volume name like \\?Volume{GUID}\. <br/>
-        ///  <br/>
-        /// cimtype: string <br/>
-        ///  <br/>
+        /// The VolumePath property indicates the name of the volume that disk quotas are on.<br/>
+        /// It can be volume name, volume path (ex D:\) or it can be the unique volume name like \\?Volume{GUID}\.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
         /// </summary>
         public String VolumePath { get; set; }
         /// <summary>
-        /// The WarningExceedNotification property indicates whether or not events will be written to the event log when warnings are exceeded. <br/>
-        ///  <br/>
-        /// cimtype: boolean <br/>
-        ///  <br/>
+        /// The WarningExceedNotification property indicates whether or not events will be written to the event log when warnings are exceeded.<br/>
+        /// <br/>
+        /// cimtype: boolean<br/>
+        /// <br/>
         /// </summary>
         public Boolean WarningExceededNotification { get; set; }
     }
+    
 }
