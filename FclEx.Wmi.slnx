@@ -18,9 +18,7 @@
     <File Path="src/Directory.Build.props" />
     <File Path="src/Directory.Build.targets" />
     <Project Path="src/FclEx.Wmi.SourceGenerator/FclEx.Wmi.SourceGenerator.csproj" />
-    <Project Path="src/FclEx.Wmi/FclEx.Wmi.csproj">
-      <BuildDependency Project="src/FclEx.Wmi.SourceGenerator/FclEx.Wmi.SourceGenerator.csproj" />
-    </Project>
+    <Project Path="src/FclEx.Wmi/FclEx.Wmi.csproj" />
   </Folder>
   <Folder Name="/test/">
     <File Path="test/Directory.Build.props" />
