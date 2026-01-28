@@ -6,6 +6,7 @@
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <WarningsAsErrors>CS8785</WarningsAsErrors>
     <PackageProjectUrl>https://github.com/huoshan12345/FclEx.Wmi</PackageProjectUrl>
     <RepositoryUrl>https://github.com/huoshan12345/FclEx.Wmi</RepositoryUrl>
     <PackageTags>extensions;helpers</PackageTags>
