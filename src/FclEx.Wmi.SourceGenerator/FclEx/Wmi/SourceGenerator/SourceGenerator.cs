@@ -20,6 +20,12 @@ public class SourceGenerator : IIncrementalGenerator
 {
     private static readonly bool IsGithubAction = Environment.GetEnvironmentVariable("GITHUB_ACTION") is { Length: > 0 };
     private static readonly bool IsWin = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+    private const bool IsDebug =
+#if DEBUG
+         true;
+#else
+        false;
+#endif
 
     public static void GenerateFiles(string? folder)
     {
@@ -222,6 +228,9 @@ public class SourceGenerator : IIncrementalGenerator
                     context.AddSource(name, code);
                     break;
             }
+
+            if (IsGithubAction || IsDebug == false)
+                continue;
 
             var path = Path.Combine(resourcesDir.FullName, name);
             File.WriteAllText(path, code);
