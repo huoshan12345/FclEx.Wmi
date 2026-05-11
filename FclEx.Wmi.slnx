@@ -5,6 +5,7 @@
   </Folder>
   <Folder Name="/build/">
     <File Path="build/bump-version.ps1" />
+    <File Path="build/clean.ps1" />
     <File Path="build/pack.ps1" />
     <File Path="build/pkg.version" />
   </Folder>
@@ -16,7 +17,9 @@
   <Folder Name="/src/">
     <File Path="src/Directory.Build.props" />
     <File Path="src/Directory.Build.targets" />
-    <Project Path="src/FclEx.Wmi.SourceGenerator/FclEx.Wmi.SourceGenerator.csproj" />
+    <Project Path="src/FclEx.Wmi.SourceGenerator/FclEx.Wmi.SourceGenerator.csproj">
+      <BuildDependency Project="src/FclEx.Wmi/FclEx.Wmi.csproj" />
+    </Project>
     <Project Path="src/FclEx.Wmi/FclEx.Wmi.csproj" />
   </Folder>
   <Folder Name="/test/">

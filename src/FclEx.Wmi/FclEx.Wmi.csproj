@@ -17,7 +17,7 @@
   <!--Option to run target once per project in multi-targeting build-->
   <!--https://github.com/dotnet/msbuild/issues/2781-->
   <Target Name="GenerateCodeBody">
-    <Message Importance="High" Text="Generating code to $(SourceDir)." />
+    <Message Importance="High" Text="Generating code to $(SourceDir)" />
     <ItemGroup>
       <!--MSBuild maintains an item list named FileWrites that contains the files that need to be cleaned.
       This list is persisted to a file inside the obj folder that is referred to as the "clean cache."
