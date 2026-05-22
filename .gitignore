@@ -251,3 +251,4 @@ BenchmarkDotNet.Artifacts/
 ~Generated/
 appsettings.json
 * - Backup.*.csproj
+!Directory.Build.rsp
