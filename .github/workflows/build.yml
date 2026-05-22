@@ -87,23 +87,6 @@ jobs:
         with:
           ref: ${{ steps.pr.outputs.merge_commit_sha }}
 
-      - name: Setup sops
-        shell: pwsh
-        run: |
-          choco install sops -y --no-progress
-
-      - name: Setup age
-        shell: pwsh
-        run: |
-          choco install age.portable -y --no-progress
-
-      - name: Decrypt appsettings
-        shell: pwsh
-        env:
-          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
-        run: |
-          ./build/decrypt.ps1
-
       - name: Check missing SDKs
         id: sdk_check
         shell: pwsh
