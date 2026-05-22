@@ -121,7 +121,7 @@ jobs:
         with:
           name: ${{ env.ARTIFACTS_NAME }}
           path: ${{ env.ARTIFACTS_DIR }}
-          
+
   publish:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -163,7 +163,7 @@ jobs:
       - name: Set version
         shell: pwsh
         run: |
-          $ver = "${{ needs.build.outputs.version }}"
+          $ver = "${{ needs.build-win.outputs.version }}"
           echo "VERSION=$ver" >> $Env:GITHUB_ENV
           echo $ver
 
