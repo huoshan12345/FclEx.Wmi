@@ -36,6 +36,9 @@ env:
 jobs:
   build-win:
     runs-on: windows-latest
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
+
     steps:
       - name: Get PR
         if: ${{ github.event_name == 'pull_request_target' }}
