@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <!--To fix the error The library 'hostpolicy.dll' required to execute the application was not found-->
     <OutputType>exe</OutputType>
@@ -8,12 +7,10 @@
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <NoWarn>RS1035;CS1591</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="FclEx.Core" Version="2.3.1" />
-    <PackageReference Include="System.Management" Version="10.0.11" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="5.9.0" PrivateAssets="all" />
+    <PackageReference Include="FclEx.Core" />
+    <PackageReference Include="System.Management" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" PrivateAssets="all" />
   </ItemGroup>
-
 </Project>

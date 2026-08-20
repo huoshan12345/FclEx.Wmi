@@ -1,14 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.9.0" />
-    <PackageReference Include="xunit.v3" Version="[3.2.2]" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="[3.1.5]" />
-    <PackageReference Include="FclEx.Xunit.v3" Version="2.3.1" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="FclEx.Xunit.v3" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\FclEx.Wmi\FclEx.Wmi.csproj" />
   </ItemGroup>
-
 </Project>

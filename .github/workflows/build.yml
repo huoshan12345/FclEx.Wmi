@@ -46,6 +46,7 @@ jobs:
               - .github/workflows/build.yml
               - build/pack.ps1
               - build/pkg.version
+              - global.json
               - NuGet.Config
               - src/**
               - test/**
@@ -130,7 +131,7 @@ jobs:
 
       - name: Test Release
         timeout-minutes: 10
-        run: dotnet test /nr:false ${{ env.SOLUTION }} -c Release --no-restore --no-build
+        run: dotnet test --solution ${{ env.SOLUTION }} -c Release --no-restore --no-build
 
       - name: Test Report
         uses: dorny/test-reporter@main
