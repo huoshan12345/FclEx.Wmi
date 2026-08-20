@@ -1150,6 +1150,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_OnBoardDevice class represents common adapter devices built into the motherboard (system board).<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {AEECF151-D0EA-11d2-ABFC-00805F538618}<br/>
@@ -1158,6 +1160,7 @@ namespace CIMV2
     public class Win32_OnBoardDevice
     {
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1206,6 +1209,8 @@ namespace CIMV2
         /// </summary>
         public Boolean HotSwappable { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -1228,6 +1233,8 @@ namespace CIMV2
         /// </summary>
         public String Model { get; set; }
         /// <summary>
+        /// The Name property defines the label by which the object is known.<br/>
+        /// When subclassed, the Name property can be overridden to be a Key property.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1291,6 +1298,15 @@ namespace CIMV2
         /// </summary>
         public String SKU { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1319,6 +1335,8 @@ namespace CIMV2
     /// The Win32_OperatingSystem class represents an operating system installed on a Win32 computer system.<br/>
     /// Any operating system that can be installed on a Win32 system is a descendent (or member) of this class.<br/>
     /// Example: Microsoft Windows 95.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -1353,6 +1371,7 @@ namespace CIMV2
         /// </summary>
         public String BuildType { get; set; }
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1545,6 +1564,8 @@ namespace CIMV2
         /// </summary>
         public UInt64 FreeVirtualMemory { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -1795,6 +1816,15 @@ namespace CIMV2
         /// </summary>
         public UInt64 SizeStoredInPagingFiles { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1897,6 +1927,8 @@ namespace CIMV2
     /// <summary>
     /// This class represents the association between an operating system and the autochk settings that apply to the disks on the machine.Note that the setting is associated to operating system rather than computer system since there can be one or more operating systems installed on the machine, each with its own autochk settings.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32a<br/>
     /// <br/>
     /// </summary>
@@ -1906,6 +1938,8 @@ namespace CIMV2
     
     /// <summary>
     /// The Win32_OperatingSystemQFE class represents an association between an operating system and product updates applied as represented in Win32_QuickFixEngineering.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -1918,6 +1952,8 @@ namespace CIMV2
     
     /// <summary>
     /// This class represents status of the Optional Features present on the operating system<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -1934,12 +1970,15 @@ namespace CIMV2
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -1961,6 +2000,15 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1971,6 +2019,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_OSRecoveryConfiguration class represents the types of information that will be gathered from memory when the operating system fails.<br/>
     /// This includes boot failures and system crashes.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>

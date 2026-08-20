@@ -105,6 +105,8 @@ namespace CIMV2
     /// The services must be initiated in the order specified by the Load Order Group, as the services are dependent on each other.<br/>
     /// These dependent services require the presence of the antecedent services in order to function correctly.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {8502C4D4-5FBB-11D2-AAC1-006008C78BC7}<br/>
@@ -113,12 +115,14 @@ namespace CIMV2
     public class Win32_LoadOrderGroup
     {
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -142,6 +146,8 @@ namespace CIMV2
         /// </summary>
         public UInt32 GroupOrder { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -158,6 +164,15 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -167,6 +182,8 @@ namespace CIMV2
     
     /// <summary>
     /// The Win32_LoadOrderGroupServiceDependencies class represents an association between a base service and a load order group that the service depends on to start running.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -181,6 +198,8 @@ namespace CIMV2
     /// The Win32_LoadOrderGroupServiceMembers class represents an association between a load order group and a base service.<br/>
     /// Note: Win32_SystemDriver objects are members of that load order group.<br/>
     /// Not all services are members of groups, and not all groups have services within them.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -278,6 +297,8 @@ namespace CIMV2
     /// Although the association will usually be one to one - users are possible that involve more than one session.<br/>
     /// At the termination of the session the association instance is deleted.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {8BB5B3EC-E1F7-4b39-942A-605D5F55789A}<br/>
@@ -291,6 +312,8 @@ namespace CIMV2
     /// The Win32_LogicalDisk class represents a data source that resolves to an actual local storage device on a Win32 system.<br/>
     /// The class returns both local as well as mapped logical disks.<br/>
     /// However, the recommended approach is to use this class for obtaining information on local disks and to use the Win32_MappedLogicalDisk class for information on mapped logical disk.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -328,6 +351,7 @@ namespace CIMV2
         /// </summary>
         public UInt64 BlockSize { get; set; }
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -401,6 +425,7 @@ namespace CIMV2
         /// </summary>
         public String CreationClassName { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -463,6 +488,8 @@ namespace CIMV2
         /// </summary>
         public UInt64 FreeSpace { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -497,6 +524,8 @@ namespace CIMV2
         /// </summary>
         public UInt32 MediaType { get; set; }
         /// <summary>
+        /// The Name property defines the label by which the object is known.<br/>
+        /// When subclassed, the Name property can be overridden to be a Key property.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -588,6 +617,15 @@ namespace CIMV2
         /// </summary>
         public UInt64 Size { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -667,6 +705,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_LogicalDiskRootDirectory class represents an association between a logical disk and its directory structure.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {F25FE468-783E-11d2-90BF-0060081A46FD}<br/>
@@ -678,6 +718,8 @@ namespace CIMV2
     
     /// <summary>
     /// The Win32_LogicalDiskToPartition class represents an association between a logical disk drive and the disk partition it resides on.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -705,6 +747,8 @@ namespace CIMV2
     
     /// <summary>
     /// Association between the security settings of a file/directory and one member of its DACL<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
@@ -753,6 +797,8 @@ namespace CIMV2
     /// <summary>
     /// Association between the security settings of a file/directory one member of its SACL.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
     /// uuid: {FCC86599-DB20-11d2-85FC-0000F8102E5F}<br/>
@@ -800,6 +846,8 @@ namespace CIMV2
     /// <summary>
     /// Association between the security settings of a file/directory and its group<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
     /// uuid: {8502C58F-5FBB-11D2-AAC1-006008C78BC7}<br/>
@@ -812,6 +860,8 @@ namespace CIMV2
     /// <summary>
     /// Association between the security settings of a file/directory and its owner<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
     /// uuid: {8502C58E-5FBB-11D2-AAC1-006008C78BC7}<br/>
@@ -823,6 +873,8 @@ namespace CIMV2
     
     /// <summary>
     /// security settings for a logical file<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
@@ -880,6 +932,8 @@ namespace CIMV2
     /// The Win32_LogicalProgramGroup class represents a program group in a Win32 system.<br/>
     /// Example: Accessories or Startup.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {D52706F2-8045-11d2-90CE-0060081A46FD}<br/>
@@ -888,12 +942,14 @@ namespace CIMV2
     public class Win32_LogicalProgramGroup
     {
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -909,6 +965,8 @@ namespace CIMV2
         /// </summary>
         public String GroupName { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -926,6 +984,15 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -945,6 +1012,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_LogicalProgramGroupDirectory class represents an association between logical program groups (groupings in the start menu) and the file directories in which they are stored.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {F25FE467-783E-11d2-90BF-0060081A46FD}<br/>
@@ -957,6 +1026,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_LogicalProgramGroupItem class represents an element contained by a Win32_ProgramGroup, that is not itself another Win32_ProgramGroup.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {86E30E82-7DB2-11d2-90CB-0060081A46FD}<br/>
@@ -965,18 +1036,22 @@ namespace CIMV2
     public class Win32_LogicalProgramGroupItem
     {
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -995,6 +1070,15 @@ namespace CIMV2
         /// </summary>
         public String Name { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1004,6 +1088,8 @@ namespace CIMV2
     
     /// <summary>
     /// The Win32_LogicalProgramGroupItemDataFile class represents an association between the program group items of the start menu and the files in which they are stored.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
@@ -1016,6 +1102,8 @@ namespace CIMV2
     
     /// <summary>
     /// Association between the security settings of a share and one member of its DACL<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
@@ -1064,6 +1152,8 @@ namespace CIMV2
     /// <summary>
     /// Association between the security settings of a share and one member of its SACL.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
     /// uuid: {8502C594-5FBB-11D2-AAC1-006008C78BC7}<br/>
@@ -1110,6 +1200,8 @@ namespace CIMV2
     
     /// <summary>
     /// security settings for a logical file<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: SECRCW32<br/>
     /// <br/>
@@ -1159,6 +1251,8 @@ namespace CIMV2
     /// <summary>
     /// The Win32_LogonSession class describes the logon session or sessions associated with a user who has logged on to Windows NT or Windows 2000.<br/>
     /// <br/>
+    /// locale: ms_409<br/>
+    /// <br/>
     /// provider: CIMWin32<br/>
     /// <br/>
     /// uuid: {9083C21E-7D58-4e0e-BC30-0BC8922AFB8B}<br/>
@@ -1174,18 +1268,22 @@ namespace CIMV2
         /// </summary>
         public String AuthenticationPackage { get; set; }
         /// <summary>
+        /// The Caption property is a short textual description (one-line string) of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Caption { get; set; }
         /// <summary>
+        /// The Description property provides a textual description of the object.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
         /// </summary>
         public String Description { get; set; }
         /// <summary>
+        /// The InstallDate property is datetime value indicating when the object was installed.<br/>
+        /// A lack of a value does not indicate that the object is not installed.<br/>
         /// <br/>
         /// cimtype: datetime<br/>
         /// <br/>
@@ -1222,6 +1320,8 @@ namespace CIMV2
         /// </summary>
         public UInt32 LogonType { get; set; }
         /// <summary>
+        /// The Name property defines the label by which the object is known.<br/>
+        /// When subclassed, the Name property can be overridden to be a Key property.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1235,6 +1335,15 @@ namespace CIMV2
         /// </summary>
         public DateTime StartTime { get; set; }
         /// <summary>
+        /// The Status property is a string indicating the current status of the object.<br/>
+        /// Various operational and non-operational statuses can be defined.<br/>
+        /// Operational statuses are &quot;OK&quot;, &quot;Degraded&quot; and &quot;Pred Fail&quot;.<br/>
+        /// &quot;Pred Fail&quot; indicates that an element may be functioning properly but predicting a failure in the near future.<br/>
+        /// An example is a SMART-enabled hard drive.<br/>
+        /// Non-operational statuses can also be specified.<br/>
+        /// These are &quot;Error&quot;, &quot;Starting&quot;, &quot;Stopping&quot; and &quot;Service&quot;.<br/>
+        /// The latter, &quot;Service&quot;, could apply during mirror-resilvering of a disk, reload of a user permissions list, or other administrative work.<br/>
+        /// Not all such work is on-line, yet the managed element is neither &quot;OK&quot; nor in one of the other states.<br/>
         /// <br/>
         /// cimtype: string<br/>
         /// <br/>
@@ -1244,6 +1353,8 @@ namespace CIMV2
     
     /// <summary>
     /// The Win32_LogonSessionMappedDisk class represents an association between a logon session and the mapped logical disks defined within the session.<br/>
+    /// <br/>
+    /// locale: ms_409<br/>
     /// <br/>
     /// provider: CIMWin32a<br/>
     /// <br/>

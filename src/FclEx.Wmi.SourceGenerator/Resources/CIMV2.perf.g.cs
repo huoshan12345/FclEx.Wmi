@@ -25375,6 +25375,225 @@ namespace CIMV2
     
     /// <summary>
     /// <br/>
+    /// autocook_rawclass: Win32_PerfRawData_Counters_RemoteDesktopVirtualChannel<br/>
+    /// <br/>
+    /// displayname: Remote Desktop Virtual Channel<br/>
+    /// <br/>
+    /// displayname009: Remote Desktop Virtual Channel<br/>
+    /// <br/>
+    /// provider: WmiPerfInst<br/>
+    /// <br/>
+    /// registrykey: {57683f06-a08b-4708-8825-5c26f410744b}<br/>
+    /// <br/>
+    /// </summary>
+    public class Win32_PerfFormattedData_Counters_RemoteDesktopVirtualChannel
+    {
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: Bandwidthkbps<br/>
+        /// <br/>
+        /// displayname: Bandwidth (kbps)<br/>
+        /// <br/>
+        /// displayname009: Bandwidth (kbps)<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 Bandwidthkbps { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_BULK_COUNT<br/>
+        /// <br/>
+        /// counter: BytesReceivedFromClientPersec<br/>
+        /// <br/>
+        /// displayname: Bytes Received From Client/sec<br/>
+        /// <br/>
+        /// displayname009: Bytes Received From Client/sec<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 BytesReceivedFromClientPersec { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_BULK_COUNT<br/>
+        /// <br/>
+        /// counter: BytesSentToClientPersec<br/>
+        /// <br/>
+        /// displayname: Bytes Sent To Client/sec<br/>
+        /// <br/>
+        /// displayname009: Bytes Sent To Client/sec<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 BytesSentToClientPersec { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) for the statistic or metric.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: CurrentlyOpen<br/>
+        /// <br/>
+        /// displayname: Currently Open<br/>
+        /// <br/>
+        /// displayname009: Currently Open<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 CurrentlyOpen { get; set; }
+        /// <summary>
+        /// A textual description of the statistic or metric.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_Object { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_PerfTime { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_Sys100NS { get; set; }
+        /// <summary>
+        /// The Name property defines the label by which the statistic or metric is known.<br/>
+        /// When subclassed, the property can be overridden to be a Key property.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: Openings<br/>
+        /// <br/>
+        /// displayname: Openings<br/>
+        /// <br/>
+        /// displayname009: Openings<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 Openings { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: RTTms<br/>
+        /// <br/>
+        /// displayname: RTT (ms)<br/>
+        /// <br/>
+        /// displayname009: RTT (ms)<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 RTTms { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_Object { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_PerfTime { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_Sys100NS { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_LARGE_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: TotalBytesReceivedFromClient<br/>
+        /// <br/>
+        /// displayname: Total Bytes Received From Client<br/>
+        /// <br/>
+        /// displayname009: Total Bytes Received From Client<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 TotalBytesReceivedFromClient { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// cookingtype: PERF_COUNTER_LARGE_RAWCOUNT<br/>
+        /// <br/>
+        /// counter: TotalBytesSentToClient<br/>
+        /// <br/>
+        /// displayname: Total Bytes Sent To Client<br/>
+        /// <br/>
+        /// displayname009: Total Bytes Sent To Client<br/>
+        /// <br/>
+        /// perftimefreq: Frequency_PerfTime<br/>
+        /// <br/>
+        /// perftimestamp: Timestamp_PerfTime<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 TotalBytesSentToClient { get; set; }
+    }
+    
+    /// <summary>
+    /// <br/>
     /// autocook_rawclass: Win32_PerfRawData_Counters_RemoteFXGraphics<br/>
     /// <br/>
     /// displayname: RemoteFX Graphics<br/>
@@ -123783,6 +124002,159 @@ namespace CIMV2
         /// <br/>
         /// </summary>
         public UInt64 Timestamp_Sys100NS { get; set; }
+    }
+    
+    /// <summary>
+    /// <br/>
+    /// displayname: Remote Desktop Virtual Channel<br/>
+    /// <br/>
+    /// displayname009: Remote Desktop Virtual Channel<br/>
+    /// <br/>
+    /// provider: WmiPerfInst<br/>
+    /// <br/>
+    /// registrykey: {57683f06-a08b-4708-8825-5c26f410744b}<br/>
+    /// <br/>
+    /// </summary>
+    public class Win32_PerfRawData_Counters_RemoteDesktopVirtualChannel
+    {
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// displayname: Bandwidth (kbps)<br/>
+        /// <br/>
+        /// displayname009: Bandwidth (kbps)<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 Bandwidthkbps { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// displayname: Bytes Received From Client/sec<br/>
+        /// <br/>
+        /// displayname009: Bytes Received From Client/sec<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 BytesReceivedFromClientPersec { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// displayname: Bytes Sent To Client/sec<br/>
+        /// <br/>
+        /// displayname009: Bytes Sent To Client/sec<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 BytesSentToClientPersec { get; set; }
+        /// <summary>
+        /// A short textual description (one-line string) for the statistic or metric.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Caption { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// displayname: Currently Open<br/>
+        /// <br/>
+        /// displayname009: Currently Open<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 CurrentlyOpen { get; set; }
+        /// <summary>
+        /// A textual description of the statistic or metric.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Description { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_Object { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_PerfTime { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Frequency_Sys100NS { get; set; }
+        /// <summary>
+        /// The Name property defines the label by which the statistic or metric is known.<br/>
+        /// When subclassed, the property can be overridden to be a Key property.<br/>
+        /// <br/>
+        /// cimtype: string<br/>
+        /// <br/>
+        /// </summary>
+        public String Name { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// displayname: Openings<br/>
+        /// <br/>
+        /// displayname009: Openings<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 Openings { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint32<br/>
+        /// <br/>
+        /// displayname: RTT (ms)<br/>
+        /// <br/>
+        /// displayname009: RTT (ms)<br/>
+        /// <br/>
+        /// </summary>
+        public UInt32 RTTms { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_Object { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_PerfTime { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 Timestamp_Sys100NS { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// displayname: Total Bytes Received From Client<br/>
+        /// <br/>
+        /// displayname009: Total Bytes Received From Client<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 TotalBytesReceivedFromClient { get; set; }
+        /// <summary>
+        /// <br/>
+        /// cimtype: uint64<br/>
+        /// <br/>
+        /// displayname: Total Bytes Sent To Client<br/>
+        /// <br/>
+        /// displayname009: Total Bytes Sent To Client<br/>
+        /// <br/>
+        /// </summary>
+        public UInt64 TotalBytesSentToClient { get; set; }
     }
     
     /// <summary>
