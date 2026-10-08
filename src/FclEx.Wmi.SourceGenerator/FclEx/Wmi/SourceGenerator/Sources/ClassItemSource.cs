@@ -22,7 +22,7 @@ public static class ClassItemSource
             .WriteUsings(usings)
             .WriteLine();
 
-        var ns = @namespace.SkipUntil("root\\", true, StringComparison.OrdinalIgnoreCase).Replace("\\", ".");
+        var ns = @namespace.SkipUntil("root\\", true, false, StringComparison.OrdinalIgnoreCase).Replace("\\", ".");
 
         // Namespace declaration
         builder.WriteLine($"namespace {ns}")
