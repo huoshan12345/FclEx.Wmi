@@ -1,12 +1,14 @@
 ﻿namespace FclEx.Wmi;
 
-public class Win32PerfRawDataPerfDiskPhysicalDiskTests(ITestOutputHelper output)
+public class Win32PerfRawDataPerfDiskPhysicalDiskTests
 {
-    [LocalOnlyFact]
+    [Fact(Explicit = true)]
     public async Task Test()
     {
         for (var i = 0; i < 5; i++)
         {
+            GlobalConstants.CancellationToken.ThrowIfCancellationRequested();
+
             var items = new ManagementObjectSearcher("SELECT * FROM Win32_PerfRawData_PerfDisk_PhysicalDisk")
                 .Get()
                 .OfType<ManagementBaseObject>()
@@ -15,7 +17,7 @@ public class Win32PerfRawDataPerfDiskPhysicalDiskTests(ITestOutputHelper output)
 
             foreach (var item in items)
             {
-                output.WriteLine($"{item.Name}");
+                Output?.WriteLine($"{item.Name}");
             }
 
             await Task.Delay(TimeSpan.FromSeconds(1));

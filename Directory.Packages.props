@@ -1,6 +1,7 @@
 ﻿<Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <TargetFrameworkVersion>$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="FclEx.Core" Version="2.4.4" />
@@ -9,8 +10,16 @@
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.11.1" />
     <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.2" />
-    <PackageVersion Include="System.Management" Version="11.0.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
     <PackageVersion Include="xunit.v3" Version="4.0.3" />
+  </ItemGroup>
+  <!--System.Management 11.x provides Windows runtime implementations only for net10.0 and later.
+      Keep older targets on 10.x so net8.0/net9.0 do not fall back to the netstandard2.0 stub,
+      which throws PlatformNotSupportedException even on Windows. Use 11.x for net11.0 and later.-->
+  <ItemGroup Condition="$([MSBuild]::VersionLessThan($(TargetFrameworkVersion), 11.0))">
+    <PackageVersion Include="System.Management" Version="[10.0.15, 11.0.0)" />
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), 11.0))">
+    <PackageVersion Include="System.Management" Version="11.0.0" />
   </ItemGroup>
 </Project>
