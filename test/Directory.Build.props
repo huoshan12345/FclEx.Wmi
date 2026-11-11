@@ -12,6 +12,7 @@
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
   </PropertyGroup>
   <PropertyGroup>
     <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
