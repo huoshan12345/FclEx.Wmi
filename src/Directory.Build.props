@@ -1,6 +1,10 @@
 <Project>
   <Import Project="..\build\Package.props" />
   <PropertyGroup>
+    <!--System.Management only supports net8.0-windows and above. Do not try to add net6.0-windows or net7.0-windows, it won't work.-->
+    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows;net11.0-windows</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <LangVersion>latest</LangVersion>
@@ -12,9 +16,5 @@
   <PropertyGroup>
     <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
     <TargetFrameworkVersion>$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <!--System.Management only supports net8.0-windows and above. Do not try to add net6.0-windows or net7.0-windows, it won't work.-->
-    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
   </PropertyGroup>
 </Project>

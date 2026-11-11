@@ -1,5 +1,8 @@
 <Project>
   <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows;net11.0-windows</TargetFrameworks>
+  </PropertyGroup>
+  <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Is64BitOS>$([System.Environment]::Is64BitOperatingSystem)</Is64BitOS>
@@ -13,9 +16,6 @@
   <PropertyGroup>
     <IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
     <TargetFrameworkVersion>$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup Condition="$(TargetFramework.StartsWith('net4'))">
     <Prefer32Bit>false</Prefer32Bit>
